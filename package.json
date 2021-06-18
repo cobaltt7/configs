@@ -1,0 +1,60 @@
+{
+	"name": "@onedotprojects/eslint-plugin",
+	"version": "1.0.0",
+	"description": "OneDot Projects' ESLint Style Guide",
+	"keywords": [
+		"eslint",
+		"eslint-plugin",
+		"eslint-config"
+	],
+	"homepage": "https://github.com/onedotprojects/eslint-plugin#readme",
+	"bugs": {
+		"url": "https://github.com/onedotprojects/eslint-plugin/issues",
+		"email": "1auth.wgyt@gmail.com"
+	},
+	"license": "MIT",
+	"author": "OneDot Projects",
+	"main": "index.js",
+	"scripts": {
+		"lint": "prettier --ignore-path .gitignore --ignore-path .prettierignore --write ."
+	},
+	"prettier": {
+		"printWidth": 80,
+		"proseWrap": "always",
+		"quoteProps": "consistent",
+		"tabWidth": 4,
+		"trailingComma": "all",
+		"useTabs": true
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/onedotprojects/eslint-plugin.git"
+	},
+	"dependencies": {
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-compat": "^3.9.0",
+		"eslint-plugin-diff": "^1.0.11",
+		"eslint-plugin-eslint-comments": "^3.2.0",
+		"eslint-plugin-html": "^6.1.2",
+		"eslint-plugin-jsdoc": "^35.1.3",
+		"eslint-plugin-markdown": "^2.2.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-optimize-regex": "^1.2.0",
+		"eslint-plugin-regexp": "^0.12.1",
+		"eslint-plugin-unicorn": "^33.0.1"
+	},
+	"peerDependencies": {
+		"prettier": "^2.3.1",
+		"eslint": "^7.28.0"
+	},
+	"engines": {
+		"node": "12.22.1"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"not dead",
+		"> 0.1% in us",
+		"maintained node versions",
+		"unreleased versions"
+	]
+}

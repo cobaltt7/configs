@@ -1,2 +1,3 @@
-# eslint-plugin
-OneDot Project's ESLint Style Guide
+# @onedotprojects/eslint-plugin
+
+OneDot Projects' ESLint Style Guide
