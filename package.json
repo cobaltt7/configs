@@ -40,15 +40,16 @@
 		"eslint-plugin-markdown": "^2.2.0",
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-optimize-regex": "^1.2.0",
+		"eslint-plugin-promise": "^5.1.0",
 		"eslint-plugin-regexp": "^0.12.1",
 		"eslint-plugin-unicorn": "^33.0.1"
 	},
 	"peerDependencies": {
-		"prettier": "^2.3.1",
-		"eslint": "^7.28.0"
+		"eslint": "^7.28.0",
+		"prettier": "^2.3.1"
 	},
 	"engines": {
-		"node": "12.22.1"
+		"node": "^12.22.1"
 	},
 	"browserslist": [
 		"last 2 versions",

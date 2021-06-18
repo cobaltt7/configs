@@ -60,7 +60,9 @@ module.exports = {
 					parserOptions: {
 						sourceType: "module",
 					},
-					implicitStrict: true,
+					ecmaFeatures: {
+						impliedStrict: true,
+					},
 					rules: {
 						"id-length": 0,
 						"unicorn/no-keyword-prefix": 0,
