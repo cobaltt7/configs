@@ -59,9 +59,9 @@ module.exports = {
 					files: ["**.config.js", "**rc.js"],
 					parserOptions: {
 						sourceType: "module",
-					},
-					ecmaFeatures: {
-						impliedStrict: true,
+						ecmaFeatures: {
+							impliedStrict: true,
+						},
 					},
 					rules: {
 						"id-length": 0,
@@ -93,6 +93,11 @@ module.exports = {
 						"jsconfig.json",
 					],
 				},
+				{
+
+					files:["**.ts"],
+						"parser": "@typescript-eslint/parser"
+							  },
 				{
 					extends: ["plugin:jsonc/recommended-with-json"],
 					parser: "jsonc-eslint-parser",
