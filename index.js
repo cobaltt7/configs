@@ -1,7 +1,7 @@
 /** @file ESLint Configuration file. */
 
 // "plugin:diff/diff",
-export default {
+module.exports = {
 	configs: {
 		browser: {
 			env: { browser: true, es2020: false, es6: false, node: false },
@@ -9,7 +9,7 @@ export default {
 			parserOptions: { ecmaVersion: 3 },
 
 			rules: {
-				"@html-eslint/id-naming-convention": [2,"kebab-case"],
+				"@html-eslint/id-naming-convention": [2, "kebab-case"],
 				"@html-eslint/require-meta-charset": 2,
 				"comma-dangle": 0,
 				"jsdoc/require-file-overview": 0,
@@ -86,7 +86,8 @@ export default {
 
 			extends: [
 				"plugin:node/recommended",
-				"plugin:node/recommended-script","hardcore/node",
+				"plugin:node/recommended-script",
+				"hardcore/node",
 			],
 
 			parserOptions: { ecmaVersion: 10 },
@@ -103,11 +104,14 @@ export default {
 				"plugin:markdown/recommended",
 				"plugin:promise/recommended",
 				"plugin:unicorn/recommended",
-				"prettier","hardcore/ts-for-js",
+				"prettier",
+				"hardcore/ts-for-js",
 				"plugin:import/recommended",
 				"plugin:import/typescript",
 				"plugin:jsonc/base",
-				"plugin:jsonc/prettier","hardcore", "hardcore/fp",
+				"plugin:jsonc/prettier",
+				"hardcore",
+				"hardcore/fp",
 			],
 
 			overrides: [
@@ -174,10 +178,9 @@ export default {
 					parser: "jsonc-eslint-parser",
 				},
 				{
-
-					files:["**.ts"],
+					files: ["**.ts"],
 					parser: "@typescript-eslint/parser",
-							  },
+				},
 				{
 					extends: ["plugin:jsonc/recommended-with-json"],
 
@@ -192,16 +195,25 @@ export default {
 				},
 			],
 
-			parserOptions: { ecmaVersion: 6, project: "./jsconfig.json",sourceType: "script"  },
+			parserOptions: {
+				ecmaVersion: 6,
+				project: "./jsconfig.json",
+				sourceType: "script",
+			},
 
-			plugins: ["html", "jsdoc", "regexp",
-				"sort-keys-fix","switch-case"],
+			plugins: [
+				"html",
+				"jsdoc",
+				"regexp",
+				"sort-keys-fix",
+				"switch-case",
+			],
 
 			reportUnusedDisableDirectives: true,
 			root: true,
 
 			rules: {
-				    "arrow-body-style": 2,
+				"arrow-body-style": 2,
 
 				"comma-dangle": [1, "always-multiline"],
 
@@ -219,10 +231,15 @@ export default {
 
 				"id-length": [1, { exceptions: ["_"], max: 20, min: 3 }],
 
-				"id-match": [2, /^(?:[a-z]+[A-Z][a-z]+|[A-Z]+_[A-Z]+){0,2}$/u.source,
+				"id-match": [
+					2,
+					/^(?:[a-z]+[A-Z][a-z]+|[A-Z]+_[A-Z]+){0,2}$/u.source,
 					{
-						ignoreDestructuring: true,onlyDeclarations: true,properties: true,
-					}],
+						ignoreDestructuring: true,
+						onlyDeclarations: true,
+						properties: true,
+					},
+				],
 
 				"import/first": 2,
 				"import/group-exports": 2,
@@ -261,7 +278,8 @@ export default {
 				"jsdoc/check-param-names": 1,
 				"jsdoc/check-property-names": 1,
 				"jsdoc/check-syntax": 1,
-				"jsdoc/check-tag-names": 1,  "jsdoc/check-types": 1,
+				"jsdoc/check-tag-names": 1,
+				"jsdoc/check-types": 1,
 
 				"jsdoc/check-values": 1,
 				"jsdoc/empty-tags": 1,
@@ -279,7 +297,7 @@ export default {
 				"jsdoc/require-description-complete-sentence": 1,
 				"unicorn/prefer-prototype-methods": 2,
 				"jsdoc/require-file-overview": 1,
-				"sonarjs/no-duplicate-string": [2,3],
+				"sonarjs/no-duplicate-string": [2, 3],
 				"jsdoc/require-hyphen-before-param-description": 1,
 				"jsdoc/require-jsdoc": 1,
 				"jsdoc/require-param": 1,
@@ -382,7 +400,8 @@ export default {
 				"node/prefer-promises/fs": 2,
 				"object-curly-spacing": [1, "always"],
 				"one-var": [1, "consecutive"],
-				"optimize-regex/optimize-regex": 2,"padded-blocks": [1, "never"],
+				"optimize-regex/optimize-regex": 2,
+				"padded-blocks": [1, "never"],
 				"prettier/prettier": 0,
 
 				"promise/prefer-await-to-callbacks": 2,
@@ -405,7 +424,8 @@ export default {
 				"regexp/no-standalone-backslash": 2,
 				"regexp/no-trivially-nested-assertion": 2,
 				"regexp/no-trivially-nested-quantifier": 2,
-				"regexp/no-useless-assertions": 2,  "regexp/no-useless-character-class": 2,
+				"regexp/no-useless-assertions": 2,
+				"regexp/no-useless-character-class": 2,
 
 				"regexp/no-useless-dollar-replacements": 2,
 				"regexp/no-useless-escape": 2,
@@ -479,14 +499,17 @@ export default {
 					},
 				],
 
-				"unicorn/string-content": [2, {
-					patterns: {
-						'"': "”",
-						"'": "’",
-						"...": "…",
-						"^http:\\/\\/": "^https:\\/\\/",
+				"unicorn/string-content": [
+					2,
+					{
+						patterns: {
+							'"': "”",
+							"'": "’",
+							"...": "…",
+							"^http:\\/\\/": "^https:\\/\\/",
+						},
 					},
-				}],
+				],
 
 				"vars-on-top": 1,
 
@@ -497,6 +520,3 @@ export default {
 		},
 	},
 };
-
-
-
