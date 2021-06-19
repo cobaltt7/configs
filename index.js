@@ -234,7 +234,7 @@ module.exports = {
 				"indent-legacy": 0,
 				"init-declarations": 0,
 				"jsdoc/check-access": 1,
-				"no-implicit-coercion":-0,
+				"no-implicit-coercion": 0,
 				"jsdoc/check-alignment": 1,
 				"json/*": 0,
 				"prefer-arrow-callback": 2,
