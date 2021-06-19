@@ -97,8 +97,6 @@ module.exports = {
 				"plugin:unicorn/recommended",
 				"prettier",
 				"plugin:import/recommended",
-				"plugin:jsonc/base",
-				"plugin:jsonc/prettier",
 				"hardcore",
 				"hardcore/fp",
 			],
@@ -139,66 +137,6 @@ module.exports = {
 						"no-console": 0,
 					},
 				},
-				{
-					extends: [
-						"plugin:jsonc/recommended-with-json",
-						"plugin:jsonc/recommended-with-jsonc",
-					],
-					files: [
-						"**.code-workspace",
-						".code-snippets",
-						"**/settings.json",
-						"**/launch.json",
-						"**/extensions.json",
-						"**.jsonc",
-						"**.eslintrc",
-						"**.eslintrc.json",
-						"jsconfig.json",
-					],
-					parser: "jsonc-eslint-parser",
-					rules: {
-						"strict": "off",
-						"no-unused-expressions": "off",
-					},
-					"parserOptions": {
-					  "jsonSyntax": "JSONC"
-					}
-				},
-				{
-					extends: [
-						"plugin:jsonc/recommended-with-json",
-						"plugin:jsonc/recommended-with-jsonc",
-						"plugin:jsonc/recommended-with-json5",
-					],
-					files: [
-						"**.json5",
-					],
-					parser: "jsonc-eslint-parser",
-					rules: {
-						"strict": "off",
-						"no-unused-expressions": "off",
-					},
-					"parserOptions": {
-					  "jsonSyntax": "JSON5"
-					}
-				},
-				{
-					extends: ["plugin:jsonc/recommended-with-json"],
-					files: [
-						"**.json",
-						"**.map",
-						"**.jslintrc",
-						"**.all-contributorsrc",
-					],
-					parser: "jsonc-eslint-parser",
-					rules: {
-						"strict": "off",
-						"no-unused-expressions": "off",
-					},
-					"parserOptions": {
-					  "jsonSyntax": "JSON"
-					}
-				},
 			],
 			parserOptions: {
 				ecmaVersion: 6,
@@ -215,7 +153,6 @@ module.exports = {
 			reportUnusedDisableDirectives: true,
 			root: true,
 			rules: {
-				"jsonc/auto": 2,
 				"arrow-body-style": 2,
 				"comma-dangle": [1, "always-multiline"],
 				"curly": [1, "multi-or-nest", "consistent"],
