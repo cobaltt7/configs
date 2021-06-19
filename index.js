@@ -178,6 +178,7 @@ module.exports = {
 				"regexp",
 				"sort-keys-fix",
 				"switch-case",
+				"@onedotprojects"
 			],
 			reportUnusedDisableDirectives: true,
 			root: true,
