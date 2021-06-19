@@ -107,7 +107,7 @@ module.exports = {
 				},
 				{
 					env: { browser: true, es2020: true, es6: true, node: true },
-					files: ["**.md/**"],
+					files: ["**.md/**", "**.md"],
 					parserOptions: {
 						ecmaVersion: 12,
 					},
@@ -115,6 +115,7 @@ module.exports = {
 						"eol-last": [2, "never"],
 						"jsdoc/require-file-overview": 0,
 						"no-console": 0,
+						"unicorn/filename-case": 0,
 					},
 				},
 				{
@@ -164,7 +165,7 @@ module.exports = {
 				"id-length": [1, { exceptions: ["_"], max: 20, min: 3 }],
 				"id-match": [
 					2,
-					/^(?:[a-z]+[A-Z][a-z]+|[A-Z]+_[A-Z]+){0,2}$/u.source,
+					/^(?:[a-z]+(?:[A-Z][a-z])+|[A-Z]+(?:_[A-Z])+){0,2}$/.source,
 					{
 						ignoreDestructuring: true,
 						onlyDeclarations: true,
@@ -198,6 +199,7 @@ module.exports = {
 				"init-declarations": 0,
 				"jsdoc/check-access": 1,
 				"jsdoc/check-alignment": 1,
+				"json/*": 0,
 				"prefer-arrow-callback": 2,
 				"jsdoc/check-examples": 1,
 				"sort-keys": 0,
@@ -406,7 +408,6 @@ module.exports = {
 						patterns: {
 							'"': "”",
 							"'": "’",
-							"...": "…",
 							"^http:\\/\\/": "^https:\\/\\/",
 						},
 					},
