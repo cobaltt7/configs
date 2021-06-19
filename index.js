@@ -156,6 +156,9 @@ module.exports = {
 						"jsconfig.json",
 					],
 					parser: "jsonc-eslint-parser",
+					rules:{
+						strict: "off",
+						"no-unused-expressions": "off"}
 				},
 				{
 					extends: ["plugin:jsonc/recommended-with-json"],
@@ -166,6 +169,9 @@ module.exports = {
 						"**.all-contributorsrc",
 					],
 					parser: "jsonc-eslint-parser",
+					rules:{
+						strict: "off",
+						"no-unused-expressions": "off"}
 				},
 			],
 			parserOptions: {
@@ -183,6 +189,7 @@ module.exports = {
 			reportUnusedDisableDirectives: true,
 			root: true,
 			rules: {
+				"jsonc/auto": 2,
 				"arrow-body-style": 2,
 				"comma-dangle": [1, "always-multiline"],
 				"curly": [1, "multi-or-nest", "consistent"],
