@@ -156,9 +156,31 @@ module.exports = {
 						"jsconfig.json",
 					],
 					parser: "jsonc-eslint-parser",
-					rules:{
-						strict: "off",
-						"no-unused-expressions": "off"}
+					rules: {
+						"strict": "off",
+						"no-unused-expressions": "off",
+					},
+					"parserOptions": {
+					  "jsonSyntax": "JSONC"
+					}
+				},
+				{
+					extends: [
+						"plugin:jsonc/recommended-with-json",
+						"plugin:jsonc/recommended-with-jsonc",
+						"plugin:jsonc/recommended-with-json5",
+					],
+					files: [
+						"**.json5",
+					],
+					parser: "jsonc-eslint-parser",
+					rules: {
+						"strict": "off",
+						"no-unused-expressions": "off",
+					},
+					"parserOptions": {
+					  "jsonSyntax": "JSON5"
+					}
 				},
 				{
 					extends: ["plugin:jsonc/recommended-with-json"],
@@ -169,9 +191,13 @@ module.exports = {
 						"**.all-contributorsrc",
 					],
 					parser: "jsonc-eslint-parser",
-					rules:{
-						strict: "off",
-						"no-unused-expressions": "off"}
+					rules: {
+						"strict": "off",
+						"no-unused-expressions": "off",
+					},
+					"parserOptions": {
+					  "jsonSyntax": "JSON"
+					}
 				},
 			],
 			parserOptions: {
@@ -184,7 +210,7 @@ module.exports = {
 				"regexp",
 				"sort-keys-fix",
 				"switch-case",
-				"@onedotprojects"
+				"@onedotprojects",
 			],
 			reportUnusedDisableDirectives: true,
 			root: true,

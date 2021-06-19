@@ -31,10 +31,10 @@
 		"url": "git+https://github.com/onedotprojects/eslint-plugin.git"
 	},
 	"dependencies": {
+		"eslint-config-hardcore": "^19.8.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-compat": "^3.9.0",
 		"eslint-plugin-eslint-comments": "^3.2.0",
-		"eslint-config-hardcore": "^19.8.0",
 		"eslint-plugin-html": "^6.1.2",
 		"eslint-plugin-jsdoc": "^35.1.3",
 		"eslint-plugin-jsonc": "^1.3.1",
@@ -44,7 +44,8 @@
 		"eslint-plugin-promise": "^5.1.0",
 		"eslint-plugin-regexp": "^0.12.1",
 		"eslint-plugin-switch-case": "^1.1.2",
-		"eslint-plugin-unicorn": "^33.0.1"
+		"eslint-plugin-unicorn": "^33.0.1",
+		"jsonc-eslint-parser": "^1.0.1"
 	},
 	"peerDependencies": {
 		"eslint": "^7.28.0",
