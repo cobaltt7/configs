@@ -1,5 +1,4 @@
 /** @file ESLint Configuration file. */
-
 // "plugin:diff/diff",
 module.exports = {
 	configs: {
@@ -7,14 +6,12 @@ module.exports = {
 			env: { browser: true, es2020: false, es6: false, node: false },
 			extends: ["plugin:compat/recommended"],
 			parserOptions: { ecmaVersion: 3 },
-
 			rules: {
 				"@html-eslint/id-naming-convention": [2, "kebab-case"],
 				"@html-eslint/require-meta-charset": 2,
 				"comma-dangle": 0,
 				"jsdoc/require-file-overview": 0,
 				"no-console": 2,
-
 				"no-restricted-globals": [
 					2,
 					"addEventListener",
@@ -76,26 +73,20 @@ module.exports = {
 					"toolbar",
 					"top",
 				],
-
 				"prettier/prettier": 0,
 			},
 		},
-
 		node: {
 			env: { node: true },
-
 			extends: [
 				"plugin:node/recommended",
 				"plugin:node/recommended-script",
 				"hardcore/node",
 			],
-
 			parserOptions: { ecmaVersion: 10 },
 		},
-
 		reccomended: {
 			env: { es2020: false, es6: true },
-
 			extends: [
 				"eslint:all",
 				"plugin:eslint-comments/recommended",
@@ -113,7 +104,6 @@ module.exports = {
 				"hardcore",
 				"hardcore/fp",
 			],
-
 			overrides: [
 				{
 					files: ["**.md"],
@@ -122,11 +112,9 @@ module.exports = {
 				{
 					env: { browser: true, es2020: true, es6: true, node: true },
 					files: ["**.md/**"],
-
 					parserOptions: {
 						ecmaVersion: 12,
 					},
-
 					rules: {
 						"eol-last": [2, "never"],
 						"jsdoc/require-file-overview": 0,
@@ -135,15 +123,12 @@ module.exports = {
 				},
 				{
 					files: ["**.config.js", "**rc.js"],
-
 					parserOptions: {
 						ecmaFeatures: {
 							impliedStrict: true,
 						},
-
 						sourceType: "module",
 					},
-
 					rules: {
 						"id-length": 0,
 						"unicorn/no-keyword-prefix": 0,
@@ -152,7 +137,6 @@ module.exports = {
 				},
 				{
 					files: [".github/**.js"],
-
 					rules: {
 						"no-console": 0,
 					},
@@ -162,7 +146,6 @@ module.exports = {
 						"plugin:jsonc/recommended-with-json",
 						"plugin:jsonc/recommended-with-jsonc",
 					],
-
 					files: [
 						"**.code-workspace",
 						".code-snippets",
@@ -174,7 +157,6 @@ module.exports = {
 						"**.eslintrc.json",
 						"jsconfig.json",
 					],
-
 					parser: "jsonc-eslint-parser",
 				},
 				{
@@ -183,24 +165,21 @@ module.exports = {
 				},
 				{
 					extends: ["plugin:jsonc/recommended-with-json"],
-
 					files: [
 						"**.json",
 						"**.map",
 						"**.jslintrc",
 						"**.all-contributorsrc",
 					],
-
 					parser: "jsonc-eslint-parser",
 				},
 			],
-
 			parserOptions: {
 				ecmaVersion: 6,
-				project: "./jsconfig.json",
+				project: "jsconfig.json",
+				tsconfigRootDir: __dirname,
 				sourceType: "script",
 			},
-
 			plugins: [
 				"html",
 				"jsdoc",
@@ -208,29 +187,18 @@ module.exports = {
 				"sort-keys-fix",
 				"switch-case",
 			],
-
 			reportUnusedDisableDirectives: true,
 			root: true,
-
 			rules: {
 				"arrow-body-style": 2,
-
 				"comma-dangle": [1, "always-multiline"],
-
 				"curly": [1, "multi-or-nest", "consistent"],
-
 				"dot-location": [1, "property"],
-
 				"eslint-comments/require-description": 2,
-
 				"func-style": [1, "declaration", { allowArrowFunctions: true }],
-
 				"function-call-argument-newline": [1, "consistent"],
-
 				"function-paren-newline": 0,
-
 				"id-length": [1, { exceptions: ["_"], max: 20, min: 3 }],
-
 				"id-match": [
 					2,
 					/^(?:[a-z]+[A-Z][a-z]+|[A-Z]+_[A-Z]+){0,2}$/u.source,
@@ -240,13 +208,11 @@ module.exports = {
 						properties: true,
 					},
 				],
-
 				"import/first": 2,
 				"import/group-exports": 2,
 				"import/max-dependencies": 2,
 				"import/newline-after-import": 2,
 				"import/no-absolute-path": 2,
-
 				"import/no-amd": 2,
 				"import/no-anonymous-default-export": 2,
 				"import/no-commonjs": 2,
@@ -255,7 +221,6 @@ module.exports = {
 				"import/no-extraneous-dependencies": 2,
 				"import/no-import-module-exports": 2,
 				"import/no-mutable-exports": 2,
-
 				"import/no-named-default": 2,
 				"import/no-namespace": 2,
 				"import/no-self-import": 2,
@@ -280,7 +245,6 @@ module.exports = {
 				"jsdoc/check-syntax": 1,
 				"jsdoc/check-tag-names": 1,
 				"jsdoc/check-types": 1,
-
 				"jsdoc/check-values": 1,
 				"jsdoc/empty-tags": 1,
 				"jsdoc/implements-on-classes": 1,
@@ -316,7 +280,6 @@ module.exports = {
 				"jsdoc/require-yields": 1,
 				"jsdoc/require-yields-check": 1,
 				"linebreak-style": 0,
-
 				"max-len": [
 					1,
 					{
@@ -328,12 +291,10 @@ module.exports = {
 						tabWidth: 2,
 					},
 				],
-
 				"max-lines": [
 					1,
 					{ max: 500, skipBlankLines: true, skipComments: true },
 				],
-
 				"max-lines-per-function": [
 					1,
 					{
@@ -343,24 +304,17 @@ module.exports = {
 						skipComments: true,
 					},
 				],
-
 				"unicorn/no-useless-undefined": 1,
-
 				"import/no-relative-parent-imports": 1,
 				"consistent-return": 2,
 				"max-params": [1, { max: 5 }],
-
 				"max-statements": 0,
-
 				"multiline-comment-style": 2,
-
 				"multiline-ternary": [1, "always-multiline"],
-
 				"new-cap": [
 					1,
 					{ capIsNew: true, newIsCap: true, properties: true },
 				],
-
 				"no-confusing-arrow": 0,
 				"no-console": 1,
 				"no-continue": 0,
@@ -370,13 +324,9 @@ module.exports = {
 				"no-mixed-operators": 0,
 				"no-nested-ternary": 0,
 				"no-plusplus": 0,
-
 				"no-process-exit": 2,
-
 				"no-tabs": 0,
-
 				"no-ternary": 0,
-
 				"no-unused-vars": [
 					2,
 					{
@@ -385,7 +335,6 @@ module.exports = {
 						caughtErrors: "all",
 					},
 				],
-
 				"no-warning-comments": [1, { location: "anywhere" }],
 				"class-methods-use-this": 1,
 				"node/exports-style": 2,
@@ -403,7 +352,6 @@ module.exports = {
 				"optimize-regex/optimize-regex": 2,
 				"padded-blocks": [1, "never"],
 				"prettier/prettier": 0,
-
 				"promise/prefer-await-to-callbacks": 2,
 				"promise/prefer-await-to-then": 1,
 				"quote-props": [1, "consistent-as-needed"],
@@ -426,7 +374,6 @@ module.exports = {
 				"regexp/no-trivially-nested-quantifier": 2,
 				"regexp/no-useless-assertions": 2,
 				"regexp/no-useless-character-class": 2,
-
 				"regexp/no-useless-dollar-replacements": 2,
 				"regexp/no-useless-escape": 2,
 				"regexp/no-useless-flag": 2,
@@ -451,9 +398,7 @@ module.exports = {
 				"regexp/sort-flags": 2,
 				"regexp/unicode-escape": 2,
 				"require-unicode-regexp": 2,
-
 				"sort-vars": 1,
-
 				"space-before-function-paren": [
 					1,
 					{
@@ -462,7 +407,6 @@ module.exports = {
 						named: "never",
 					},
 				],
-
 				"strict": [2, "global"],
 				"switch-case/newline-between-switch-case": 1,
 				"unicorn/custom-error-definition": 2,
@@ -471,34 +415,28 @@ module.exports = {
 				"unicorn/no-keyword-prefix": 2,
 				"unicorn/no-unsafe-regex": 2,
 				"unicorn/no-unused-properties": 2,
-
 				"unicorn/numeric-separators-style": [
 					1,
 					{
 						onlyIfContainsSeparator: true,
 					},
 				],
-
 				"unicorn/prefer-module": 0,
-
 				"unicorn/prefer-object-has-own": 0,
 				"unicorn/prefer-spread": 1,
 				"unicorn/prefer-string-replace-all": 0,
-
 				"unicorn/prevent-abbreviations": [
 					2,
 					{
 						allowList: {
 							jQuery: true,
 						},
-
 						checkDefaultAndNamespaceImports: true,
 						checkShorthandImports: true,
 						checkShorthandProperties: true,
 						replacements: {},
 					},
 				],
-
 				"unicorn/string-content": [
 					2,
 					{
@@ -510,12 +448,9 @@ module.exports = {
 						},
 					},
 				],
-
 				"vars-on-top": 1,
-
 				"wrap-iife": [2, "inside"],
 			},
-
 			settings: { html: { "xml-extensions": [".svg"] } },
 		},
 	},
