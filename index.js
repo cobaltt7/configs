@@ -455,8 +455,8 @@ module.exports = {
 					"error",
 					{
 						rules: {
-							"split-variable-declarations": false,
-							"convert-template-to-string": false,
+							"split-variable-declarations": "off",
+							"convert-template-to-string": "off",
 						},
 					},
 				],
