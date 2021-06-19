@@ -16,7 +16,7 @@
 	"author": "OneDot Projects",
 	"main": "index.js",
 	"scripts": {
-		"lint": "prettier --ignore-path .gitignore --ignore-path .prettierignore --write ."
+		"lint": "prettier --ignore-path .gitignore --write ."
 	},
 	"prettier": {
 		"printWidth": 80,

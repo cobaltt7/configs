@@ -83,8 +83,8 @@ module.exports = {
 				"plugin:node/recommended-script",
 				"hardcore/node",
 			],
-			parserOptions: {ecmaVersion: 10},
-			rules:{
+			parserOptions: { ecmaVersion: 10 },
+			rules: {
 				"no-unused-vars": [
 					2,
 					{
@@ -101,10 +101,10 @@ module.exports = {
 				"node/no-path-concat": 2,
 				"node/no-restricted-import": 2,
 				"node/no-restricted-require": 2,
-				"node/no-mixed-requires":0,
+				"node/no-mixed-requires": 0,
 				"node/no-unpublished-require": 0,
 				"node/prefer-promises/fs": 2,
-			}
+			},
 		},
 		reccomended: {
 			env: { es2020: false, es6: true },
@@ -129,7 +129,7 @@ module.exports = {
 				{
 					files: ["**.json*"],
 					rules: {
-						"jsdoc/require-file-overview":0
+						"jsdoc/require-file-overview": 0,
 					},
 				},
 				{
@@ -140,7 +140,10 @@ module.exports = {
 					},
 					rules: {
 						"eol-last": [2, "never"],
-						"import/no-extraneous-dependencies": [2, {devDependencies:true}],
+						"import/no-extraneous-dependencies": [
+							2,
+							{ devDependencies: true },
+						],
 						"jsdoc/require-file-overview": 0,
 						"no-console": 0,
 						"unicorn/filename-case": 0,
@@ -156,7 +159,10 @@ module.exports = {
 					},
 					rules: {
 						"id-length": 0,
-						"import/no-extraneous-dependencies": [2, {devDependencies:true}],
+						"import/no-extraneous-dependencies": [
+							2,
+							{ devDependencies: true },
+						],
 						"unicorn/no-keyword-prefix": 0,
 						"unicorn/prevent-abbreviations": 0,
 					},
@@ -164,7 +170,10 @@ module.exports = {
 				{
 					files: [".github/**.js"],
 					rules: {
-						"import/no-extraneous-dependencies": [2, {devDependencies:true}],
+						"import/no-extraneous-dependencies": [
+							2,
+							{ devDependencies: true },
+						],
 						"no-console": 0,
 					},
 				},
@@ -192,22 +201,22 @@ module.exports = {
 				"func-style": [1, "declaration", { allowArrowFunctions: true }],
 				"function-call-argument-newline": [1, "consistent"],
 				"function-paren-newline": 0,
-				"fp/no-let":0,
+				"fp/no-let": 0,
 				"fp/no-loops": 0,
 				"fp/no-mutation": 0,
 				"fp/no-mutating-methods": 0,
 				"id-length": [1, { exceptions: ["_"], max: 20, min: 3 }],
 				"id-match": [
 					2,
-					/^(?:[a-z]+(?:[A-Z][a-z]{1,10}){0,2}|[A-Z]+(?:_[A-Z]+){0,1})$/.source,
+					/^(?:[a-z]+(?:[A-Z][a-z]{1,10}){0,2}|[A-Z]+(?:_[A-Z]+){0,1})$/
+						.source,
 					{
 						ignoreDestructuring: true,
 						onlyDeclarations: true,
 						properties: true,
 					},
 				],
-				"import/extentions":[2, "never"]
-				  ,
+				"import/extentions": [2, "never"],
 				"import/first": 2,
 				"import/group-exports": 2,
 				"import/max-dependencies": 2,
@@ -311,7 +320,7 @@ module.exports = {
 				"consistent-return": 2,
 				"max-params": [1, { max: 5 }],
 				"max-statements": 0,
-				"multiline-comment-style": [1,"separate-lines"],
+				"multiline-comment-style": [1, "separate-lines"],
 				"multiline-ternary": [1, "always-multiline"],
 				"new-cap": [
 					1,
@@ -361,7 +370,7 @@ module.exports = {
 				"regexp/no-obscure-range": 2,
 				"regexp/no-optional-assertion": 2,
 				"regexp/no-potentially-useless-backreference": 2,
-				'fp/no-this':0,
+				"fp/no-this": 0,
 				"regexp/no-standalone-backslash": 2,
 				"regexp/no-trivially-nested-assertion": 2,
 				"regexp/no-trivially-nested-quantifier": 2,
@@ -445,12 +454,12 @@ module.exports = {
 				"putout/putout": [
 					"error",
 					{
-						"rules": {
-							"split-variable-declarations": 0,
-							"convert-template-to-string":0
-					  },
-					}
-				  ]
+						rules: {
+							"split-variable-declarations": false,
+							"convert-template-to-string": false,
+						},
+					},
+				],
 			},
 			settings: { html: { "xml-extensions": [".svg"] } },
 		},
