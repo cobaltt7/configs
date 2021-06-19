@@ -96,9 +96,7 @@ module.exports = {
 				"plugin:promise/recommended",
 				"plugin:unicorn/recommended",
 				"prettier",
-				"hardcore/ts-for-js",
 				"plugin:import/recommended",
-				"plugin:import/typescript",
 				"plugin:jsonc/base",
 				"plugin:jsonc/prettier",
 				"hardcore",
@@ -160,10 +158,6 @@ module.exports = {
 					parser: "jsonc-eslint-parser",
 				},
 				{
-					files: ["**.ts"],
-					parser: "@typescript-eslint/parser",
-				},
-				{
 					extends: ["plugin:jsonc/recommended-with-json"],
 					files: [
 						"**.json",
@@ -176,8 +170,6 @@ module.exports = {
 			],
 			parserOptions: {
 				ecmaVersion: 6,
-				project: "jsconfig.json",
-				tsconfigRootDir: __dirname,
 				sourceType: "script",
 			},
 			plugins: [
