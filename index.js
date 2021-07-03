@@ -82,6 +82,7 @@ module.exports = {
 					2,
 					{ devDependencies: true },
 				],
+				"node/global-require": 0,
 				"unicorn/no-keyword-prefix": 0,
 				"unicorn/prevent-abbreviations": [
 					2,
@@ -223,6 +224,7 @@ module.exports = {
 				"unicorn/filename-case": 0,
 				"node/no-process-env": 0,
 				"arrow-body-style": 2,
+				"security/detect-non-literal-regexp":0,
 				"import/no-commonjs": 0,
 				"comma-dangle": [1, "always-multiline"],
 				"curly": [1, "multi-or-nest", "consistent"],
@@ -235,7 +237,7 @@ module.exports = {
 				"fp/no-loops": 0,
 				"fp/no-mutation": 0,
 				"fp/no-mutating-methods": 0,
-				"@html-eslint/require-doctype":0,
+				"@html-eslint/require-doctype": 0,
 				"id-length": [1, { exceptions: ["_"], max: 20, min: 3 }],
 				"id-match": [
 					2,
@@ -321,7 +323,7 @@ module.exports = {
 				"sonarjs/no-duplicate-string": [2, 3],
 				"jsdoc/require-hyphen-before-param-description": 1,
 				"jsdoc/require-jsdoc": 1,
-				"sonarjs/cognitive-complexity":0,
+				"sonarjs/cognitive-complexity": 0,
 				"jsdoc/require-param": 1,
 				"jsdoc/require-param-description": 1,
 				"jsdoc/require-param-name": 1,
@@ -462,7 +464,7 @@ module.exports = {
 				"unicorn/expiring-todo-comments": 1,
 				"unicorn/import-index": [1, { ignoreImports: true }],
 				"unicorn/no-keyword-prefix": 2,
-				"unicorn/no-unsafe-regex": 2,
+				"unicorn/no-unsafe-regex": 0,
 				"unicorn/no-unused-properties": 2,
 				"unicorn/numeric-separators-style": [
 					1,
@@ -486,6 +488,7 @@ module.exports = {
 						checkProperties: true,
 					},
 				],
+				"unicorn/consistent-function-scoping":0,
 				"vars-on-top": 1,
 				"wrap-iife": [2, "inside"],
 				"putout/putout": [
