@@ -446,7 +446,7 @@ module.exports = {
 				"regexp/prefer-unicode-codepoint-escapes": 2,
 				"regexp/sort-flags": 2,
 				"regexp/unicode-escape": 2,
-				"require-unicode-regexp": 2,
+				"require-unicode-regexp": 0,
 				"sort-vars": 1,
 				"space-before-function-paren": [
 					1,
