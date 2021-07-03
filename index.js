@@ -76,6 +76,22 @@ module.exports = {
 				"prettier/prettier": 0,
 			},
 		},
+		config: {
+			rules: {
+				"id-length": 0,
+				"import/no-extraneous-dependencies": [
+					2,
+					{ devDependencies: true },
+				],
+				"unicorn/no-keyword-prefix": 0,
+				"unicorn/prevent-abbreviations": 0,
+			},
+		},
+		ejs: {
+			rules: {
+				"import/no-commonjs": 2,
+			},
+		},
 		node: {
 			env: { node: true },
 			extends: [
@@ -106,6 +122,32 @@ module.exports = {
 				"node/prefer-promises/fs": 2,
 			},
 		},
+		githubAction: {
+			rules: {
+				"import/no-extraneous-dependencies": [
+					2,
+					{ devDependencies: true },
+				],
+				"no-console": 0,
+				"fp/no-throw": 0,
+			},
+		},
+		samples: {
+			env: { browser: true, es2020: true, es6: true, node: true },
+			parserOptions: {
+				ecmaVersion: 12,
+			},
+			rules: {
+				"eol-last": [2, "never"],
+				"import/no-extraneous-dependencies": [
+					2,
+					{ devDependencies: true },
+				],
+				"jsdoc/require-file-overview": 0,
+				"no-console": 0,
+				"unicorn/filename-case": 0,
+			},
+		},
 		reccomended: {
 			env: { es2020: false, es6: true },
 			extends: [
@@ -133,49 +175,16 @@ module.exports = {
 					},
 				},
 				{
-					env: { browser: true, es2020: true, es6: true, node: true },
 					files: ["**.md/**", "**.md"],
-					parserOptions: {
-						ecmaVersion: 12,
-					},
-					rules: {
-						"eol-last": [2, "never"],
-						"import/no-extraneous-dependencies": [
-							2,
-							{ devDependencies: true },
-						],
-						"jsdoc/require-file-overview": 0,
-						"no-console": 0,
-						"unicorn/filename-case": 0,
-					},
+					extends: ["plugin:@onedotprojects/samples"],
 				},
 				{
 					files: ["**.config.js", "**rc.js"],
-					parserOptions: {
-						ecmaFeatures: {
-							impliedStrict: true,
-						},
-						sourceType: "module",
-					},
-					rules: {
-						"id-length": 0,
-						"import/no-extraneous-dependencies": [
-							2,
-							{ devDependencies: true },
-						],
-						"unicorn/no-keyword-prefix": 0,
-						"unicorn/prevent-abbreviations": 0,
-					},
+					extends: ["plugin:@onedotprojects/config"],
 				},
 				{
 					files: [".github/**.js"],
-					rules: {
-						"import/no-extraneous-dependencies": [
-							2,
-							{ devDependencies: true },
-						],
-						"no-console": 0,
-					},
+					extends: ["plugin:@onedotprojects/githubAction"],
 				},
 				{
 					files: ["**.html", "**.htm"],
@@ -232,7 +241,6 @@ module.exports = {
 				"import/no-absolute-path": 2,
 				"import/no-amd": 2,
 				"import/no-anonymous-default-export": 2,
-				"import/no-commonjs": 2,
 				"import/no-cycle": 2,
 				"import/no-dynamic-require": 2,
 				"import/no-extraneous-dependencies": 2,
@@ -275,6 +283,7 @@ module.exports = {
 				"jsdoc/require-asterisk-prefix": 1,
 				"jsdoc/require-description": 1,
 				"regexp/sort-character-class-elements": 2,
+				"regexp/strict": 0,
 				"capitalized-comments": 2,
 				"unicorn/no-array-for-each": 1,
 				"jsdoc/require-description-complete-sentence": 1,
@@ -299,6 +308,7 @@ module.exports = {
 				"jsdoc/require-yields": 1,
 				"jsdoc/require-yields-check": 1,
 				"linebreak-style": 0,
+				"lines-around-comment": 0,
 				"max-len": [
 					1,
 					{
@@ -447,16 +457,6 @@ module.exports = {
 						replacements: {},
 					},
 				],
-				"unicorn/string-content": [
-					2,
-					{
-						patterns: {
-							'"': "”",
-							"'": "’",
-							"^http:\\/\\/": "^https:\\/\\/",
-						},
-					},
-				],
 				"vars-on-top": 1,
 				"wrap-iife": [2, "inside"],
 				"putout/putout": [
@@ -465,6 +465,7 @@ module.exports = {
 						rules: {
 							"split-variable-declarations": "off",
 							"convert-template-to-string": "off",
+							"remove-console": "off",
 						},
 					},
 				],
