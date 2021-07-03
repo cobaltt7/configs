@@ -177,6 +177,14 @@ module.exports = {
 						"no-console": 0,
 					},
 				},
+				{
+					files: ["**.html", "**.htm"],
+					extends: ["plugin:@onedotprojects/browser"],
+
+					rules: {
+						"putout/putout": 0,
+					},
+				},
 			],
 			parserOptions: {
 				ecmaVersion: 6,
