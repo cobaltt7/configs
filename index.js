@@ -144,7 +144,7 @@ module.exports = {
 				],
 			},
 		},
-		workflow: {
+		cli: {
 			rules: {
 				"import/no-extraneous-dependencies": [
 					2,
@@ -206,7 +206,7 @@ module.exports = {
 				},
 				{
 					files: [".github/**.js"],
-					extends: ["plugin:@onedotprojects/workflow"],
+					extends: ["plugin:@onedotprojects/cli"],
 				},
 				{
 					files: ["**.html", "**.htm"],
@@ -234,7 +234,7 @@ module.exports = {
 			rules: {
 				"unicorn/filename-case": 0,
 				"arrow-body-style": 2,
-				"security/detect-non-literal-regexp":0,
+				"security/detect-non-literal-regexp": 0,
 				"import/no-commonjs": 0,
 				"comma-dangle": [1, "always-multiline"],
 				"curly": [1, "multi-or-nest", "consistent"],
@@ -498,7 +498,7 @@ module.exports = {
 						checkProperties: true,
 					},
 				],
-				"unicorn/consistent-function-scoping":0,
+				"unicorn/consistent-function-scoping": 0,
 				"vars-on-top": 1,
 				"wrap-iife": [2, "inside"],
 				"putout/putout": [
@@ -513,6 +513,19 @@ module.exports = {
 				],
 			},
 			settings: { html: { "xml-extensions": [".svg"] } },
+			ignorePatterns: [
+				"node_modules",
+				".git",
+				"plugin_packages",
+				".npm",
+				".upm",
+				"dist",
+				"build",
+				".parcel-cache",
+				".nvm",
+				".eslintcache",
+				".node_repl_history",
+			],
 		},
 	},
 };

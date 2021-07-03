@@ -1,3 +1,101 @@
 # @onedotprojects/eslint-plugin
 
+![Logo](https://cdn.onedot.cf/brand/SVG/NoPadding/One%20Dot%20NoPad.svg)
+
 OneDot Projects' ESLint Style Guide
+
+## Adding To A Project
+
+1. Add the following to your project's `devDependencies` in package.json. It is
+   really important that you do this manually; there is no `npm` command that
+   will do it correctly:
+
+```json
+"@onedotprojects/eslint-plugin": "github:onedotprojects/eslint-plugin#main"
+```
+
+2. Install the plugin and its dependencies by running:
+
+```bash
+npm install
+```
+
+3. Add a .eslintrc.js file with the following contents:
+
+```js
+"use strict";
+
+/** @file ESLint Configuration file. */
+
+module.exports = {
+	extends: ["plugin:@onedotprojects/recommended"],
+};
+```
+
+4. Add overrides for specific files by adding an `overrides` key:
+
+```js
+overrides: [
+	{
+		extends: ["plugin:@onedotprojects/node"],
+		files: ["**.js"], // Node.JS scripts
+	},
+	{
+		extends: ["plugin:@onedotprojects/cli"],
+		files: [".github/**"], // CLIs (including JS GitHub Actions)
+	},
+	{
+		extends: ["plugin:@onedotprojects/ejs"],
+		files: ["**.ejs"], // EJS files
+	},
+	{
+		extends: ["plugin:@onedotprojects/config"],
+		files: ["**.config.js", "**rc.js"], // Configuration files (This usually catches all of them)
+	},
+	{
+		extends: ["plugin:@onedotprojects/sample"],
+		files: ["**.md/**", "**.md"], // Files including samples (AKA docs) (also include HTML and Markdown files)
+	},
+	{
+		extends: ["plugin:@onedotprojects/browser"],
+		files: ["**.html", "**.htm"], // Client-side scripts (also include HTML files)
+	},
+],
+```
+
+You can remove any objects that end up with an empty `files` array.
+
+5. Add project-specific configuration (such as `ecmaVersion`). (You should not
+   need to add more rules; it'd probably be better to update the plugin in that
+   case).
+
+6. Add a npm script to lint your code:
+
+```json
+"lint:eslint": "eslint --fix ."
+```
+
+7. To lint your code, simply run
+
+```sh
+npm run lint:eslint
+```
+
+Congrats! You've setup ESLint with @onedotprojects/eslint-plugin!
+
+## For All
+
+While this was made specifically for OneDot Projects, anyone can use it!
+
+If you have any feedback or require support, please open a discussion and I will
+get back to you as soon as I can.
+
+## Contributing
+
+Feel free to open pull requests, but don't be surprised when we close them. This
+project rarely changes. However, if you really feel like it _should_ change,
+open an issue so we can discuss it!
+
+## Authors
+
+-   [@RedGuy12](https://www.github.com/RedGuy12)
