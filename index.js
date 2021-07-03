@@ -1,5 +1,4 @@
 /** @file ESLint Configuration file. */
-// "plugin:diff/diff",
 module.exports = {
 	configs: {
 		browser: {
@@ -143,7 +142,7 @@ module.exports = {
 				"fp/no-throw": 0,
 			},
 		},
-		samples: {
+		sample: {
 			env: { browser: true, es2020: true, es6: true, node: true },
 			parserOptions: {
 				ecmaVersion: 12,
@@ -156,7 +155,6 @@ module.exports = {
 				],
 				"jsdoc/require-file-overview": 0,
 				"no-console": 0,
-				"unicorn/filename-case": 0,
 			},
 		},
 		recommended: {
@@ -222,6 +220,7 @@ module.exports = {
 			reportUnusedDisableDirectives: true,
 			root: true,
 			rules: {
+				"unicorn/filename-case": 0,
 				"node/no-process-env": 0,
 				"arrow-body-style": 2,
 				"import/no-commonjs": 0,
