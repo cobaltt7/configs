@@ -124,6 +124,7 @@ module.exports = {
 				"node/exports-style": 2,
 				"node/handle-callback-err": 2,
 				"node/no-callback-literal": 2,
+				"node/no-process-env": 0,
 				"node/no-new-require": 2,
 				"node/no-path-concat": 2,
 				"node/no-restricted-import": 2,
@@ -131,6 +132,16 @@ module.exports = {
 				"node/no-mixed-requires": 0,
 				"node/no-sync": 0,
 				"node/no-unpublished-require": 0,
+				"id-match": [
+					2,
+					/^_?[a-z]+(?:[A-Z][a-z]{1,10}){0,2}|[A-Z]+(?:_[A-Z]+){0,1}$/
+						.source,
+					{
+						ignoreDestructuring: true,
+						onlyDeclarations: true,
+						properties: true,
+					},
+				],
 			},
 		},
 		workflow: {
@@ -222,7 +233,6 @@ module.exports = {
 			root: true,
 			rules: {
 				"unicorn/filename-case": 0,
-				"node/no-process-env": 0,
 				"arrow-body-style": 2,
 				"security/detect-non-literal-regexp":0,
 				"import/no-commonjs": 0,
@@ -262,7 +272,7 @@ module.exports = {
 				],
 				"import/first": 2,
 				"import/order": 0,
-				"import/group-exports": 2,
+				"import/group-exports": 0,
 				"import/no-dynamic-require": 0,
 				"import/max-dependencies": 2,
 				"import/newline-after-import": 2,
@@ -435,7 +445,7 @@ module.exports = {
 				"regexp/no-useless-quantifier": 2,
 				"regexp/no-useless-range": 2,
 				"regexp/no-zero-quantifier": 2,
-				"regexp/optimal-lookaround-quantifier": 2,
+				"regexp/optimal-lookaround-quantifier": 0,
 				"regexp/prefer-character-class": 2,
 				"regexp/prefer-escape-replacement-dollar-char": 2,
 				"regexp/prefer-named-backreference": 2,
