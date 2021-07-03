@@ -111,7 +111,6 @@ module.exports = {
 					},
 				],
 				"node/exports-style": 2,
-				"node/file-extension-in-import": 2,
 				"node/handle-callback-err": 2,
 				"node/no-callback-literal": 2,
 				"node/no-new-require": 2,
@@ -121,10 +120,9 @@ module.exports = {
 				"node/no-mixed-requires": 0,
 				"node/no-sync": 0,
 				"node/no-unpublished-require": 0,
-				"node/prefer-promises/fs": 2,
 			},
 		},
-		githubAction: {
+		workflow: {
 			rules: {
 				"import/no-extraneous-dependencies": [
 					2,
@@ -186,7 +184,7 @@ module.exports = {
 				},
 				{
 					files: [".github/**.js"],
-					extends: ["plugin:@onedotprojects/githubAction"],
+					extends: ["plugin:@onedotprojects/workflow"],
 				},
 				{
 					files: ["**.html", "**.htm"],
@@ -249,6 +247,7 @@ module.exports = {
 				"import/first": 2,
 				"import/order": 0,
 				"import/group-exports": 2,
+				"import/no-dynamic-require":0,
 				"import/max-dependencies": 2,
 				"import/newline-after-import": 2,
 				"import/no-absolute-path": 2,
@@ -262,8 +261,10 @@ module.exports = {
 				"import/no-namespace": 2,
 				"import/no-self-import": 2,
 				"import/no-unassigned-import": 2,
+				"promise/prefer-await-to-then": 0,
 				"import/no-unused-modules": 2,
 				"import/no-useless-path-segments": 2,
+				"security/detect-unsafe-regex":0,
 				"import/no-webpack-loader-syntax": 2,
 				"import/prefer-default-export": 2,
 				"import/unambiguous": 2,
@@ -292,6 +293,7 @@ module.exports = {
 				"jsdoc/no-bad-blocks": 1,
 				"jsdoc/no-defaults": 1,
 				"jsdoc/no-undefined-types": 0,
+				"no-undefined": 0,
 				"jsdoc/require-asterisk-prefix": 1,
 				"jsdoc/require-description": 1,
 				"regexp/sort-character-class-elements": 2,
