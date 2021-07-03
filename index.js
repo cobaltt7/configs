@@ -176,7 +176,7 @@ module.exports = {
 				{
 					files: ["**.md"],
 					processor: "markdown/markdown",
-					extends: ["plugin:@onedotprojects/samples"],
+					extends: ["plugin:@onedotprojects/sample"],
 				},
 				{
 					files: ["**.json*"],
@@ -186,7 +186,7 @@ module.exports = {
 				},
 				{
 					files: ["**.md/**", "**.md"],
-					extends: ["plugin:@onedotprojects/samples"],
+					extends: ["plugin:@onedotprojects/sample"],
 				},
 				{
 					files: ["**.config.js", "**rc.js"],
