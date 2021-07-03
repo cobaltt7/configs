@@ -159,7 +159,7 @@ module.exports = {
 				"unicorn/filename-case": 0,
 			},
 		},
-		reccomended: {
+		recommended: {
 			env: { es2020: false, es6: true },
 			extends: [
 				"eslint:all",
@@ -224,6 +224,7 @@ module.exports = {
 			rules: {
 				"node/no-process-env": 0,
 				"arrow-body-style": 2,
+				"import/no-commonjs": 0,
 				"comma-dangle": [1, "always-multiline"],
 				"curly": [1, "multi-or-nest", "consistent"],
 				"dot-location": [1, "property"],
@@ -235,6 +236,7 @@ module.exports = {
 				"fp/no-loops": 0,
 				"fp/no-mutation": 0,
 				"fp/no-mutating-methods": 0,
+				"@html-eslint/require-doctype":0,
 				"id-length": [1, { exceptions: ["_"], max: 20, min: 3 }],
 				"id-match": [
 					2,
@@ -320,6 +322,7 @@ module.exports = {
 				"sonarjs/no-duplicate-string": [2, 3],
 				"jsdoc/require-hyphen-before-param-description": 1,
 				"jsdoc/require-jsdoc": 1,
+				"sonarjs/cognitive-complexity":0,
 				"jsdoc/require-param": 1,
 				"jsdoc/require-param-description": 1,
 				"jsdoc/require-param-name": 1,
