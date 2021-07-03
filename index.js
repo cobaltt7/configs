@@ -84,7 +84,18 @@ module.exports = {
 					{ devDependencies: true },
 				],
 				"unicorn/no-keyword-prefix": 0,
-				"unicorn/prevent-abbreviations": 0,
+				"unicorn/prevent-abbreviations": [
+					2,
+					{
+						allowList: {
+							jQuery: true,
+						},
+						checkDefaultAndNamespaceImports: true,
+						checkShorthandImports: true,
+						checkShorthandProperties: true,
+						checkProperties: false,
+					},
+				],
 			},
 		},
 		ejs: {
@@ -167,6 +178,7 @@ module.exports = {
 				{
 					files: ["**.md"],
 					processor: "markdown/markdown",
+					extends: ["plugin:@onedotprojects/samples"],
 				},
 				{
 					files: ["**.json*"],
@@ -210,6 +222,7 @@ module.exports = {
 			reportUnusedDisableDirectives: true,
 			root: true,
 			rules: {
+				"node/no-process-env": 0,
 				"arrow-body-style": 2,
 				"comma-dangle": [1, "always-multiline"],
 				"curly": [1, "multi-or-nest", "consistent"],
@@ -225,7 +238,7 @@ module.exports = {
 				"id-length": [1, { exceptions: ["_"], max: 20, min: 3 }],
 				"id-match": [
 					2,
-					/^(?:[a-z]+(?:[A-Z][a-z]{1,10}){0,2}|[A-Z]+(?:_[A-Z]+){0,1})$/
+					/^_?[a-z]+(?:[A-Z][a-z]{1,10}){0,2}|[A-Z]+(?:_[A-Z]+){0,1}$/
 						.source,
 					{
 						ignoreDestructuring: true,
@@ -247,7 +260,7 @@ module.exports = {
 				"import/first": 2,
 				"import/order": 0,
 				"import/group-exports": 2,
-				"import/no-dynamic-require":0,
+				"import/no-dynamic-require": 0,
 				"import/max-dependencies": 2,
 				"import/newline-after-import": 2,
 				"import/no-absolute-path": 2,
@@ -264,7 +277,8 @@ module.exports = {
 				"promise/prefer-await-to-then": 0,
 				"import/no-unused-modules": 2,
 				"import/no-useless-path-segments": 2,
-				"security/detect-unsafe-regex":0,
+				"security/detect-unsafe-regex": 0,
+				"promise/no-nesting": 0,
 				"import/no-webpack-loader-syntax": 2,
 				"import/prefer-default-export": 2,
 				"import/unambiguous": 2,
@@ -467,7 +481,7 @@ module.exports = {
 						checkDefaultAndNamespaceImports: true,
 						checkShorthandImports: true,
 						checkShorthandProperties: true,
-						replacements: {},
+						checkProperties: true,
 					},
 				],
 				"vars-on-top": 1,
