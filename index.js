@@ -141,7 +141,7 @@ module.exports = {
 				"eol-last": [2, "never"],
 				"import/no-extraneous-dependencies": [
 					2,
-					{ devDependencies: true },
+					{ devDependencies: false },
 				],
 				"jsdoc/require-file-overview": 0,
 				"no-console": 0,
@@ -233,7 +233,6 @@ module.exports = {
 						properties: true,
 					},
 				],
-				"import/extentions": [2, "never"],
 				"import/first": 2,
 				"import/group-exports": 2,
 				"import/max-dependencies": 2,
@@ -443,7 +442,7 @@ module.exports = {
 				],
 				"unicorn/prefer-module": 0,
 				"unicorn/prefer-object-has-own": 0,
-				"unicorn/prefer-spread": 1,
+				"unicorn/prefer-spread": 0,
 				"unicorn/prefer-string-replace-all": 0,
 				"unicorn/prevent-abbreviations": [
 					2,
