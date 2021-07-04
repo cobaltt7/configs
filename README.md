@@ -6,21 +6,13 @@ OneDot Projects' ESLint Style Guide
 
 ## Adding To A Project
 
-1. Add the following to your project's `devDependencies` in package.json. It is
-   really important that you do this manually; there is no `npm` command that
-   will do it correctly:
-
-```json
-"@onedotprojects/eslint-plugin": "github:onedotprojects/eslint-plugin#main"
-```
-
-2. Install the plugin and its dependencies by running:
+1. Install the plugin and its dependencies by running:
 
 ```bash
-npm install
+npm install @onedotprojects/eslint-plugin --save-dev
 ```
 
-3. Add a .eslintrc.js file with the following contents:
+2. Add a .eslintrc.js file with the following contents:
 
 ```js
 "use strict";
@@ -32,7 +24,7 @@ module.exports = {
 };
 ```
 
-4. Add overrides for specific files by adding an `overrides` key:
+3. Add overrides for specific files by adding an `overrides` key:
 
 ```js
 overrides: [
@@ -65,17 +57,17 @@ overrides: [
 
 You can remove any objects that end up with an empty `files` array.
 
-5. Add project-specific configuration (such as `ecmaVersion`). (You should not
+4. Add project-specific configuration (such as `ecmaVersion`). (You should not
    need to add more rules; it'd probably be better to update the plugin in that
    case).
 
-6. Add a npm script to lint your code:
+5. Add a npm script to lint your code:
 
 ```json
 "lint:eslint": "eslint --fix ."
 ```
 
-7. To lint your code, simply run
+6. To lint your code, simply run
 
 ```sh
 npm run lint:eslint
