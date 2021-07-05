@@ -109,10 +109,15 @@ module.exports = {
 			},
 		},
 
-		ejs: {
+		mjs: {
 			rules: {
 				"import/no-commonjs": 2,
 				"import/order": 1,
+				"id-match": [
+					2,
+					/^(?:_?[A-Za-z]+(?:[A-Z][a-z]{1,10}){0,2}|(?:_?[A-Z]+){1,2}|_)$/.source,
+					{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
+				],
 			},
 		},
 
@@ -153,6 +158,8 @@ module.exports = {
 				"node/no-unpublished-require": 0,
 
 				"unicorn/escape-case": 0,
+
+				"unicorn/no-hex-escape": 0,
 			},
 		},
 
@@ -203,6 +210,10 @@ module.exports = {
 					files: ["**.html", "**.htm"],
 					rules: { "putout/putout": 0 },
 				},
+				{
+					extends: ["plugin:@onedotprojects/mjs"],
+					files: ["**.mjs"],
+				},
 			],
 
 			parserOptions: {
@@ -238,7 +249,8 @@ module.exports = {
 
 				"id-match": [
 					2,
-					/^(?:_|_?[A-Za-z]+(?:[A-Z][a-z]{1,10}){0,2}|[A-Z]+(?:_[A-Z]+)?)$/.source,
+					/^(?:_?[A-Za-z]+(?:[A-Z][a-z]{1,10}){0,2}|(?:_?[A-Z]+){1,2}|_(?:_(?:filename|dirname))?)$/
+						.source,
 					{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
 				],
 

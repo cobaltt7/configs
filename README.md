@@ -22,7 +22,6 @@ npm install @onedotprojects/eslint-plugin --save-dev
 module.exports = {
 	extends: ["plugin:@onedotprojects/recommended"],
 };
-
 ```
 
 3. Add overrides for specific files by adding an `overrides` key:
@@ -38,8 +37,8 @@ overrides: [
 		files: [".github/**"], // CLIs (including JS GitHub Actions)
 	},
 	{
-		extends: ["plugin:@onedotprojects/ejs"],
-		files: ["**.ejs"], // EJS files
+		extends: ["plugin:@onedotprojects/mjs"],
+		files: ["**.mjs"], // MJS files
 	},
 	{
 		extends: ["plugin:@onedotprojects/config"],
@@ -57,12 +56,13 @@ overrides: [
 
 ```
 
-You can remove any objects that end up with an empty `files` array.
+You can remove any objects that end up with an empty `files` array. Make sure that the scripts stay
+in this order. Otherwise, you might get some false-positive errors.
 
-4. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more
+1. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more
    rules; it'd probably be better to update the plugin in that case).
 
-5. Add an npm script to lint your code:
+2. Add an npm script to lint your code:
 
 ```json
 "lint:eslint": "eslint --fix ."

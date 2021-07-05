@@ -2,7 +2,13 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.1) - **Latest**
+## [v1.1.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.2) - **Latest**
+
+-   Rename `ejs` config to `mjs` - oops!
+-   Actaully disable `unicorn/escape-case` (didn't work in v1.0.3)
+-   Allow `__filename` and `__dirname` variable names.
+
+## [v1.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.1)
 
 -   Add a changelog.
 -   Disable ignoring default folders.
