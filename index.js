@@ -174,6 +174,7 @@ module.exports = {
 			],
 
 			ignorePatterns: [
+				"!**",
 				"node_modules",
 				".git",
 				"plugin_packages",
@@ -326,14 +327,12 @@ module.exports = {
 					1,
 					{
 						code: 100,
-						comments: 100,
-						ignoreComments: true,
-						ignorePattern: true,
+						comments: 120,
 						ignoreRegExpLiterals: true,
 						ignoreStrings: false,
 						ignoreTemplateLiterals: false,
 						ignoreUrls: true,
-						tabWidth: 2,
+						tabWidth: 0,
 					},
 				],
 
