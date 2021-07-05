@@ -418,7 +418,7 @@ module.exports = {
 				"padded-blocks": [1, "never"],
 				"prettier/prettier": 0,
 				"quote-props": [1, "consistent-as-needed"],
-				"quotes": [1, "double", { aundefinedEscape: true }],
+				"quotes": [1, "double", { avoidEscape: true }],
 				"regexp/confusing-quantifier": 2,
 				"regexp/control-character-escape": 2,
 				"regexp/hexadecimal-escape": 2,
