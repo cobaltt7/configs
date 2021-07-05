@@ -22,6 +22,7 @@ npm install @onedotprojects/eslint-plugin --save-dev
 module.exports = {
 	extends: ["plugin:@onedotprojects/recommended"],
 };
+
 ```
 
 3. Add overrides for specific files by adding an `overrides` key:
@@ -53,15 +54,15 @@ overrides: [
 		files: ["**.html", "**.htm"], // Client-side scripts (also include HTML files)
 	},
 ],
+
 ```
 
 You can remove any objects that end up with an empty `files` array.
 
-4. Add project-specific configuration (such as `ecmaVersion`). (You should not
-   need to add more rules; it'd probably be better to update the plugin in that
-   case).
+4. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more
+   rules; it'd probably be better to update the plugin in that case).
 
-5. Add a npm script to lint your code:
+5. Add an npm script to lint your code:
 
 ```json
 "lint:eslint": "eslint --fix ."
@@ -73,20 +74,19 @@ You can remove any objects that end up with an empty `files` array.
 npm run lint:eslint
 ```
 
-Congrats! You've setup ESLint with @onedotprojects/eslint-plugin!
+Congrats! You've set up ESLint with @onedotprojects/eslint-plugin!
 
 ## For All
 
 While this was made specifically for OneDot Projects, anyone can use it!
 
-If you have any feedback or require support, please open a discussion and I will
-get back to you as soon as I can.
+If you have any feedback or require support, please open a discussion and I will get back to you as
+soon as I can.
 
 ## Contributing
 
-Feel free to open pull requests, but don't be surprised when we close them. This
-project rarely changes. However, if you really feel like it _should_ change,
-open an issue so we can discuss it!
+Feel free to open pull requests, but don't be surprised when we close them. This project rarely
+changes. However, if you really feel like it _should_ change, open an issue so we can discuss it!
 
 ## Authors
 
