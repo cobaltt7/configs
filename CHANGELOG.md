@@ -2,7 +2,7 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.2.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.1)
+## [v1.2.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.2)
 
 -   Update prettier configuration.
 -   Add more files to the default `config` and `cli` configurations.
