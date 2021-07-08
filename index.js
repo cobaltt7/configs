@@ -109,15 +109,36 @@ module.exports = {
 			},
 		},
 
-		mjs: {
+		esm: {
+			sourceType :"module",
 			rules: {
 				"import/no-commonjs": 2,
-				"import/order": 1,
+				"import/no-unresolved": [2, { ignore: [/^node:/.source] }],
+				"import/order": [
+					1,
+					{
+						groups: [
+							"type",
+							"object",
+							"builtin",
+							"external",
+							"internal",
+							["parent", "sibling", "index"],
+						],
+						"newlines-between": "always",
+						"alphabetize": {
+							order: "asc",
+							caseInsensitive: true,
+						},
+					},
+				],
 				"id-match": [
 					2,
 					/^(?:_?[A-Za-z]+(?:[A-Z][a-z]{1,10}){0,2}|(?:_?[A-Z]+){1,2}|_)$/.source,
 					{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
 				],
+				"import/extensions": [1, "always"],
+				"sort-imports": 0,
 			},
 		},
 
@@ -211,8 +232,8 @@ module.exports = {
 					rules: { "putout/putout": 0 },
 				},
 				{
-					extends: ["plugin:@onedotprojects/mjs"],
-					files: ["**.mjs"],
+					extends: ["plugin:@onedotprojects/esm"],
+					files: ["**.esm"],
 				},
 			],
 
@@ -221,7 +242,7 @@ module.exports = {
 				sourceType: "script",
 			},
 
-			plugins: ["html", "jsdoc", "regexp", "sort-keys-fix", "switch-case", "@onedotprojects"],
+			plugins: ["html", "jsdoc", "regexp", "switch-case", "@onedotprojects"],
 
 			reportUnusedDisableDirectives: true,
 
@@ -256,7 +277,7 @@ module.exports = {
 
 				"import/extensions": [
 					1,
-					"ignorePackages",
+					"always",
 					{
 						js: "never",
 						json: "ignorePackages",
@@ -274,6 +295,8 @@ module.exports = {
 				"import/no-amd": 2,
 				"import/no-anonymous-default-export": 2,
 				"import/no-commonjs": 0,
+				"import/no-unresolved": [2, { ignore: [/^node:/.source] }],
+
 				"import/no-cycle": 2,
 				"import/no-dynamic-require": 0,
 				"import/no-extraneous-dependencies": 2,
@@ -449,8 +472,7 @@ module.exports = {
 				"security/detect-unsafe-regex": 0,
 				"sonarjs/cognitive-complexity": 0,
 				"sonarjs/no-duplicate-string": [2, 3],
-				"sort-keys": 0,
-				"sort-keys-fix/sort-keys-fix": 1,
+				"sort-keys": 1,
 				"sort-vars": 1,
 
 				"space-before-function-paren": [

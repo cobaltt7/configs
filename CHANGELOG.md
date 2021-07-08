@@ -2,12 +2,22 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.1.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.2) - **Latest**
+## [v1.1.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.3) - **Latest**
+
+-   Rename `mjs` config to `esm` - better name.
+-   Always add `index` and the file extention to the end of imports.
+-   Add `sourceType: "module"` to ESM config.
+-   Don't report errors on `node:` module
+-   Disable `sort-keys-fix` and enable `sort-keys`.
+-   Disable `sort-imports` and configure `import/sort`.
+-   Bump `eslint-plugin-regexp`.
+-   Add `npm-shrinkwrap.json`.
+
+## [v1.1.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.2)
 
 -   Rename `ejs` config to `mjs` - oops!
 -   Actaully disable `unicorn/escape-case` (didn't work in v1.0.3)
 -   Allow `__filename` and `__dirname` variable names.
-
 ## [v1.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.1)
 
 -   Add a changelog.

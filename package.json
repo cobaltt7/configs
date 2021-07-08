@@ -1,6 +1,6 @@
 {
 	"name": "@onedotprojects/eslint-plugin",
-	"version": "1.1.2",
+	"version": "1.1.3",
 	"description": "OneDot Projects' ESLint Style Guide",
 	"keywords": [
 		"eslint",
@@ -30,6 +30,9 @@
 		"type": "git",
 		"url": "git+https://github.com/onedotprojects/eslint-plugin.git"
 	},
+	"files": [
+		"npm-shrinkwrap.json"
+	],
 	"dependencies": {
 		"eslint-config-hardcore": "^19.8.0",
 		"eslint-config-prettier": "^8.3.0",
@@ -42,8 +45,7 @@
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-optimize-regex": "^1.2.0",
 		"eslint-plugin-promise": "^5.1.0",
-		"eslint-plugin-regexp": "^0.13.0",
-		"eslint-plugin-sort-keys-fix": "^1.1.1",
+		"eslint-plugin-regexp": "^0.13.1",
 		"eslint-plugin-switch-case": "^1.1.2",
 		"eslint-plugin-unicorn": "^34.0.1"
 	},

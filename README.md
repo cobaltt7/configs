@@ -37,8 +37,8 @@ overrides: [
 		files: [".github/**"], // CLIs (including JS GitHub Actions)
 	},
 	{
-		extends: ["plugin:@onedotprojects/mjs"],
-		files: ["**.mjs"], // MJS files
+		extends: ["plugin:@onedotprojects/esm"],
+		files: ["**.esm"], // ESM files
 	},
 	{
 		extends: ["plugin:@onedotprojects/config"],
