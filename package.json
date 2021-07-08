@@ -1,6 +1,6 @@
 {
 	"name": "@onedotprojects/eslint-plugin",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "OneDot Projects' ESLint Style Guide",
 	"keywords": [
 		"eslint",
@@ -16,7 +16,7 @@
 	"author": "OneDot Projects",
 	"main": "index.js",
 	"scripts": {
-		"lint": "prettier --ignore-path .gitignore --write ."
+		"lint": "prettier --write ."
 	},
 	"prettier": {
 		"printWidth": 100,
@@ -24,7 +24,22 @@
 		"quoteProps": "consistent",
 		"tabWidth": 4,
 		"trailingComma": "all",
-		"useTabs": true
+		"useTabs": true,
+		"jsxBracketSameLine": false,
+		"vueIndentScriptAndStyle": true,
+		"overrides": [
+			{
+				"files": [
+					"**.md",
+					"**/LICENSE"
+				],
+				"options": {
+					"trailingComma": "es5",
+					"proseWrap": "never",
+					"parser": "markdown"
+				}
+			}
+		]
 	},
 	"repository": {
 		"type": "git",
@@ -34,7 +49,9 @@
 		"npm-shrinkwrap.json"
 	],
 	"dependencies": {
-		"eslint-config-hardcore": "^19.8.0",
+		"@babel/eslint-parser": "^7.14.7",
+		"@babel/plugin-syntax-top-level-await": "^7.14.5",
+		"eslint-config-hardcore": "^19.15.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-compat": "^3.9.0",
 		"eslint-plugin-eslint-comments": "^3.2.0",

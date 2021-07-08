@@ -2,7 +2,16 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.2.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.1) - **Latest**
+## [v1.2.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.1)
+
+-   Update prettier configuration.
+-   Add more files to the default `config` and `cli` configurations.
+-   Bump `eslint-plugin-hardcore`.
+-   Move to `@babel/eslint-parser` for module top-level `await` support.
+-   Disable `node/no-missing-import` (conflicts with `import/no-unresolved`).
+-   Allow importing devDependencies in GitHub Actions.
+
+## [v1.2.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.1)
 
 -   Fix typo causing a crash.
 
@@ -12,7 +21,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Fix `sourceType: "module"` crashing the plugin.
 -   Don't report errors on `node:` modules (didn't work in 1.1.3).
 -   Disable rules related to imports:
-    -    `node/no-unsupported-features/es-syntax` (it is supported).
+    -   `node/no-unsupported-features/es-syntax` (it is supported).
     -   `import/exports-last` (I don't care).
     -   `import/no-relative-parent-imports` (I don't care).
     -   `node/file-extension-in-import` (conflicts with `import/extensions`).
@@ -41,15 +50,13 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 
 -   Add a changelog.
 -   Disable ignoring default folders.
--   Start reporting errors on long comments again, but be a little laxer (reverts part of
-    [`6ae53f3`](https://github.com/onedotprojects/eslint-plugin/commit/6ae53f3086ef0c0a021d9255c8ba08d7e4fdd12d)).
+-   Start reporting errors on long comments again, but be a little laxer (reverts part of [`6ae53f3`](https://github.com/onedotprojects/eslint-plugin/commit/6ae53f3086ef0c0a021d9255c8ba08d7e4fdd12d)).
 -   Ignore tabs when checking line length.
 -   Fix crash in `max-len` configuration.
 
 ## [v1.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.0)
 
--   Fix PascelCased variable names reporting errors (We use camelCase for most variables, but
-    PascelCase for class names).
+-   Fix PascelCased variable names reporting errors (We use camelCase for most variables, but PascelCase for class names).
 -   Fix variables named `_` reporting errors.
 -   Report unconventional variable names in more situations.
 -   Stop reporting errors on long comments.
@@ -58,8 +65,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 
 ## [v1.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.4)
 
--   Fix a typo (regressed by
-    [`f3c6515`](https://github.com/onedotprojects/eslint-plugin/commit/f3c651573d60854851482a2491a4f767a9159009)).
+-   Fix a typo (regressed by [`f3c6515`](https://github.com/onedotprojects/eslint-plugin/commit/f3c651573d60854851482a2491a4f767a9159009)).
 
 ## [v1.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.3)
 

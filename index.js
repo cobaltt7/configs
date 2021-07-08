@@ -84,7 +84,7 @@ module.exports = {
 		cli: {
 			rules: {
 				"fp/no-throw": 0,
-				"import/no-extraneous-dependencies": [2, { devDependencies: true }],
+
 				"no-console": 0,
 			},
 		},
@@ -118,9 +118,14 @@ module.exports = {
 		},
 
 		esm: {
+			// TODO: Remove with ESLint 8
+			parser: "@babel/eslint-parser",
 			parserOptions: {
+				requireConfigFile: false,
 				sourceType: "module",
-				ecmaFeatures: { globalReturn: true, impliedStrict: true },
+				babelOptions: {
+					plugins: ["@babel/plugin-syntax-top-level-await"],
+				},
 			},
 			rules: {
 				"id-match": [
@@ -158,8 +163,10 @@ module.exports = {
 				],
 				"node/file-extension-in-import": 0,
 				"node/no-unsupported-features/es-syntax": [
-					"error", {"ignores": ["dynamicImport", "modules"]}
-				  ],
+					"error",
+					{ ignores: ["dynamicImport", "modules"] },
+				],
+				"node/no-missing-import": 0,
 				"sort-imports": 0,
 			},
 		},
@@ -239,12 +246,39 @@ module.exports = {
 			],
 
 			overrides: [
-				{ extends: ["plugin:@onedotprojects/cli"], files: [".github/**.js"] },
+				{
+					extends: ["plugin:@onedotprojects/cli"],
+					files: ["bin/**.js", ".github/**.js"],
+				},
+				{
+					files: [".github/**.js"],
+					rules: {
+						"import/no-extraneous-dependencies": [
+							2,
+							{
+								bundledDependencies: false,
+								peerDependencies: false,
+								optionalDependencies: false,
+								devDependencies: true,
+							},
+						],
+					},
+				},
 				{
 					extends: ["plugin:@onedotprojects/esm"],
 					files: ["**.esm"],
 				},
-				{ extends: ["plugin:@onedotprojects/config"], files: ["**.config.js", "**rc.js"] },
+				{
+					extends: ["plugin:@onedotprojects/config"],
+					files: [
+						"**.config.js",
+						"**rc.js",
+						"**.config.mjs",
+						"**rc.mjs",
+						"**.config.cjs",
+						"**rc.cjs",
+					],
+				},
 				{
 					extends: ["plugin:@onedotprojects/sample"],
 					files: ["**.md"],

@@ -30,37 +30,47 @@ module.exports = {
 overrides: [
 	{
 		extends: ["plugin:@onedotprojects/node"],
-		files: ["**.js"], // Node.JS scripts
+
+		// Node.JS scripts
+		files: ["**.js"],
 	},
 	{
 		extends: ["plugin:@onedotprojects/cli"],
-		files: [".github/**.js"], // CLIs (including JS GitHub Actions)
+
+		// CLIs (including JS GitHub Actions)
+		files: [".github/**.js", "bin/**.js"],
 	},
 	{
 		extends: ["plugin:@onedotprojects/esm"],
-		files: ["**.esm"], // ESM files
+
+		// ESM files
+		files: ["**.esm"],
 	},
 	{
 		extends: ["plugin:@onedotprojects/config"],
-		files: ["**.config.js", "**rc.js"], // Configuration files (This usually catches all of them)
+
+		// Configuration files (This usually catches all of them)
+		files: ["**.config.js", "**rc.js","**.config.mjs", "**rc.mjs","**.config.cjs", "**rc.cjs"],
 	},
 	{
 		extends: ["plugin:@onedotprojects/sample"],
-		files: ["**.md/**", "**.md"], // Files including samples (AKA docs) (also include HTML and Markdown files)
+
+		// Files including samples (AKA docs) (including HTML and Markdown files)
+		files: ["**.md/**", "**.md"],
 	},
 	{
 		extends: ["plugin:@onedotprojects/browser"],
-		files: ["**.html", "**.htm"], // Client-side scripts (also include HTML files)
+
+		// Client-side scripts (including HTML files)
+		files: ["**.html", "**.htm"],
 	},
 ],
 
 ```
 
-You can remove any objects that end up with an empty `files` array. Make sure that the scripts stay
-in this order. Otherwise, you might get some false-positive errors.
+You can remove any objects that end up with an empty `files` array. Make sure that the scripts stay in this order. Otherwise, you will get some false-positive errors.
 
-1. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more
-   rules; it'd probably be better to update the plugin in that case).
+1. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more rules; it'd probably be better to update the plugin in that case).
 
 2. Add an npm script to lint your code:
 
@@ -80,13 +90,11 @@ Congrats! You've set up ESLint with @onedotprojects/eslint-plugin!
 
 While this was made specifically for OneDot Projects, anyone can use it!
 
-If you have any feedback or require support, please open a discussion and I will get back to you as
-soon as I can.
+If you have any feedback or require support, please open a discussion and I will get back to you as soon as I can.
 
 ## Contributing
 
-Feel free to open pull requests, but don't be surprised when we close them. This project rarely
-changes. However, if you **really** feel like it _should_ change, open an issue so we can discuss it!
+Feel free to open pull requests, but don't be surprised when we close them. This project rarely changes. However, if you **really** feel like it _should_ change, open an issue so we can discuss it!
 
 ## Authors
 
