@@ -126,7 +126,7 @@ module.exports = {
 				"id-match": [
 					2,
 					/^(?:_?[A-Za-z]+(?:[A-Z][a-z]{1,10}){0,2}|(?:_?[A-Z]+){1,2}|_)$/.source,
-					{ ignornode/file-extension-in-importnode/file-extension-in-importnode/file-extension-in-importnode/file-extension-in-importDestructuring: false, onlyDeclarations: false, properties: true },
+					{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
 				],
 				"import/extensions": [1, "always"],
 				"import/exports-last": 0,
@@ -157,7 +157,9 @@ module.exports = {
 					},
 				],
 				"node/file-extension-in-import": 0,
-				"node/no-unsupported-features/es-syntax": 0,
+				"node/no-unsupported-features/es-syntax": [
+					"error", {"ignores": ["dynamicImport", "modules"]}
+				  ],
 				"sort-imports": 0,
 			},
 		},

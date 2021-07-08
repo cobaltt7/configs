@@ -2,7 +2,11 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.2.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.0) - **Latest**
+## [v1.2.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.1) - **Latest**
+
+-   Fix typo causing a crash.
+
+## [v1.2.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.0)
 
 -   Don't allow importing dependencies not specified in `package.json#dependecies`.
 -   Fix `sourceType: "module"` crashing the plugin.
