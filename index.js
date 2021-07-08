@@ -92,7 +92,15 @@ module.exports = {
 		config: {
 			rules: {
 				"id-length": 0,
-				"import/no-extraneous-dependencies": [2, { devDependencies: true }],
+				"import/no-extraneous-dependencies": [
+					2,
+					{
+						bundledDependencies: false,
+						peerDependencies: false,
+						optionalDependencies: false,
+						devDependencies: true,
+					},
+				],
 				"node/global-require": 0,
 				"unicorn/no-keyword-prefix": 0,
 
@@ -110,14 +118,24 @@ module.exports = {
 		},
 
 		esm: {
-			sourceType :"module",
+			parserOptions: {
+				sourceType: "module",
+				ecmaFeatures: { globalReturn: true, impliedStrict: true },
+			},
 			rules: {
+				"id-match": [
+					2,
+					/^(?:_?[A-Za-z]+(?:[A-Z][a-z]{1,10}){0,2}|(?:_?[A-Z]+){1,2}|_)$/.source,
+					{ ignornode/file-extension-in-importnode/file-extension-in-importnode/file-extension-in-importnode/file-extension-in-importDestructuring: false, onlyDeclarations: false, properties: true },
+				],
+				"import/extensions": [1, "always"],
+				"import/exports-last": 0,
 				"import/no-commonjs": 2,
-				"import/no-unresolved": [2, { ignore: [/^node:/.source] }],
+				"import/no-unresolved": [2, { ignore: [/^node:\w+$/.source] }],
 				"import/order": [
 					1,
 					{
-						groups: [
+						"groups": [
 							"type",
 							"object",
 							"builtin",
@@ -130,14 +148,16 @@ module.exports = {
 							order: "asc",
 							caseInsensitive: true,
 						},
+						"pathGroups": [
+							{
+								pattern: "node:**",
+								group: "builtin",
+							},
+						],
 					},
 				],
-				"id-match": [
-					2,
-					/^(?:_?[A-Za-z]+(?:[A-Z][a-z]{1,10}){0,2}|(?:_?[A-Z]+){1,2}|_)$/.source,
-					{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
-				],
-				"import/extensions": [1, "always"],
+				"node/file-extension-in-import": 0,
+				"node/no-unsupported-features/es-syntax": 0,
 				"sort-imports": 0,
 			},
 		},
@@ -217,24 +237,24 @@ module.exports = {
 			],
 
 			overrides: [
+				{ extends: ["plugin:@onedotprojects/cli"], files: [".github/**.js"] },
+				{
+					extends: ["plugin:@onedotprojects/esm"],
+					files: ["**.esm"],
+				},
+				{ extends: ["plugin:@onedotprojects/config"], files: ["**.config.js", "**rc.js"] },
 				{
 					extends: ["plugin:@onedotprojects/sample"],
 					files: ["**.md"],
 					processor: "markdown/markdown",
 				},
-				{ files: ["**.json*"], rules: { "jsdoc/require-file-overview": 0 } },
-				{ extends: ["plugin:@onedotprojects/sample"], files: ["**.md/**", "**.md"] },
-				{ extends: ["plugin:@onedotprojects/config"], files: ["**.config.js", "**rc.js"] },
-				{ extends: ["plugin:@onedotprojects/cli"], files: [".github/**.js"] },
+				{ extends: ["plugin:@onedotprojects/sample"], files: ["**.md/**"] },
 				{
 					extends: ["plugin:@onedotprojects/browser"],
 					files: ["**.html", "**.htm"],
 					rules: { "putout/putout": 0 },
 				},
-				{
-					extends: ["plugin:@onedotprojects/esm"],
-					files: ["**.esm"],
-				},
+				{ files: ["**.json*"], rules: { "jsdoc/require-file-overview": 0 } },
 			],
 
 			parserOptions: {
@@ -289,25 +309,33 @@ module.exports = {
 
 				"import/first": 2,
 				"import/group-exports": 0,
-				"import/max-dependencies": 2,
+				"import/max-dependencies": 0,
 				"import/newline-after-import": 2,
 				"import/no-absolute-path": 2,
 				"import/no-amd": 2,
 				"import/no-anonymous-default-export": 2,
 				"import/no-commonjs": 0,
-				"import/no-unresolved": [2, { ignore: [/^node:/.source] }],
+				"import/no-unresolved": [2, { ignore: [/^node:\w+$/.source] }],
 
 				"import/no-cycle": 2,
 				"import/no-dynamic-require": 0,
-				"import/no-extraneous-dependencies": 2,
+				"import/no-extraneous-dependencies": [
+					2,
+					{
+						bundledDependencies: false,
+						peerDependencies: false,
+						optionalDependencies: false,
+						devDependencies: false,
+					},
+				],
 				"import/no-import-module-exports": 2,
 				"import/no-mutable-exports": 2,
 				"import/no-named-default": 2,
 				"import/no-namespace": 2,
-				"import/no-relative-parent-imports": 1,
+				"import/no-relative-parent-imports": 0,
 				"import/no-self-import": 2,
 				"import/no-unassigned-import": 2,
-				"import/no-unused-modules": 2,
+				"import/no-unused-modules": 0,
 				"import/no-useless-path-segments": 2,
 				"import/no-webpack-loader-syntax": 2,
 				"import/order": 0,

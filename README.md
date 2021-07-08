@@ -34,7 +34,7 @@ overrides: [
 	},
 	{
 		extends: ["plugin:@onedotprojects/cli"],
-		files: [".github/**"], // CLIs (including JS GitHub Actions)
+		files: [".github/**.js"], // CLIs (including JS GitHub Actions)
 	},
 	{
 		extends: ["plugin:@onedotprojects/esm"],
@@ -86,7 +86,7 @@ soon as I can.
 ## Contributing
 
 Feel free to open pull requests, but don't be surprised when we close them. This project rarely
-changes. However, if you really feel like it _should_ change, open an issue so we can discuss it!
+changes. However, if you **really** feel like it _should_ change, open an issue so we can discuss it!
 
 ## Authors
 
