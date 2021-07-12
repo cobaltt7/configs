@@ -1,8 +1,11 @@
 # Changelog
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
+## [v1.2.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021) - **Latest**
 
-## [v1.2.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021) - **Latest**
+-   Fix occasional crash.
+
+## [v1.2.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021)
 
 -   Stop using `node:` modules (didn't work in v1.2.3).
 -   Update `README.md`.

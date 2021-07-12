@@ -2,6 +2,7 @@
 
 /** @file ESLint Configuration file. */
 
+const fileSystem = require("fs");
 
 module.exports = {
 	configs: {
@@ -127,7 +128,9 @@ module.exports = {
 				sourceType: "module",
 				babelOptions: {
 					plugins: [
-						"@onedotprojects/eslint-plugin/node_modules/@babel/plugin-syntax-top-level-await",
+						fs.existsSync("node_modules/@babel/plugin-syntax-top-level-await")
+							? "@onedotprojects/eslint-plugin/node_modules/@babel/plugin-syntax-top-level-await"
+							: "@babel/plugin-syntax-top-level-await",
 					],
 				},
 			},
