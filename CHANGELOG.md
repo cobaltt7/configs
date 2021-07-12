@@ -1,6 +1,11 @@
 # Changelog
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
+
+## [v1.2.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021)
+
+-   Fix crash.
+
 ## [v1.2.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021) - **Latest**
 
 -   Fix occasional crash.
