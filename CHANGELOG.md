@@ -2,13 +2,17 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.2.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021)
+## [v1.2.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.7) (07/12/2021)
+
+-   FOR THE LAST TIME, fix the crash.
+
+## [v1.2.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.6) (07/12/2021)
 
 -   Fix crash.
 
-## [v1.2.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021) - **Latest**
+## [v1.2.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.5) (07/12/2021) - **Latest**
 
--   Fix occasional crash.
+-   Fix the occasional crash.
 
 ## [v1.2.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021)
 

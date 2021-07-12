@@ -127,8 +127,8 @@ module.exports = {
 				babelOptions: {
 					plugins: [
 						require("fs").existsSync("node_modules/@babel/plugin-syntax-top-level-await")
-							? "@onedotprojects/eslint-plugin/node_modules/@babel/plugin-syntax-top-level-await"
-							: "@babel/plugin-syntax-top-level-await",
+						?							"@babel/plugin-syntax-top-level-await"
+							:						"@onedotprojects/eslint-plugin/node_modules/@babel/plugin-syntax-top-level-await",
 					],
 				},
 			},
