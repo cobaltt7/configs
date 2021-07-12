@@ -2,7 +2,15 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.2.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.2)
+## [v1.2.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.3) (07/11/2021) - **Latest**
+
+-   Stop using `node:` modules.
+-   Allow variables named `jQuery`.
+-   Update dependencies.
+-   Disable `node/callback-return` due to conflicts.
+-   Add dates to the changelog.
+
+## [v1.2.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.2) (07/08/2021)
 
 -   Update prettier configuration.
 -   Add more files to the default `config` and `cli` configurations.
@@ -11,11 +19,11 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Disable `node/no-missing-import` (conflicts with `import/no-unresolved`).
 -   Allow importing devDependencies in GitHub Actions.
 
-## [v1.2.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.1)
+## [v1.2.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.1) (07/08/2021)
 
 -   Fix typo causing a crash.
 
-## [v1.2.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.0)
+## [v1.2.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.0) (07/07/2021)
 
 -   Don't allow importing dependencies not specified in `package.json#dependecies`.
 -   Fix `sourceType: "module"` crashing the plugin.
@@ -29,7 +37,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Fix typos in CHANGELOG.md and README.md.
 -   Update .gitignore.
 
-## [v1.1.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.3)
+## [v1.1.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.3) (07/07/2021)
 
 -   Rename `mjs` config to `esm` - better name.
 -   Always add `index` and the file extention to the end of imports.
@@ -40,13 +48,13 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Bump `eslint-plugin-regexp`.
 -   Add `npm-shrinkwrap.json`.
 
-## [v1.1.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.2)
+## [v1.1.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.2) (07/05/2021)
 
 -   Rename `ejs` config to `mjs` - oops!
 -   Actaully disable `unicorn/escape-case` (didn't work in v1.0.3)
 -   Allow `__filename` and `__dirname` variable names.
 
-## [v1.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.1)
+## [v1.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.1) (07/05/2021)
 
 -   Add a changelog.
 -   Disable ignoring default folders.
@@ -54,7 +62,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Ignore tabs when checking line length.
 -   Fix crash in `max-len` configuration.
 
-## [v1.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.0)
+## [v1.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.0) (07/04/2021)
 
 -   Fix PascelCased variable names reporting errors (We use camelCase for most variables, but PascelCase for class names).
 -   Fix variables named `_` reporting errors.
@@ -63,25 +71,25 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Format code with Prettier.
 -   Lint code with ESLint.
 
-## [v1.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.4)
+## [v1.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.4) (07/04/2021)
 
 -   Fix a typo (regressed by [`f3c6515`](https://github.com/onedotprojects/eslint-plugin/commit/f3c651573d60854851482a2491a4f767a9159009)).
 
-## [v1.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.3)
+## [v1.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.3) (07/04/2021)
 
 -   Disable rules related to regular expressions:
     -   `unicorn/escape-case` (conflicts with `regexp/letter-case`).
     -   `regexp/no-super-linear-backtracking` (I have no idea how I could fix these errors).
     -   `regexp/no-super-linear-move` (ditto).
 
-## [v1.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.2)
+## [v1.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.2) (07/04/2021)
 
 -   Bump dependencies.
 
-## [v1.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.1)
+## [v1.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.1) (07/04/2021)
 
 -   Add a forgotten dependency.
 
-## [v1.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.0)
+## [v1.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.0) (07/03/2021)
 
 -   Initial commit.

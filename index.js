@@ -136,7 +136,7 @@ module.exports = {
 				"import/extensions": [1, "always"],
 				"import/exports-last": 0,
 				"import/no-commonjs": 2,
-				"import/no-unresolved": [2, { ignore: [/^node:\w+$/.source] }],
+				"import/no-unresolved": 2,
 				"import/order": [
 					1,
 					{
@@ -153,12 +153,6 @@ module.exports = {
 							order: "asc",
 							caseInsensitive: true,
 						},
-						"pathGroups": [
-							{
-								pattern: "node:**",
-								group: "builtin",
-							},
-						],
 					},
 				],
 				"node/file-extension-in-import": 0,
@@ -185,6 +179,8 @@ module.exports = {
 
 				"no-unused-vars": [2, { args: "all", argsIgnorePattern: "_", caughtErrors: "all" }],
 
+				"node/callback-return": 0,
+
 				"node/exports-style": 2,
 
 				"node/handle-callback-err": 2,
@@ -208,6 +204,19 @@ module.exports = {
 				"node/no-unpublished-require": 0,
 
 				"unicorn/escape-case": 0,
+
+				"unicorn/prefer-node-protocol": 0,
+
+				"unicorn/prevent-abbreviations": [
+					2,
+					{
+						allowList: { jQuery: true },
+						checkDefaultAndNamespaceImports: true,
+						checkProperties: true,
+						checkShorthandImports: true,
+						checkShorthandProperties: true,
+					},
+				],
 
 				"unicorn/no-hex-escape": 0,
 			},
@@ -351,7 +360,7 @@ module.exports = {
 				"import/no-amd": 2,
 				"import/no-anonymous-default-export": 2,
 				"import/no-commonjs": 0,
-				"import/no-unresolved": [2, { ignore: [/^node:\w+$/.source] }],
+				"import/no-unresolved": 2,
 
 				"import/no-cycle": 2,
 				"import/no-dynamic-require": 0,
