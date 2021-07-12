@@ -2,7 +2,13 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.2.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.3) (07/11/2021) - **Latest**
+## [v1.2.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021) - **Latest**
+
+-   Stop using `node:` modules (didn't work in v1.2.3).
+-   Update `README.md`.
+-   Fix crash.
+
+## [v1.2.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.3) (07/11/2021)
 
 -   Stop using `node:` modules.
 -   Allow variables named `jQuery`.
@@ -27,7 +33,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 
 -   Don't allow importing dependencies not specified in `package.json#dependecies`.
 -   Fix `sourceType: "module"` crashing the plugin.
--   Don't report errors on `node:` modules (didn't work in 1.1.3).
+-   Don't report errors on `node:` modules (didn't work in v1.1.3).
 -   Disable rules related to imports:
     -   `node/no-unsupported-features/es-syntax` (it is supported).
     -   `import/exports-last` (I don't care).

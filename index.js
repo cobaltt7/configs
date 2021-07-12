@@ -1,6 +1,8 @@
 "use strict";
 
 /** @file ESLint Configuration file. */
+
+
 module.exports = {
 	configs: {
 		browser: {
@@ -124,7 +126,9 @@ module.exports = {
 				requireConfigFile: false,
 				sourceType: "module",
 				babelOptions: {
-					plugins: ["@babel/plugin-syntax-top-level-await"],
+					plugins: [
+						"@onedotprojects/eslint-plugin/node_modules/@babel/plugin-syntax-top-level-await",
+					],
 				},
 			},
 			rules: {
@@ -568,6 +572,7 @@ module.exports = {
 				"unicorn/no-useless-undefined": 1,
 				"unicorn/numeric-separators-style": [1, { onlyIfContainsSeparator: true }],
 				"unicorn/prefer-module": 0,
+				"unicorn/prefer-node-protocol": 0,
 				"unicorn/prefer-object-has-own": 0,
 				"unicorn/prefer-prototype-methods": 2,
 				"unicorn/prefer-spread": 0,

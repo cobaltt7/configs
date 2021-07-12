@@ -68,23 +68,25 @@ overrides: [
 
 ```
 
-You can remove any objects that end up with an empty `files` array. Make sure that the scripts stay in this order. Otherwise, you will get some false-positive errors.
+You can remove any objects that end up with an empty `files` array.
 
-1. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more rules; it'd probably be better to update the plugin in that case).
+Make sure that the scripts stay in this order. Otherwise, you will get some false-positive errors.
 
-2. Add an npm script to lint your code:
+4. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more rules; it'd probably be better to update the plugin in that case).
 
-```json
-"lint:eslint": "eslint --fix ."
+5. Add an npm script to lint your code. It should be named `lint:eslint` and have the following content:
+
+```bash
+eslint --fix --cache --resolve-plugins-relative-to="./node_modules/@onedotprojects/eslint-plugin/"
 ```
 
 6. To lint your code, simply run
 
-```sh
+```bash
 npm run lint:eslint
 ```
 
-Congrats! You've set up ESLint with @onedotprojects/eslint-plugin!
+Congrats! You've successfully integrated ESLint into your project with @onedotprojects/eslint-plugin!
 
 ## For All
 
