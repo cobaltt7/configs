@@ -2,6 +2,14 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
+## [v1.3.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.3.0) (07/22/2021) - **Latest**
+
+-   Disable `unicorn/prevent-abbreviations` in configuration files.
+-   Change some warnings to errors.
+-   Rethink `import/order` configuration.
+-   Add more abbreviations to `unicorn/prevent-abbreviations`.
+-   Disable `unicorn/no-array-callback-reference` and `unicorn/no-array-reduce` because I don't care.
+
 ## [v1.2.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.7) (07/12/2021)
 
 -   FOR THE LAST TIME, fix the crash.
@@ -10,7 +18,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 
 -   Fix crash.
 
-## [v1.2.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.5) (07/12/2021) - **Latest**
+## [v1.2.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.5) (07/12/2021)
 
 -   Fix the occasional crash.
 
