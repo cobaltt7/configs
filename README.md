@@ -32,24 +32,24 @@ overrides: [
 		extends: ["plugin:@onedotprojects/node"],
 
 		// Node.JS scripts
-		files: ["**.js"],
-	},
-	{
-		extends: ["plugin:@onedotprojects/cli"],
-
-		// CLIs (including JS GitHub Actions)
-		files: [".github/**.js", "bin/**.js"],
+		files: [],
 	},
 	{
 		extends: ["plugin:@onedotprojects/esm"],
 
 		// ESM files
-		files: ["**.esm"],
+		files: ["**.mjs"],
+	},
+	{
+		extends: ["plugin:@onedotprojects/cli"],
+
+		// CLIs (including JS GitHub Actions)
+		files: ["bin/**.js", ".github/**.js"],
 	},
 	{
 		extends: ["plugin:@onedotprojects/config"],
 
-		// Configuration files (This usually catches all of them)
+		// Configuration files
 		files: ["**.config.js", "**rc.js","**.config.mjs", "**rc.mjs","**.config.cjs", "**rc.cjs"],
 	},
 	{
@@ -62,22 +62,22 @@ overrides: [
 		extends: ["plugin:@onedotprojects/browser"],
 
 		// Client-side scripts (including HTML files)
-		files: ["**.html", "**.htm"],
+		files: ["**.html", "**.htm","**.md/*.html"],
 	},
 ],
 
 ```
 
-You can remove any objects that end up with an empty `files` array.
+You can remove any objects that have an empty or unchanged `files` array.
 
-Make sure that the scripts stay in this order. Otherwise, you will get some false-positive errors.
+Make sure that the scripts stay in this order. Otherwise, you may get some false-positive errors.
 
 4. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more rules; it'd probably be better to update the plugin in that case).
 
 5. Add an npm script to lint your code. It should be named `lint:eslint` and have the following content:
 
 ```bash
-eslint --fix --cache --resolve-plugins-relative-to="./node_modules/@onedotprojects/eslint-plugin/"
+eslint --fix --cache .
 ```
 
 6. To lint your code, simply run
@@ -85,6 +85,8 @@ eslint --fix --cache --resolve-plugins-relative-to="./node_modules/@onedotprojec
 ```bash
 npm run lint:eslint
 ```
+
+7. The first few times you run `npm run lint:eslint`, you may see an error `ESLint couldn't find the plugin ...`. If this happens, run the command it suggests.
 
 Congrats! You've successfully integrated ESLint into your project with @onedotprojects/eslint-plugin!
 

@@ -2,7 +2,35 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.3.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.3.0) (07/22/2021) - **Latest**
+## [2.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.3.0) (08/03/2021) - **Latest**
+
+- Make it modular.
+-   Disable rules in sample files:
+    - `no-undef`
+    - `jsdoc/require-jsdoc`
+    - `import/no-unresolved`
+    - `import/unambiguous`
+    - `node/no-missing-import`
+    - `node/no-missing-require`
+    - `strict`
+- Remove `eslint-plugin-optimize-regex` and disable `unicorn/better-regex` in favor of `eslint-plugin-regexp`.
+- Fix errors being reported when `devDependencies` are imported in GitHub Actions.
+- Fix default files in the `esm` configuration.
+- Lint HTML in Markdown files.
+- Disable `indent` in favor of Prettier.
+- Add configuration to `jsdoc/check-examples`.
+- Disable `no-inline-comments` in favor of `line-comment-position`.
+- Disable `no-useless-escape` due to conflicts with `eslint-plugin-regexp`.
+- Disable Putout's `apply-numberic-separators` due to it being problemaic.
+- Disable `camelcase` in favor of `id-match`.
+- Disable `regexp/sort-character-class-elements` due to conflicts.
+- Disable `sonarjs/eslif-without-else` because I don't care.
+- Tweak `eslint-plugin-jsdoc` global configuration.
+- Lint code with Prettier.
+- Move to peer dependencies instead of relying upon the structure of `node_modules` too much.
+- Update docs.
+
+## [v1.3.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.3.0) (07/22/2021)
 
 -   Disable `unicorn/prevent-abbreviations` in configuration files.
 -   Change some warnings to errors.
