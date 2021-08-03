@@ -2,7 +2,11 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.3.0) (08/03/2021) - **Latest**
+## [2.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.1) (08/03/2021) - **Latest**
+
+- Bump dependency.
+
+## [2.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.0) (08/03/2021)
 
 - Make it modular.
 -   Disable rules in sample files:
