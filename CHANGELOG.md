@@ -2,7 +2,11 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.1) (08/03/2021) - **Latest**
+## [2.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.2) (08/04/2021) - **Latest**
+
+- Publish **all** the files (fix crash).
+
+## [2.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.1) (08/03/2021)
 
 - Bump dependency.
 

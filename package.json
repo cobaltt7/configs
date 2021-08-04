@@ -1,6 +1,6 @@
 {
 	"name": "@onedotprojects/eslint-plugin",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "OneDot Projects' ESLint Style Guide",
 	"keywords": [
 		"eslint",
@@ -45,9 +45,6 @@
 		"type": "git",
 		"url": "git+https://github.com/onedotprojects/eslint-plugin.git"
 	},
-	"files": [
-		"npm-shrinkwrap.json"
-	],
 	"peerDependenciesMeta": {
 		"eslint-plugin-node": {
 			"optional": true
