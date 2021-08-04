@@ -94,6 +94,7 @@ module.exports = {
 		"capitalized-comments": 2,
 		"class-methods-use-this": 1,
 		"comma-dangle": [1, "always-multiline"],
+		"complexity": [1, 15],
 		"consistent-return": 2,
 		"curly": [1, "multi-or-nest", "consistent"],
 		"dot-location": [2, "property"],

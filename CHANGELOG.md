@@ -2,7 +2,12 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.2) (08/04/2021) - **Latest**
+## [2.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.3) (08/04/2021) - **Latest**
+
+- Bump maximum cognetive complexity to 15.
+
+
+## [2.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.2) (08/04/2021)
 
 - Publish **all** the files (fix crash).
 
@@ -113,7 +118,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 ## [v1.1.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.2) (07/05/2021)
 
 -   Rename `ejs` config to `mjs` - oops!
--   Actaully disable `unicorn/escape-case` (didn't work in v1.0.3)
+-   Actaully disable `unicorn/escape-case` (didn't work in v1.0.3).
 -   Allow `__filename` and `__dirname` variable names.
 
 ## [v1.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.1) (07/05/2021)
