@@ -1,6 +1,6 @@
 # @onedotprojects/eslint-plugin
 
-![Logo](http://onedot.cf/brand/OneDot.svg)
+![Logo](https://onedot.cf/brand/OneDot.svg)
 
 OneDot Projects' ESLint Style Guide
 
