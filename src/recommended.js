@@ -92,11 +92,11 @@ module.exports = {
 		"@html-eslint/require-doctype": 0,
 		"arrow-body-style": 2,
 		"capitalized-comments": 2,
-		"class-methods-use-this": 1,
-		"comma-dangle": [1, "always-multiline"],
+		"class-methods-use-this": 2,
+		"comma-dangle": [2, "always-multiline"],
 		"complexity": [1, 15],
 		"consistent-return": 2,
-		"curly": [1, "multi-or-nest", "consistent"],
+		"curly": [2, "multi-or-nest", "consistent"],
 		"dot-location": [2, "property"],
 		"eslint-comments/require-description": 2,
 		"fp/no-let": 0,
@@ -107,7 +107,7 @@ module.exports = {
 		"func-style": [2, "declaration", { allowArrowFunctions: true }],
 		"function-call-argument-newline": [1, "consistent"],
 		"function-paren-newline": 0,
-		"id-length": [1, { exceptions: ["_"], max: 20, min: 3 }],
+		"id-length": [2, { exceptions: ["_"], max: 20, min: 3 }],
 
 		"id-match": [
 			2,
@@ -168,7 +168,7 @@ module.exports = {
 		"jsdoc/check-access": 2,
 		"jsdoc/check-alignment": 2,
 		"jsdoc/check-examples": [
-			1,
+			2,
 			{
 				noDefaultExampleRules: false,
 				captionRequired: true,
@@ -215,6 +215,7 @@ module.exports = {
 		"json/*": 0,
 		"linebreak-style": 0,
 		"lines-around-comment": 0,
+		"max-depth": [1, { max: 5 }],
 
 		"max-len": [
 			1,
@@ -259,9 +260,9 @@ module.exports = {
 		"no-unused-vars": [2, { args: "all", argsIgnorePattern: "_", caughtErrors: "all" }],
 		"no-useless-escape": 0,
 		"no-warning-comments": [1, { location: "anywhere" }],
-		"object-curly-spacing": [1, "always"],
+		"object-curly-spacing": [2, "always"],
 		"one-var": [1, "consecutive"],
-		"padded-blocks": [1, "never"],
+		"padded-blocks": [2, "never"],
 		"prefer-arrow-callback": 2,
 		"prettier/prettier": 0,
 		"promise/no-callback-in-promise": 0,
@@ -280,9 +281,9 @@ module.exports = {
 			},
 		],
 
-		"quote-props": [1, "consistent-as-needed"],
+		"quote-props": [2, "consistent-as-needed"],
 		"camelcase": 0,
-		"quotes": [1, "double", { avoidEscape: true }],
+		"quotes": [2, "double", { avoidEscape: true }],
 		"regexp/confusing-quantifier": 2,
 		"regexp/control-character-escape": 2,
 		"regexp/hexadecimal-escape": 2,
@@ -338,7 +339,7 @@ module.exports = {
 		"sort-vars": 2,
 
 		"space-before-function-paren": [
-			1,
+			2,
 			{ anonymous: "always", asyncArrow: "always", named: "never" },
 		],
 

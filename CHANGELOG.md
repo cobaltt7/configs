@@ -2,48 +2,54 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.3) (08/04/2021) - **Latest**
+## [2.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.4) (2021-08-09) - **Latest**
 
-- Bump maximum cognetive complexity to 15.
+-   Change many warnings to errors.
+-   Bump maximum nesting level to 5.
+-   Change the date format used in the changelog.
+-   Update dependencies.
 
+## [2.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.3) (2021-08-04)
 
-## [2.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.2) (08/04/2021)
+-   Bump maximum cognitive complexity to 15.
 
-- Publish **all** the files (fix crash).
+## [2.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.2) (2021-08-04)
 
-## [2.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.1) (08/03/2021)
+-   Publish **all** the files (fix crash).
 
-- Bump dependency.
+## [2.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.1) (2021-08-03)
 
-## [2.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.0) (08/03/2021)
+-   Bump dependency.
 
-- Make it modular.
+## [2.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.0) (2021-08-03)
+
+-   Make it modular.
 -   Disable rules in sample files:
-    - `no-undef`
-    - `jsdoc/require-jsdoc`
-    - `import/no-unresolved`
-    - `import/unambiguous`
-    - `node/no-missing-import`
-    - `node/no-missing-require`
-    - `strict`
-- Remove `eslint-plugin-optimize-regex` and disable `unicorn/better-regex` in favor of `eslint-plugin-regexp`.
-- Fix errors being reported when `devDependencies` are imported in GitHub Actions.
-- Fix default files in the `esm` configuration.
-- Lint HTML in Markdown files.
-- Disable `indent` in favor of Prettier.
-- Add configuration to `jsdoc/check-examples`.
-- Disable `no-inline-comments` in favor of `line-comment-position`.
-- Disable `no-useless-escape` due to conflicts with `eslint-plugin-regexp`.
-- Disable Putout's `apply-numberic-separators` due to it being problemaic.
-- Disable `camelcase` in favor of `id-match`.
-- Disable `regexp/sort-character-class-elements` due to conflicts.
-- Disable `sonarjs/eslif-without-else` because I don't care.
-- Tweak `eslint-plugin-jsdoc` global configuration.
-- Lint code with Prettier.
-- Move to peer dependencies instead of relying upon the structure of `node_modules` too much.
-- Update docs.
+    -   `no-undef`
+    -   `jsdoc/require-jsdoc`
+    -   `import/no-unresolved`
+    -   `import/unambiguous`
+    -   `node/no-missing-import`
+    -   `node/no-missing-require`
+    -   `strict`
+-   Remove `eslint-plugin-optimize-regex` and disable `unicorn/better-regex` in favor of `eslint-plugin-regexp`.
+-   Fix errors being reported when `devDependencies` are imported in GitHub Actions.
+-   Fix default files in the `esm` configuration.
+-   Lint HTML in Markdown files.
+-   Disable `indent` in favor of Prettier.
+-   Add configuration to `jsdoc/check-examples`.
+-   Disable `no-inline-comments` in favor of `line-comment-position`.
+-   Disable `no-useless-escape` due to conflicts with `eslint-plugin-regexp`.
+-   Disable Putout's `apply-numberic-separators` due to it being problemaic.
+-   Disable `camelcase` in favor of `id-match`.
+-   Disable `regexp/sort-character-class-elements` due to conflicts.
+-   Disable `sonarjs/eslif-without-else` because I don't care.
+-   Tweak `eslint-plugin-jsdoc` global configuration.
+-   Lint code with Prettier.
+-   Move to peer dependencies instead of relying upon the structure of `node_modules` too much.
+-   Update docs.
 
-## [v1.3.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.3.0) (07/22/2021)
+## [v1.3.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.3.0) (2021-07-22)
 
 -   Disable `unicorn/prevent-abbreviations` in configuration files.
 -   Change some warnings to errors.
@@ -51,25 +57,25 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Add more abbreviations to `unicorn/prevent-abbreviations`.
 -   Disable `unicorn/no-array-callback-reference` and `unicorn/no-array-reduce` because I don't care.
 
-## [v1.2.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.7) (07/12/2021)
+## [v1.2.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.7) (2021-07-12)
 
 -   FOR THE LAST TIME, fix the crash.
 
-## [v1.2.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.6) (07/12/2021)
+## [v1.2.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.6) (2021-07-12)
 
 -   Fix crash.
 
-## [v1.2.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.5) (07/12/2021)
+## [v1.2.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.5) (2021-07-12)
 
 -   Fix the occasional crash.
 
-## [v1.2.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (07/12/2021)
+## [v1.2.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.4) (2021-07-12)
 
 -   Stop using `node:` modules (didn't work in v1.2.3).
 -   Update `README.md`.
 -   Fix crash.
 
-## [v1.2.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.3) (07/11/2021)
+## [v1.2.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.3) (2021-07-11)
 
 -   Stop using `node:` modules.
 -   Allow variables named `jQuery`.
@@ -77,7 +83,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Disable `node/callback-return` due to conflicts.
 -   Add dates to the changelog.
 
-## [v1.2.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.2) (07/08/2021)
+## [v1.2.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.2) (2021-07-08)
 
 -   Update prettier configuration.
 -   Add more files to the default `config` and `cli` configurations.
@@ -86,11 +92,11 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Disable `node/no-missing-import` (conflicts with `import/no-unresolved`).
 -   Allow importing devDependencies in GitHub Actions.
 
-## [v1.2.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.1) (07/08/2021)
+## [v1.2.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.1) (2021-07-08)
 
 -   Fix typo causing a crash.
 
-## [v1.2.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.0) (07/07/2021)
+## [v1.2.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.2.0) (2021-07-07)
 
 -   Don't allow importing dependencies not specified in `package.json#dependecies`.
 -   Fix `sourceType: "module"` crashing the plugin.
@@ -104,7 +110,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Fix typos in CHANGELOG.md and README.md.
 -   Update .gitignore.
 
-## [v1.1.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.3) (07/07/2021)
+## [v1.1.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.3) (2021-07-07)
 
 -   Rename `mjs` config to `esm` - better name.
 -   Always add `index` and the file extention to the end of imports.
@@ -115,13 +121,13 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Bump `eslint-plugin-regexp`.
 -   Add `npm-shrinkwrap.json`.
 
-## [v1.1.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.2) (07/05/2021)
+## [v1.1.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.2) (2021-07-05)
 
 -   Rename `ejs` config to `mjs` - oops!
 -   Actaully disable `unicorn/escape-case` (didn't work in v1.0.3).
 -   Allow `__filename` and `__dirname` variable names.
 
-## [v1.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.1) (07/05/2021)
+## [v1.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.1) (2021-07-05)
 
 -   Add a changelog.
 -   Disable ignoring default folders.
@@ -129,7 +135,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Ignore tabs when checking line length.
 -   Fix crash in `max-len` configuration.
 
-## [v1.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.0) (07/04/2021)
+## [v1.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.1.0) (2021-07-04)
 
 -   Fix PascelCased variable names reporting errors (We use camelCase for most variables, but PascelCase for class names).
 -   Fix variables named `_` reporting errors.
@@ -138,25 +144,25 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -   Format code with Prettier.
 -   Lint code with ESLint.
 
-## [v1.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.4) (07/04/2021)
+## [v1.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.4) (2021-07-04)
 
 -   Fix a typo (regressed by [`f3c6515`](https://github.com/onedotprojects/eslint-plugin/commit/f3c651573d60854851482a2491a4f767a9159009)).
 
-## [v1.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.3) (07/04/2021)
+## [v1.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.3) (2021-07-04)
 
 -   Disable rules related to regular expressions:
     -   `unicorn/escape-case` (conflicts with `regexp/letter-case`).
     -   `regexp/no-super-linear-backtracking` (I have no idea how I could fix these errors).
     -   `regexp/no-super-linear-move` (ditto).
 
-## [v1.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.2) (07/04/2021)
+## [v1.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.2) (2021-07-04)
 
 -   Bump dependencies.
 
-## [v1.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.1) (07/04/2021)
+## [v1.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.1) (2021-07-04)
 
 -   Add a forgotten dependency.
 
-## [v1.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.0) (07/03/2021)
+## [v1.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/1.0.0) (2021-07-03)
 
 -   Initial commit.
