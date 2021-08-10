@@ -2,6 +2,10 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
+## Unreleased
+
+-   Update logo used in the README.
+
 ## [2.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.4) (2021-08-09) - **Latest**
 
 -   Change many warnings to errors.

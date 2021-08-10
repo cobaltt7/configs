@@ -1,6 +1,6 @@
 # @onedotprojects/eslint-plugin
 
-![Logo](https://cdn.onedot.cf/brand/SVG/NoPadding/One%20Dot%20NoPad.svg)
+![Logo](http://onedot.cf/brand/OneDot.svg)
 
 OneDot Projects' ESLint Style Guide
 
