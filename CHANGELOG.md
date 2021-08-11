@@ -2,7 +2,15 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.4) (2021-08-09) - **Latest**
+## [2.0.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.5) (2021-08-11) - **Latest**
+
+-   Update matches for Markdown files.
+-   Bump dependencies.  Changes needed with the new versions:
+    -    Enable `fp/no-throw` again.
+    -    Explicitly configure `prefer-destructuring` instead of relying on `eslint-plugin-hardcore`'s settings.
+    -    Add `i18n` and `l10n` to `unicorn/prevent-abbreviations`.
+
+## [2.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.4) (2021-08-09)
 
 -   Change many warnings to errors.
 -   Bump maximum nesting level to 5.
