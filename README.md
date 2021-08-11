@@ -56,7 +56,7 @@ overrides: [
 		extends: ["plugin:@onedotprojects/sample"],
 
 		// Files including samples (AKA docs) (including HTML and Markdown files)
-		files: ["**.md/**", "**.md"],
+		files: ["**.md/*.js", "**.md/*.javascript", "**.md"],
 	},
 	{
 		extends: ["plugin:@onedotprojects/browser"],

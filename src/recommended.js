@@ -54,7 +54,7 @@ module.exports = {
 			files: ["**.md"],
 			processor: "markdown/markdown",
 		},
-		{ extends: ["plugin:@onedotprojects/sample"], files: ["**.md/**"] },
+		{ extends: ["plugin:@onedotprojects/sample"], files: ["**.md/*.js","**.md/*.javascript"] },
 		{
 			extends: ["plugin:@onedotprojects/browser"],
 			files: ["**.html", "**.htm", "**.md/*.html"],
@@ -104,6 +104,7 @@ module.exports = {
 		"fp/no-mutating-methods": 0,
 		"fp/no-mutation": 0,
 		"fp/no-this": 0,
+		"fp/no-throw":2,
 		"func-style": [2, "declaration", { allowArrowFunctions: true }],
 		"function-call-argument-newline": [1, "consistent"],
 		"function-paren-newline": 0,
@@ -264,6 +265,18 @@ module.exports = {
 		"one-var": [1, "consecutive"],
 		"padded-blocks": [2, "never"],
 		"prefer-arrow-callback": 2,
+		"prefer-destructuring": [2, {
+			"VariableDeclarator": {
+			  "array": false,
+			  "object": true
+			},
+			"AssignmentExpression": {
+			  "array": true,
+			  "object": false
+			}
+		  }, {
+			"enforceForRenamedProperties": false
+		  }],
 		"prettier/prettier": 0,
 		"promise/no-callback-in-promise": 0,
 		"promise/no-nesting": 0,
@@ -382,7 +395,9 @@ module.exports = {
 					lang: { language: true },
 					msg: { message: true },
 					langs: { languages: true },
-					msgs: { messages: true },
+					msgs: {messages: true},
+					i18n : { internationalization: true },
+					l10n : { localization: true },
 				},
 			},
 		],
