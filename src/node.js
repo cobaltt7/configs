@@ -56,6 +56,8 @@ module.exports = {
 					msg: { message: true },
 					langs: { languages: true },
 					msgs: { messages: true },
+					i18n: { internationalization: true },
+					l10n: { localization: true },
 				},
 			},
 		],
