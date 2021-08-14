@@ -54,7 +54,7 @@ module.exports = {
 			files: ["**.md"],
 			processor: "markdown/markdown",
 		},
-		{ extends: ["plugin:@onedotprojects/sample"], files: ["**.md/*.js","**.md/*.javascript"] },
+		{ extends: ["plugin:@onedotprojects/sample"], files: ["**.md/*.js", "**.md/*.javascript"] },
 		{
 			extends: ["plugin:@onedotprojects/browser"],
 			files: ["**.html", "**.htm", "**.md/*.html"],
@@ -104,7 +104,7 @@ module.exports = {
 		"fp/no-mutating-methods": 0,
 		"fp/no-mutation": 0,
 		"fp/no-this": 0,
-		"fp/no-throw":2,
+		"fp/no-throw": 2,
 		"func-style": [2, "declaration", { allowArrowFunctions: true }],
 		"function-call-argument-newline": [1, "consistent"],
 		"function-paren-newline": 0,
@@ -117,17 +117,7 @@ module.exports = {
 			{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
 		],
 
-		"import/extensions": [
-			2,
-			"always",
-			{
-				js: "never",
-				json: "ignorePackages",
-				jsx: "never",
-				ts: "never",
-				tsx: "never",
-			},
-		],
+		"import/extensions": [2, "ignorePackages"],
 
 		"import/first": 2,
 		"import/group-exports": 0,
@@ -137,7 +127,7 @@ module.exports = {
 		"import/no-amd": 2,
 		"import/no-anonymous-default-export": 2,
 		"import/no-commonjs": 0,
-		"import/no-unresolved": 2,
+		"import/no-unresolved": 0,
 
 		"import/no-cycle": 2,
 		"import/no-dynamic-require": 0,
@@ -265,18 +255,22 @@ module.exports = {
 		"one-var": [1, "consecutive"],
 		"padded-blocks": [2, "never"],
 		"prefer-arrow-callback": 2,
-		"prefer-destructuring": [2, {
-			"VariableDeclarator": {
-			  "array": false,
-			  "object": true
+		"prefer-destructuring": [
+			2,
+			{
+				VariableDeclarator: {
+					array: false,
+					object: true,
+				},
+				AssignmentExpression: {
+					array: true,
+					object: false,
+				},
 			},
-			"AssignmentExpression": {
-			  "array": true,
-			  "object": false
-			}
-		  }, {
-			"enforceForRenamedProperties": false
-		  }],
+			{
+				enforceForRenamedProperties: false,
+			},
+		],
 		"prettier/prettier": 0,
 		"promise/no-callback-in-promise": 0,
 		"promise/no-nesting": 0,
@@ -395,9 +389,9 @@ module.exports = {
 					lang: { language: true },
 					msg: { message: true },
 					langs: { languages: true },
-					msgs: {messages: true},
-					i18n : { internationalization: true },
-					l10n : { localization: true },
+					msgs: { messages: true },
+					i18n: { internationalization: true },
+					l10n: { localization: true },
 				},
 			},
 		],

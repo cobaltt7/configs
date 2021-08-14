@@ -2,13 +2,19 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.0.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.5) (2021-08-11) - **Latest**
+## [2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14) - **Latest**
+
+-   Disable `import/no-unresolved` (conflicts with packages that specify paths to export, plus TS kinda takes care of it?).
+-   Do not check for the existence of file extensions on package imports (conflicts with packages that specify paths to export).
+-   Format code using Prettier.
+
+## [2.0.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.5) (2021-08-11)
 
 -   Update matches for Markdown files.
--   Bump dependencies.  Changes needed with the new versions:
-    -    Enable `fp/no-throw` again.
-    -    Explicitly configure `prefer-destructuring` instead of relying on `eslint-plugin-hardcore`'s settings.
-    -    Add `i18n` and `l10n` to `unicorn/prevent-abbreviations`.
+-   Bump dependencies. Changes needed with the new versions:
+    -   Enable `fp/no-throw` again.
+    -   Explicitly configure `prefer-destructuring` instead of relying on `eslint-plugin-hardcore`'s settings.
+    -   Add `i18n` and `l10n` to `unicorn/prevent-abbreviations`.
 
 ## [2.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.4) (2021-08-09)
 

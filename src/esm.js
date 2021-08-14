@@ -18,10 +18,10 @@ module.exports = {
 			/^(?:_?[A-Za-z]+(?:[A-Z][a-z]{1,10}){0,2}|(?:_?[A-Z]+){1,2}|_)$/.source,
 			{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
 		],
-		"import/extensions": [2, "always"],
+		"import/extensions": [2, "ignorePackages"],
 		"import/exports-last": 0,
 		"import/no-commonjs": 2,
-		"import/no-unresolved": 2,
+		"import/no-unresolved": 0,
 		"import/order": [
 			2,
 			{
