@@ -1,12 +1,14 @@
 # Changelog
 
-We use sematic versioning (SemVer). [More information here](https://semver.org/).
+We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
 ## [2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14) - **Latest**
 
+-   Update logo used in the README.
 -   Disable `import/no-unresolved` (conflicts with packages that specify paths to export, plus TS kinda takes care of it?).
 -   Do not check for the existence of file extensions on package imports (conflicts with packages that specify paths to export).
 -   Format code using Prettier.
+-   Fix typo
 
 ## [2.0.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.5) (2021-08-11)
 
