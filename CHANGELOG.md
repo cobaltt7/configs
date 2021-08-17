@@ -2,7 +2,17 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14) - **Latest**
+## [2.0.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.7) (2021-08-17) - **Latest**
+
+-    Update matches.
+-    Enable `regexp/no-invalid-regexp`.
+-    Disable `no-param-reassign` for `request` and `response`.
+-    Update branding.
+-    Remove `eslint-plugin-switch-case`.
+-    Disable `putout/putout`'s `remove-nested-blocks`.
+-    Disable `default-case`.
+
+## [2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14)
 
 -   Disable `import/no-unresolved` (conflicts with packages that specify paths to export, plus TS kinda takes care of it?).
 -   Do not check for the existence of file extensions on package imports (conflicts with packages that specify paths to export).

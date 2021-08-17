@@ -16,6 +16,7 @@ module.exports = {
 
 	ignorePatterns: [
 		"!**",
+		"!*",
 		"node_modules",
 		".git",
 		"plugin_packages",
@@ -32,37 +33,50 @@ module.exports = {
 	overrides: [
 		{
 			extends: ["plugin:@onedotprojects/cli"],
-			files: ["bin/**.js", ".github/**.js"],
+			files: ["bin/**.js", "bin/*.js", ".github/**.js", ".github/*.js"],
 		},
 		{
 			extends: ["plugin:@onedotprojects/esm"],
-			files: ["**.mjs"],
+			files: ["**.mjs", "*.mjs"],
 		},
 		{
 			extends: ["plugin:@onedotprojects/config"],
 			files: [
 				"**.config.js",
+				"*.config.js",
+
 				"**rc.js",
+				"*rc.js",
 				"**.config.mjs",
+				"*.config.mjs",
 				"**rc.mjs",
+				"*rc.mjs",
 				"**.config.cjs",
+				"*.config.cjs",
 				"**rc.cjs",
+				"*rc.cjs",
 			],
 		},
 		{
 			extends: ["plugin:@onedotprojects/sample"],
-			files: ["**.md"],
+			files: ["**.md", "*.md"],
 			processor: "markdown/markdown",
 		},
-		{ extends: ["plugin:@onedotprojects/sample"], files: ["**.md/*.js", "**.md/*.javascript"] },
+		{
+			extends: ["plugin:@onedotprojects/sample"],
+			files: ["**.md/*.js", "*.md/*.js" ],
+		},
 		{
 			extends: ["plugin:@onedotprojects/browser"],
-			files: ["**.html", "**.htm", "**.md/*.html"],
+			files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html"],
 			rules: { "putout/putout": 0 },
 		},
-		{ files: ["**.json*"], rules: { "jsdoc/require-file-overview": 0 } },
 		{
-			files: [".github/**.js"],
+			files: ["**.json", "**.jsonc", "**.json5", "*.json", "*.jsonc", "*.json5"],
+			rules: { "jsdoc/require-file-overview": 0 },
+		},
+		{
+			files: [".github/**.js", ".github/*.js"],
 			rules: {
 				"import/no-extraneous-dependencies": [
 					2,
@@ -82,7 +96,7 @@ module.exports = {
 		sourceType: "script",
 	},
 
-	plugins: ["html", "jsdoc", "regexp", "switch-case", "@onedotprojects"],
+	plugins: ["html", "jsdoc", "regexp", "@onedotprojects"],
 
 	reportUnusedDisableDirectives: true,
 
@@ -97,6 +111,7 @@ module.exports = {
 		"complexity": [1, 15],
 		"consistent-return": 2,
 		"curly": [2, "multi-or-nest", "consistent"],
+		"default-case": 0,
 		"dot-location": [2, "property"],
 		"eslint-comments/require-description": 2,
 		"fp/no-let": 0,
@@ -243,6 +258,10 @@ module.exports = {
 		"no-magic-numbers": 0,
 		"no-mixed-operators": 0,
 		"no-nested-ternary": 0,
+		"no-param-reassign": [
+			2,
+			{ props: true, ignorePropertyModificationsFor: ["request", "response"] },
+		],
 		"no-plusplus": 0,
 		"no-process-exit": 2,
 		"no-tabs": 0,
@@ -283,6 +302,7 @@ module.exports = {
 					"apply-numeric-separators": "off",
 					"convert-template-to-string": "off",
 					"remove-console": "off",
+					"remove-nested-blocks":"off",
 					"split-variable-declarations": "off",
 				},
 			},
@@ -298,6 +318,7 @@ module.exports = {
 		"regexp/negation": 2,
 		"regexp/no-dupe-disjunctions": 2,
 		"regexp/no-empty-alternative": 2,
+		"regexp/no-invalid-regexp": 2,
 		"regexp/no-lazy-ends": 2,
 		"regexp/no-legacy-features": 2,
 		"regexp/no-non-standard-flag": 2,
@@ -316,7 +337,6 @@ module.exports = {
 		"regexp/no-useless-flag": 2,
 		"regexp/no-useless-lazy": 2,
 		"regexp/no-useless-non-capturing-group": 2,
-		"regexp/no-useless-non-greedy": 2,
 		"regexp/no-useless-quantifier": 2,
 		"regexp/no-useless-range": 2,
 		"regexp/no-zero-quantifier": 2,
@@ -351,7 +371,6 @@ module.exports = {
 		],
 
 		"strict": [2, "global"],
-		"switch-case/newline-between-switch-case": 2,
 		"unicorn/better-regex": 0,
 		"unicorn/consistent-function-scoping": 0,
 		"unicorn/custom-error-definition": 2,
