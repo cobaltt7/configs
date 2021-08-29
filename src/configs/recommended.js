@@ -295,18 +295,7 @@ module.exports = {
 		"promise/no-nesting": 0,
 		"promise/prefer-await-to-then": 0,
 
-		"putout/putout": [
-			"error",
-			{
-				rules: {
-					"apply-numeric-separators": "off",
-					"convert-template-to-string": "off",
-					"remove-console": "off",
-					"remove-nested-blocks":"off",
-					"split-variable-declarations": "off",
-				},
-			},
-		],
+		"putout/putout": 0,
 
 		"quote-props": [2, "consistent-as-needed"],
 		"camelcase": 0,

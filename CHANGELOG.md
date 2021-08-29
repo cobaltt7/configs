@@ -2,7 +2,15 @@
 
 We use sematic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.0.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.7) (2021-08-17) - **Latest**
+## [2.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.0) (2021-08-29) - **Latest**
+
+-    Update dependencies.
+-    Create `src/configs` directory.
+-    Remove `@babel/syntax-top-level-await`.
+-    Disable `putout/putout` due to conflicts.
+-    Update logo.
+
+## [2.0.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.7) (2021-08-17)
 
 -    Update matches.
 -    Enable `regexp/no-invalid-regexp`.
@@ -11,6 +19,7 @@ We use sematic versioning (SemVer). [More information here](https://semver.org/)
 -    Remove `eslint-plugin-switch-case`.
 -    Disable `putout/putout`'s `remove-nested-blocks`.
 -    Disable `default-case`.
+-    Update dependencies.
 
 ## [2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14)
 

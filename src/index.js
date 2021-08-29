@@ -4,18 +4,18 @@
 
 module.exports = {
 	configs: {
-		browser: require("./browser.js"),
+		browser: require("./configs/browser.js"),
 
-		cli: require("./cli.js"),
+		cli: require("./configs/cli.js"),
 
-		config: require("./config.js"),
+		config: require("./configs/config.js"),
 
-		esm: require("./esm.js"),
+		esm: require("./configs/esm.js"),
 
-		node: require("./node.js"),
+		node: require("./configs/node.js"),
 
-		recommended: require("./recommended.js"),
+		recommended: require("./configs/recommended.js"),
 
-		sample: require("./sample.js"),
+		sample: require("./configs/sample.js"),
 	},
 };
