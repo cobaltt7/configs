@@ -63,13 +63,13 @@ module.exports = {
 			processor: "markdown/markdown",
 		},
 		{
-			extends: ["plugin:@onedotprojects/sample"],
-			files: ["**.md/*.js", "*.md/*.js" ],
-		},
-		{
 			extends: ["plugin:@onedotprojects/browser"],
 			files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html"],
 			rules: { "putout/putout": 0 },
+		},
+		{
+			extends: ["plugin:@onedotprojects/sample"],
+			files: ["**.md/*", "*.md/*" ],
 		},
 		{
 			files: ["**.json", "**.jsonc", "**.json5", "*.json", "*.jsonc", "*.json5"],
@@ -267,6 +267,7 @@ module.exports = {
 		"no-tabs": 0,
 		"no-ternary": 0,
 		"no-undefined": 0,
+		"no-underscore-dangle":[2, { allow: ["_status"],"enforceInMethodNames": true }],
 		"no-unused-vars": [2, { args: "all", argsIgnorePattern: "_", caughtErrors: "all" }],
 		"no-useless-escape": 0,
 		"no-warning-comments": [1, { location: "anywhere" }],

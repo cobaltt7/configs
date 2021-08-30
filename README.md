@@ -53,16 +53,16 @@ overrides: [
 		files: ["**.config.js","*.config.js", "**rc.js","*rc.js","**.config.mjs","*.config.mjs", "**rc.mjs","*rc.mjs","**.config.cjs","*.config.cjs", "**rc.cjs","*rc.cjs"],
 	},
 	{
-		extends: ["plugin:@onedotprojects/sample"],
-
-		// Files including samples (AKA docs) (including HTML and Markdown files)
-		files: ["**.md/*.js","*.md/*.js", "**.md","*.md"],
-	},
-	{
 		extends: ["plugin:@onedotprojects/browser"],
 
 		// Client-side scripts (including HTML files)
 		files: ["**.html","*.html", "**.htm","*.htm","**.md/*.html","*.md/*.html"],
+	},
+	{
+		extends: ["plugin:@onedotprojects/sample"],
+
+		// Files including samples (AKA docs) (including HTML and Markdown files)
+		files: ["**.md","*.md","**.md/*", "*.md/*"],
 	},
 ],
 

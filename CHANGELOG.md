@@ -1,8 +1,15 @@
 # Changelog
 
-We use sematic versioning (SemVer). [More information here](https://semver.org/).
+We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.0) (2021-08-29) - **Latest**
+## [2.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.1) (2021-08-29) - **Latest**
+
+-   Fix typo.
+-   Allow `_status` as a property name.
+-   Update matches.
+-   Revert "Remove `@babel/syntax-top-level-await`".
+
+## [2.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.0) (2021-08-29)
 
 -    Update dependencies.
 -    Create `src/configs` directory.
