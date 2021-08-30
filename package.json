@@ -1,7 +1,7 @@
 {
 	"name": "@onedotprojects/eslint-plugin",
-	"version": "2.0.6",
-	"description": "OneDot Projects' ESLint Style Guide",
+	"version": "2.1.1",
+	"description": "OneDot's ESLint Style Guide",
 	"keywords": [
 		"eslint",
 		"eslint-plugin",
@@ -13,7 +13,7 @@
 		"email": "1auth.wgyt@gmail.com"
 	},
 	"license": "MIT",
-	"author": "OneDot Projects",
+	"author": "OneDot",
 	"main": "src/index.js",
 	"scripts": {
 		"lint": "prettier --write ."
@@ -31,6 +31,7 @@
 			{
 				"files": [
 					"**.md",
+					"*.md",
 					"**/LICENSE"
 				],
 				"options": {
@@ -54,13 +55,13 @@
 		}
 	},
 	"dependencies": {
-		"@babel/eslint-parser": "^7.14.7",
+		"@babel/eslint-parser": "^7.15.0",
 		"@babel/plugin-syntax-top-level-await": "^7.14.5",
 		"eslint-config-prettier": "^8.3.0"
 	},
 	"peerDependencies": {
 		"eslint": "^7.32.0",
-		"eslint-config-hardcore": "^20.2.0",
+		"eslint-config-hardcore": "^20.3.0",
 		"eslint-plugin-compat": "^3.12.0",
 		"eslint-plugin-eslint-comments": "^3.2.0",
 		"eslint-plugin-html": "^6.1.2",
@@ -69,10 +70,11 @@
 		"eslint-plugin-markdown": "^2.2.0",
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-promise": "^5.1.0",
-		"eslint-plugin-regexp": "^0.13.2",
-		"eslint-plugin-sonarjs": "^0.9.1",
-		"eslint-plugin-switch-case": "^1.1.2",
+		"eslint-plugin-regexp": "^1.0.0",
+		"eslint-plugin-sonarjs": "^0.10.0",
 		"eslint-plugin-unicorn": "^35.0.0",
-		"prettier": "^2.3.2"
+		"prettier": "^2.3.2",
+		"prettier-plugin-ini": "^0.3.1",
+		"prettier-plugin-jsdoc": "^0.3.23"
 	}
 }

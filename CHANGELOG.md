@@ -2,13 +2,37 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14) - **Latest**
+## [2.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.1) (2021-08-29) - **Latest**
 
--   Update logo used in the README.
+-   Fix typo.
+-   Allow `_status` as a property name.
+-   Update matches.
+-   Revert "Remove `@babel/syntax-top-level-await`".
+
+## [2.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.0) (2021-08-29)
+
+-    Update dependencies.
+-    Create `src/configs` directory.
+-    Remove `@babel/syntax-top-level-await`.
+-    Disable `putout/putout` due to conflicts.
+-    Update logo.
+
+## [2.0.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.7) (2021-08-17)
+
+-    Update matches.
+-    Enable `regexp/no-invalid-regexp`.
+-    Disable `no-param-reassign` for `request` and `response`.
+-    Update branding.
+-    Remove `eslint-plugin-switch-case`.
+-    Disable `putout/putout`'s `remove-nested-blocks`.
+-    Disable `default-case`.
+-    Update dependencies.
+
+## [2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14)
+
 -   Disable `import/no-unresolved` (conflicts with packages that specify paths to export, plus TS kinda takes care of it?).
 -   Do not check for the existence of file extensions on package imports (conflicts with packages that specify paths to export).
 -   Format code using Prettier.
--   Fix typo
 
 ## [2.0.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.5) (2021-08-11)
 
