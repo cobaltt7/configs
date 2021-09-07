@@ -10,6 +10,7 @@ module.exports = {
 				devDependencies: true,
 			},
 		],
+		"max-lines-per-function": 0,
 		"node/global-require": 0,
 		"unicorn/no-keyword-prefix": 0,
 

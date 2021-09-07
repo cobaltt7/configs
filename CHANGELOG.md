@@ -2,7 +2,21 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [2.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.1) (2021-08-29) - **Latest**
+# [2.2.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.2.9) (2021-09-06) - **Latest**
+
+-   Make all peer dependencies required.
+-   Remove `prettier-plugin-ini`.
+-   Disable `max-lines-per-function` in configuration files.
+-   Add `env: "es6"` to the ESM config.
+-   Add the `node` config to configuration files automatically.
+-   Disable `node/no-unsupported-features/es-syntax`
+-   Disallow calling `typeof` on known undefined variables.
+-   Allow importing `whatwg-fetch` without assigning, same for CSS files (for webpack/etc users).
+-   Allow empty `catch` blocks.
+-   Disable `import/no-anonymous-default-export` and `import/no-namespace`.
+-   Format source code.
+
+## [2.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.1) (2021-08-29)
 
 -   Fix typo.
 -   Allow `_status` as a property name.
@@ -11,22 +25,22 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 
 ## [2.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.0) (2021-08-29)
 
--    Update dependencies.
--    Create `src/configs` directory.
--    Remove `@babel/syntax-top-level-await`.
--    Disable `putout/putout` due to conflicts.
--    Update logo.
+-   Update dependencies.
+-   Create `src/configs` directory.
+-   Remove `@babel/syntax-top-level-await`.
+-   Disable `putout/putout` due to conflicts.
+-   Update logo.
 
 ## [2.0.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.7) (2021-08-17)
 
--    Update matches.
--    Enable `regexp/no-invalid-regexp`.
--    Disable `no-param-reassign` for `request` and `response`.
--    Update branding.
--    Remove `eslint-plugin-switch-case`.
--    Disable `putout/putout`'s `remove-nested-blocks`.
--    Disable `default-case`.
--    Update dependencies.
+-   Update matches.
+-   Enable `regexp/no-invalid-regexp`.
+-   Disable `no-param-reassign` for `request` and `response`.
+-   Update branding.
+-   Remove `eslint-plugin-switch-case`.
+-   Disable `putout/putout`'s `remove-nested-blocks`.
+-   Disable `default-case`.
+-   Update dependencies.
 
 ## [2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14)
 

@@ -1,6 +1,6 @@
 {
 	"name": "@onedotprojects/eslint-plugin",
-	"version": "2.1.1",
+	"version": "2.2.0",
 	"description": "OneDot's ESLint Style Guide",
 	"keywords": [
 		"eslint",
@@ -46,14 +46,6 @@
 		"type": "git",
 		"url": "git+https://github.com/onedotprojects/eslint-plugin.git"
 	},
-	"peerDependenciesMeta": {
-		"eslint-plugin-node": {
-			"optional": true
-		},
-		"eslint-plugin-sonarjs": {
-			"optional": true
-		}
-	},
 	"dependencies": {
 		"@babel/eslint-parser": "^7.15.0",
 		"@babel/plugin-syntax-top-level-await": "^7.14.5",
@@ -74,7 +66,6 @@
 		"eslint-plugin-sonarjs": "^0.10.0",
 		"eslint-plugin-unicorn": "^35.0.0",
 		"prettier": "^2.3.2",
-		"prettier-plugin-ini": "^0.3.1",
 		"prettier-plugin-jsdoc": "^0.3.23"
 	}
 }

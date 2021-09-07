@@ -40,7 +40,7 @@ module.exports = {
 			files: ["**.mjs", "*.mjs"],
 		},
 		{
-			extends: ["plugin:@onedotprojects/config"],
+			extends: ["plugin:@onedotprojects/config", "plugin:@onedotprojects/node"],
 			files: [
 				"**.config.js",
 				"*.config.js",
@@ -69,7 +69,7 @@ module.exports = {
 		},
 		{
 			extends: ["plugin:@onedotprojects/sample"],
-			files: ["**.md/*", "*.md/*" ],
+			files: ["**.md/*", "*.md/*"],
 		},
 		{
 			files: ["**.json", "**.jsonc", "**.json5", "*.json", "*.jsonc", "*.json5"],
@@ -140,7 +140,7 @@ module.exports = {
 		"import/newline-after-import": 2,
 		"import/no-absolute-path": 2,
 		"import/no-amd": 2,
-		"import/no-anonymous-default-export": 2,
+		"import/no-anonymous-default-export": 0,
 		"import/no-commonjs": 0,
 		"import/no-unresolved": 0,
 
@@ -158,10 +158,10 @@ module.exports = {
 		"import/no-import-module-exports": 2,
 		"import/no-mutable-exports": 2,
 		"import/no-named-default": 2,
-		"import/no-namespace": 2,
+		"import/no-namespace": 0,
 		"import/no-relative-parent-imports": 0,
 		"import/no-self-import": 2,
-		"import/no-unassigned-import": 2,
+		"import/no-unassigned-import": [2, { allow: ["whatwg-fetch", "**.css"] }],
 		"import/no-unused-modules": 0,
 		"import/no-useless-path-segments": 2,
 		"import/no-webpack-loader-syntax": 2,
@@ -251,6 +251,7 @@ module.exports = {
 		"no-confusing-arrow": 0,
 		"no-console": 1,
 		"no-continue": 0,
+		"no-empty": [2, { allowEmptyCatch: true }],
 		"no-extra-parens": 0,
 		"no-implicit-coercion": 0,
 		"no-inline-comments": 0,
@@ -266,8 +267,9 @@ module.exports = {
 		"no-process-exit": 2,
 		"no-tabs": 0,
 		"no-ternary": 0,
+		"no-undef": [2, { typeof: true }],
 		"no-undefined": 0,
-		"no-underscore-dangle":[2, { allow: ["_status"],"enforceInMethodNames": true }],
+		"no-underscore-dangle": [2, { allow: ["_status"], enforceInMethodNames: true }],
 		"no-unused-vars": [2, { args: "all", argsIgnorePattern: "_", caughtErrors: "all" }],
 		"no-useless-escape": 0,
 		"no-warning-comments": [1, { location: "anywhere" }],

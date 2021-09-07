@@ -1,4 +1,6 @@
 module.exports = {
+	env: { es6: true },
+
 	// TODO: Remove with ESLint 8
 	parser: "@babel/eslint-parser",
 	parserOptions: {
@@ -39,10 +41,6 @@ module.exports = {
 			},
 		],
 		"node/file-extension-in-import": 0,
-		"node/no-unsupported-features/es-syntax": [
-			"error",
-			{ ignores: ["dynamicImport", "modules"] },
-		],
 		"node/no-missing-import": 0,
 		"sort-imports": 0,
 	},
