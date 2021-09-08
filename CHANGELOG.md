@@ -2,7 +2,13 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-# [2.2.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.2.9) (2021-09-06) - **Latest**
+## [v2.2.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.2.1) (2021-09-08) - **Latest**
+
+-   Make the changelog consistent.
+-   Disallow importing `whatwg-fetch` wihout assigning.
+-   Allow importing `isomorphic-fetch` wihout assigning.
+
+## [v2.2.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.2.0) (2021-09-06)
 
 -   Make all peer dependencies required.
 -   Remove `prettier-plugin-ini`.
@@ -16,14 +22,14 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 -   Disable `import/no-anonymous-default-export` and `import/no-namespace`.
 -   Format source code.
 
-## [2.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.1) (2021-08-29)
+## [v2.1.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.1) (2021-08-29)
 
 -   Fix typo.
 -   Allow `_status` as a property name.
 -   Update matches.
 -   Revert "Remove `@babel/syntax-top-level-await`".
 
-## [2.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.0) (2021-08-29)
+## [v2.1.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.1.0) (2021-08-29)
 
 -   Update dependencies.
 -   Create `src/configs` directory.
@@ -31,7 +37,7 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 -   Disable `putout/putout` due to conflicts.
 -   Update logo.
 
-## [2.0.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.7) (2021-08-17)
+## [v2.0.7](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.7) (2021-08-17)
 
 -   Update matches.
 -   Enable `regexp/no-invalid-regexp`.
@@ -42,13 +48,13 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 -   Disable `default-case`.
 -   Update dependencies.
 
-## [2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14)
+## [v2.0.6](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14)
 
 -   Disable `import/no-unresolved` (conflicts with packages that specify paths to export, plus TS kinda takes care of it?).
 -   Do not check for the existence of file extensions on package imports (conflicts with packages that specify paths to export).
 -   Format code using Prettier.
 
-## [2.0.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.5) (2021-08-11)
+## [v2.0.5](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.5) (2021-08-11)
 
 -   Update matches for Markdown files.
 -   Bump dependencies. Changes needed with the new versions:
@@ -56,26 +62,26 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
     -   Explicitly configure `prefer-destructuring` instead of relying on `eslint-plugin-hardcore`'s settings.
     -   Add `i18n` and `l10n` to `unicorn/prevent-abbreviations`.
 
-## [2.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.4) (2021-08-09)
+## [v2.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.4) (2021-08-09)
 
 -   Change many warnings to errors.
 -   Bump maximum nesting level to 5.
 -   Change the date format used in the changelog.
 -   Update dependencies.
 
-## [2.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.3) (2021-08-04)
+## [v2.0.3](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.3) (2021-08-04)
 
 -   Bump maximum cognitive complexity to 15.
 
-## [2.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.2) (2021-08-04)
+## [v2.0.2](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.2) (2021-08-04)
 
 -   Publish **all** the files (fix crash).
 
-## [2.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.1) (2021-08-03)
+## [v2.0.1](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.1) (2021-08-03)
 
 -   Bump dependency.
 
-## [2.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.0) (2021-08-03)
+## [v2.0.0](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.0) (2021-08-03)
 
 -   Make it modular.
 -   Disable rules in sample files:

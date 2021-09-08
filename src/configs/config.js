@@ -13,7 +13,6 @@ module.exports = {
 		"max-lines-per-function": 0,
 		"node/global-require": 0,
 		"unicorn/no-keyword-prefix": 0,
-
 		"unicorn/prevent-abbreviations": 0,
 	},
 };

@@ -161,7 +161,7 @@ module.exports = {
 		"import/no-namespace": 0,
 		"import/no-relative-parent-imports": 0,
 		"import/no-self-import": 2,
-		"import/no-unassigned-import": [2, { allow: ["whatwg-fetch", "**.css"] }],
+		"import/no-unassigned-import": [2, { allow: ["isomorphic-fetch", "**.css"] }],
 		"import/no-unused-modules": 0,
 		"import/no-useless-path-segments": 2,
 		"import/no-webpack-loader-syntax": 2,
