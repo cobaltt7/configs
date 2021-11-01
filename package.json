@@ -47,7 +47,7 @@
 		"url": "git+https://github.com/onedotprojects/eslint-plugin.git"
 	},
 	"dependencies": {
-		"@babel/eslint-parser": "^7.15.0",
+		"@babel/eslint-parser": "^7.16.0",
 		"@babel/plugin-syntax-top-level-await": "^7.14.5",
 		"eslint-config-prettier": "^8.3.0"
 	},
