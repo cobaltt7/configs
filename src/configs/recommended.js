@@ -1,3 +1,7 @@
+"use strict";
+
+/** @file Recomended Rules. */
+
 module.exports = {
 	env: { es2020: false, es6: true },
 
@@ -7,11 +11,13 @@ module.exports = {
 		"plugin:regexp/recommended",
 		"plugin:markdown/recommended",
 		"plugin:promise/recommended",
+		"plugin:unicorn/all",
 		"plugin:unicorn/recommended",
 		"prettier",
 		"plugin:import/recommended",
 		"hardcore",
 		"hardcore/fp",
+		"hardcore/ts-for-js",
 	],
 
 	ignorePatterns: [
@@ -32,19 +38,19 @@ module.exports = {
 
 	overrides: [
 		{
-			extends: ["plugin:@onedotprojects/cli"],
+			extends: ["plugin:@redguy13/cli"],
 			files: ["bin/**.js", "bin/*.js", ".github/**.js", ".github/*.js"],
 		},
 		{
-			extends: ["plugin:@onedotprojects/esm"],
+			extends: ["plugin:@redguy13/esm"],
 			files: ["**.mjs", "*.mjs"],
 		},
 		{
-			extends: ["plugin:@onedotprojects/config", "plugin:@onedotprojects/node"],
+			extends: ["plugin:@redguy13/config"],
+
 			files: [
 				"**.config.js",
 				"*.config.js",
-
 				"**rc.js",
 				"*rc.js",
 				"**.config.mjs",
@@ -58,33 +64,35 @@ module.exports = {
 			],
 		},
 		{
-			extends: ["plugin:@onedotprojects/sample"],
+			extends: ["plugin:@redguy13/sample"],
 			files: ["**.md", "*.md"],
 			processor: "markdown/markdown",
 		},
 		{
-			extends: ["plugin:@onedotprojects/browser"],
+			extends: ["plugin:@redguy13/browser"],
 			files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html"],
 			rules: { "putout/putout": 0 },
 		},
 		{
-			extends: ["plugin:@onedotprojects/sample"],
+			extends: ["plugin:@redguy13/sample"],
 			files: ["**.md/*", "*.md/*"],
 		},
 		{
-			files: ["**.json", "**.jsonc", "**.json5", "*.json", "*.jsonc", "*.json5"],
+			files: ["**.json", "*.json"],
 			rules: { "jsdoc/require-file-overview": 0 },
+			extends: ["plugin:json/recommended"],
 		},
 		{
 			files: [".github/**.js", ".github/*.js"],
+
 			rules: {
 				"import/no-extraneous-dependencies": [
 					2,
 					{
 						bundledDependencies: false,
-						peerDependencies: false,
-						optionalDependencies: false,
 						devDependencies: true,
+						optionalDependencies: false,
+						peerDependencies: false,
 					},
 				],
 			},
@@ -96,15 +104,15 @@ module.exports = {
 		sourceType: "script",
 	},
 
-	plugins: ["html", "jsdoc", "regexp", "@onedotprojects"],
-
+	plugins: ["html", "jsdoc", "regexp", "@redguy13"],
 	reportUnusedDisableDirectives: true,
-
 	root: true,
 
 	rules: {
 		"@html-eslint/require-doctype": 0,
+		"@typescript-eslint/no-empty-function": 0,
 		"arrow-body-style": 2,
+		"camelcase": 0,
 		"capitalized-comments": 2,
 		"class-methods-use-this": 2,
 		"comma-dangle": [2, "always-multiline"],
@@ -118,22 +126,22 @@ module.exports = {
 		"fp/no-loops": 0,
 		"fp/no-mutating-methods": 0,
 		"fp/no-mutation": 0,
+		"line-comment-position": 0,
 		"fp/no-this": 0,
 		"fp/no-throw": 2,
 		"func-style": [2, "declaration", { allowArrowFunctions: true }],
-		"function-call-argument-newline": [1, "consistent"],
+		"function-call-argument-newline": [2, "consistent"],
 		"function-paren-newline": 0,
 		"id-length": [2, { exceptions: ["_"], max: 20, min: 3 }],
 
 		"id-match": [
 			2,
-			/^(?:_?[A-Za-z]+(?:[A-Z][a-z]{1,10}){0,2}|(?:_?[A-Z]+){1,2}|_(?:_(?:filename|dirname))?)$/
-				.source,
+			/^_?(?:[A-Za-z]+|(?:[A-Z]+_){1,2}|(?:_(?:dirname|filename))?)$/.source,
 			{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
 		],
 
-		"import/extensions": [2, "ignorePackages"],
-
+		"import/extensions": [2, "ignorePackages", { ts: "never", tsx: "never" }],
+		"etc/no-commented-out-code": 0,
 		"import/first": 2,
 		"import/group-exports": 0,
 		"import/max-dependencies": 0,
@@ -142,19 +150,19 @@ module.exports = {
 		"import/no-amd": 2,
 		"import/no-anonymous-default-export": 0,
 		"import/no-commonjs": 0,
-		"import/no-unresolved": 0,
-
 		"import/no-cycle": 2,
 		"import/no-dynamic-require": 0,
+
 		"import/no-extraneous-dependencies": [
 			2,
 			{
 				bundledDependencies: false,
-				peerDependencies: false,
-				optionalDependencies: false,
 				devDependencies: false,
+				optionalDependencies: false,
+				peerDependencies: false,
 			},
 		],
+
 		"import/no-import-module-exports": 2,
 		"import/no-mutable-exports": 2,
 		"import/no-named-default": 2,
@@ -162,27 +170,30 @@ module.exports = {
 		"import/no-relative-parent-imports": 0,
 		"import/no-self-import": 2,
 		"import/no-unassigned-import": [2, { allow: ["isomorphic-fetch", "**.css"] }],
+		"import/no-unresolved": 0,
 		"import/no-unused-modules": 0,
 		"import/no-useless-path-segments": 2,
 		"import/no-webpack-loader-syntax": 2,
 		"import/order": 0,
 		"import/prefer-default-export": 2,
-		"import/unambiguous": 2,
+		"import/unambiguous": 0,
 		"indent": 0,
 		"indent-legacy": 0,
 		"init-declarations": 0,
 		"jsdoc/check-access": 2,
 		"jsdoc/check-alignment": 2,
+
 		"jsdoc/check-examples": [
-			2,
+			0, // todo: enable after https://github.com/eslint/eslint/issues/14745
 			{
-				noDefaultExampleRules: false,
 				captionRequired: true,
-				paddedIndent: 1,
-				rejectExampleCodeRegex: /^[\s*]*?```.*?```[*\s]*?$/gimsu.toString(),
 				matchingFileName: "dummy.md/*.js",
+				noDefaultExampleRules: false,
+				paddedIndent: 1,
+				rejectExampleCodeRegex: /^[\s*]*```.*?```[\s*]*?$/gmsu.toString(),
 			},
 		],
+
 		"jsdoc/check-line-alignment": 2,
 		"jsdoc/check-param-names": 2,
 		"jsdoc/check-property-names": 2,
@@ -199,7 +210,7 @@ module.exports = {
 		"jsdoc/no-undefined-types": 0,
 		"jsdoc/require-asterisk-prefix": 2,
 		"jsdoc/require-description": 2,
-		"jsdoc/require-description-complete-sentence": 2,
+		"jsdoc/require-description-complete-sentence": 0,
 		"jsdoc/require-file-overview": 2,
 		"jsdoc/require-hyphen-before-param-description": 2,
 		"jsdoc/require-jsdoc": 2,
@@ -245,9 +256,9 @@ module.exports = {
 
 		"max-params": [1, { max: 5 }],
 		"max-statements": 0,
-		"multiline-comment-style": [1, "separate-lines"],
-		"multiline-ternary": [1, "always-multiline"],
-		"new-cap": [1, { capIsNew: true, newIsCap: true, properties: true }],
+		"multiline-comment-style": [2, "separate-lines"],
+		"multiline-ternary": [2, "always-multiline"],
+		"new-cap": [2, { capIsNew: true, newIsCap: true, properties: true }],
 		"no-confusing-arrow": 0,
 		"no-console": 1,
 		"no-continue": 0,
@@ -258,50 +269,56 @@ module.exports = {
 		"no-invalid-this": 0,
 		"no-magic-numbers": 0,
 		"no-mixed-operators": 0,
+		"no-nested-await": 0,
 		"no-nested-ternary": 0,
+
 		"no-param-reassign": [
 			2,
-			{ props: true, ignorePropertyModificationsFor: ["request", "response"] },
+			{ ignorePropertyModificationsFor: ["request", "response"], props: true },
 		],
+
 		"no-plusplus": 0,
 		"no-process-exit": 2,
 		"no-tabs": 0,
 		"no-ternary": 0,
 		"no-undef": [2, { typeof: true }],
 		"no-undefined": 0,
-		"no-underscore-dangle": [2, { allow: ["_status"], enforceInMethodNames: true }],
+		"no-underscore-dangle": [2, { enforceInMethodNames: true }],
 		"no-unused-vars": [2, { args: "all", argsIgnorePattern: "_", caughtErrors: "all" }],
 		"no-useless-escape": 0,
 		"no-warning-comments": [1, { location: "anywhere" }],
 		"object-curly-spacing": [2, "always"],
-		"one-var": [1, "consecutive"],
+		"one-var": 0,
 		"padded-blocks": [2, "never"],
 		"prefer-arrow-callback": 2,
+		"unicorn/prefer-code-point": 2,
+
 		"prefer-destructuring": [
 			2,
 			{
-				VariableDeclarator: {
-					array: false,
-					object: true,
-				},
 				AssignmentExpression: {
 					array: true,
-					object: false,
+					object: true,
+				},
+
+				VariableDeclarator: {
+					array: true,
+					object: true,
 				},
 			},
 			{
 				enforceForRenamedProperties: false,
 			},
 		],
+
+		"unicorn/prefer-export-from": 0,
+		"@typescript-eslint/naming-convention": 0,
 		"prettier/prettier": 0,
 		"promise/no-callback-in-promise": 0,
 		"promise/no-nesting": 0,
 		"promise/prefer-await-to-then": 0,
-
 		"putout/putout": 0,
-
 		"quote-props": [2, "consistent-as-needed"],
-		"camelcase": 0,
 		"quotes": [2, "double", { avoidEscape: true }],
 		"regexp/confusing-quantifier": 2,
 		"regexp/control-character-escape": 2,
@@ -342,6 +359,7 @@ module.exports = {
 		"regexp/prefer-regexp-exec": 2,
 		"regexp/prefer-regexp-test": 2,
 		"regexp/prefer-unicode-codepoint-escapes": 2,
+		"regexp/require-unicode-regexp": 0,
 		"regexp/sort-character-class-elements": 0,
 		"regexp/sort-flags": 2,
 		"regexp/strict": 0,
@@ -371,12 +389,15 @@ module.exports = {
 		"unicorn/filename-case": 0,
 		"unicorn/import-index": [2, { ignoreImports: true }],
 		"unicorn/no-array-callback-reference": 0,
-		"unicorn/no-array-for-each": 1,
+		"unicorn/no-array-for-each": 2,
 		"unicorn/no-array-reduce": 0,
+		"unicorn/no-await-expression-member": 0,
+		"promise/avoid-new": 0,
+		"unicorn/no-empty-file": 2,
 		"unicorn/no-keyword-prefix": 2,
 		"unicorn/no-unsafe-regex": 0,
 		"unicorn/no-unused-properties": 2,
-		"unicorn/no-useless-undefined": 1,
+		"unicorn/no-useless-undefined": 2,
 		"unicorn/numeric-separators-style": [2, { onlyIfContainsSeparator: true }],
 		"unicorn/prefer-module": 0,
 		"unicorn/prefer-node-protocol": 0,
@@ -393,31 +414,35 @@ module.exports = {
 				checkProperties: true,
 				checkShorthandImports: true,
 				checkShorthandProperties: true,
+
 				replacements: {
 					cmd: {
 						command: true,
 					},
-					lang: { language: true },
-					msg: { message: true },
-					langs: { languages: true },
-					msgs: { messages: true },
+
 					i18n: { internationalization: true },
 					l10n: { localization: true },
+					lang: { language: true },
+					langs: { languages: true },
+					msg: { message: true },
+					msgs: { messages: true },
 				},
 			},
 		],
 
+		"unicorn/template-indent": 2,
 		"vars-on-top": 2,
 		"wrap-iife": [2, "inside"],
 	},
 
 	settings: {
 		html: { "xml-extensions": [".svg"] },
+
 		jsdoc: {
-			maxLines: 5,
-			mode: "typescript",
 			augmentsExtendsReplacesDocs: true,
 			implementsReplacesDocs: true,
+			maxLines: 5,
+			mode: "typescript",
 		},
 	},
 };

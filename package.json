@@ -1,71 +1,146 @@
 {
-	"name": "@onedotprojects/eslint-plugin",
-	"version": "2.2.1",
-	"description": "OneDot's ESLint Style Guide",
+	"name": "@redguy13/eslint-plugin",
+	"version": "3.0.0-beta.0",
+	"description": "My ESLint Style Guide",
 	"keywords": [
 		"eslint",
 		"eslint-plugin",
 		"eslint-config"
 	],
-	"homepage": "https://github.com/onedotprojects/eslint-plugin#readme",
+	"homepage": "https://github.com/redguy12/eslint-plugin#readme",
 	"bugs": {
-		"url": "https://github.com/onedotprojects/eslint-plugin/issues",
-		"email": "1auth.wgyt@gmail.com"
+		"url": "https://github.com/redguy12/eslint-plugin/issues",
+		"email": "paul@reid-family.org"
 	},
 	"license": "MIT",
-	"author": "OneDot",
+	"author": "Paul Reid",
 	"main": "src/index.js",
 	"scripts": {
 		"lint": "prettier --write ."
 	},
 	"prettier": {
+		"jsdocSeparateTagGroups": true,
+		"jsdocAddDefaultToDescription": true,
+		"iniSpaceAroundEquals": true,
 		"printWidth": 100,
 		"proseWrap": "always",
 		"quoteProps": "consistent",
 		"tabWidth": 4,
 		"trailingComma": "all",
 		"useTabs": true,
-		"jsxBracketSameLine": false,
+		"jsdocDescriptionWithDot": true,
+		"jsdocPrintWidth": 100,
+		"jsdocSeparateReturnsFromParam": true,
+		"bracketSameLine": false,
 		"vueIndentScriptAndStyle": true,
 		"overrides": [
 			{
 				"files": [
-					"**.md",
-					"*.md",
-					"**/LICENSE"
+					"**.md"
 				],
 				"options": {
 					"trailingComma": "es5",
 					"proseWrap": "never",
 					"parser": "markdown"
 				}
+			},
+			{
+				"files": [
+					"**.svg",
+					"**.html",
+					"**.xml"
+				],
+				"options": {
+					"trailingComma": "none",
+					"parser": "html",
+					"bracketSameLine": true
+				}
+			},
+			{
+				"files": [
+					"**.sass",
+					"**.scss",
+					"**.css"
+				],
+				"options": {
+					"parser": "scss"
+				}
+			},
+			{
+				"files": [
+					"**.env",
+					"**.replit",
+					"**/.tx/config"
+				],
+				"options": {
+					"parser": "ini"
+				}
+			},
+			{
+				"files": [
+					"**.json",
+					"**.map"
+				],
+				"options": {
+					"parser": "json"
+				}
+			},
+			{
+				"files": [
+					"package.json",
+					"package-lock.json",
+					"npm-shrinkwrap.json"
+				],
+				"options": {
+					"parser": "json-stringify"
+				}
+			},
+			{
+				"files": [
+					"**.code-workspace",
+					".code-snippets",
+					"**/settings.json",
+					"**/launch.json",
+					"**/extensions.json",
+					"**.jsonc",
+					"**.eslintrc",
+					"**.eslintrc.json",
+					"jsconfig.json"
+				],
+				"options": {
+					"parser": "json5",
+					"quoteProps": "preserve",
+					"trailingComma": "none"
+				}
 			}
+		],
+		"plugins": [
+			"prettier-plugin-jsdoc",
+			"prettier-plugin-ini"
 		]
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/onedotprojects/eslint-plugin.git"
+		"url": "git+https://github.com/RedGuy12/eslint-plugin.git"
 	},
 	"dependencies": {
-		"@babel/eslint-parser": "^7.15.0",
-		"@babel/plugin-syntax-top-level-await": "^7.14.5",
-		"eslint-config-prettier": "^8.3.0"
-	},
-	"peerDependencies": {
-		"eslint": "^7.32.0",
-		"eslint-config-hardcore": "^20.3.0",
-		"eslint-plugin-compat": "^3.12.0",
-		"eslint-plugin-eslint-comments": "^3.2.0",
-		"eslint-plugin-html": "^6.1.2",
-		"eslint-plugin-import": "^2.24.0",
-		"eslint-plugin-jsdoc": "^36.0.7",
-		"eslint-plugin-markdown": "^2.2.0",
-		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-promise": "^5.1.0",
-		"eslint-plugin-regexp": "^1.0.0",
-		"eslint-plugin-sonarjs": "^0.10.0",
-		"eslint-plugin-unicorn": "^35.0.0",
-		"prettier": "^2.3.2",
-		"prettier-plugin-jsdoc": "^0.3.23"
+		"@rushstack/eslint-patch": "^1.1.0",
+		"eslint": "8.5.0",
+		"eslint-config-hardcore": "23.6.2",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-plugin-eslint-comments": "3.2.0",
+		"eslint-plugin-html": "6.2.0",
+		"eslint-plugin-import": "2.25.3",
+		"eslint-plugin-jsdoc": "37.4.0",
+		"eslint-plugin-json": "^3.1.0",
+		"eslint-plugin-markdown": "2.2.1",
+		"eslint-plugin-node": "11.1.0",
+		"eslint-plugin-promise": "6.0.0",
+		"eslint-plugin-regexp": "1.5.1",
+		"eslint-plugin-sonarjs": "0.11.0",
+		"eslint-plugin-unicorn": "39.0.0",
+		"prettier": "2.5.1",
+		"prettier-plugin-ini": "0.3.1",
+		"prettier-plugin-jsdoc": "0.3.24"
 	}
 }

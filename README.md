@@ -1,100 +1,103 @@
-# @onedotprojects/eslint-plugin
+# @redguy13/eslint-plugin
 
-![Logo](https://onedot.cf/brand/dot/full.svg)
-
-OneDot' ESLint Style Guide
+My ESLint Style Guide
 
 ## Adding To A Project
 
-1. Install the plugin and its dependencies by running:
+1. Install the plugin by running:
 
-```bash
-npm install @onedotprojects/eslint-plugin --save-dev
-```
+    ```bash
+    npm install @redguy13/eslint-plugin --save-dev
+    ```
 
-2. Add a .eslintrc.js file with the following contents:
+2. Copy the `peerDependencies` section from the `package.json` file into the `devDependencies` section in your project's `package.json` and run
 
-```js
-"use strict";
+    ```bash
+    npm install
+    ```
 
-/** @file ESLint Configuration file. */
+3. Add a .eslintrc.js file with the following contents:
 
-module.exports = {
-	extends: ["plugin:@onedotprojects/recommended"],
-};
-```
+    ```js
+    "use strict";
 
-3. Add overrides for specific files by adding an `overrides` key:
+    /** @file ESLint Configuration file. */
+    module.exports = {
+    	extends: ["plugin:@redguy13/recommended"],
+    };
+    ```
 
-```js
-overrides: [
-	{
-		extends: ["plugin:@onedotprojects/node"],
+4. Add overrides for specific files by adding an `overrides` key:
 
-		// Node.JS scripts
-		files: [],
-	},
-	{
-		extends: ["plugin:@onedotprojects/esm"],
+    ```js
+    [
+    	{
+    		extends: ["plugin:@redguy13/node"],
+    		// Node.JS scripts
+    		files: [],
+    	},
+    	{
+    		extends: ["plugin:@redguy13/esm"],
+    		// ESM files
+    		files: ["**.mjs", "*.mjs"],
+    	},
+    	{
+    		extends: ["plugin:@redguy13/cli"],
+    		// CLIs (including JS GitHub Actions)
+    		files: ["bin/**.js", "bin/*.js", ".github/**.js", ".github/*.js"],
+    	},
+    	{
+    		extends: ["plugin:@redguy13/config"],
 
-		// ESM files
-		files: ["**.mjs","*.mjs"],
-	},
-	{
-		extends: ["plugin:@onedotprojects/cli"],
+    		// Configuration files
+    		files: [
+    			"**.config.js",
+    			"*.config.js",
+    			"**rc.js",
+    			"*rc.js",
+    			"**.config.mjs",
+    			"*.config.mjs",
+    			"**rc.mjs",
+    			"*rc.mjs",
+    			"**.config.cjs",
+    			"*.config.cjs",
+    			"**rc.cjs",
+    			"*rc.cjs",
+    		],
+    	},
+    	{
+    		extends: ["plugin:@redguy13/browser"],
+    		// Client-side scripts (including HTML files)
+    		files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html"],
+    	},
+    	{
+    		extends: ["plugin:@redguy13/sample"],
+    		// Files including samples (AKA docs) (including HTML and Markdown files)
+    		files: ["**.md", "*.md", "**.md/*", "*.md/*"],
+    	},
+    ];
+    ```
 
-		// CLIs (including JS GitHub Actions)
-		files: ["bin/**.js","bin/*.js", ".github/**.js",".github/*.js"],
-	},
-	{
-		extends: ["plugin:@onedotprojects/config"],
+    You can remove any objects that have an empty or unchanged `files` array. However, please make sure that the entries stay in this order.
 
-		// Configuration files
-		files: ["**.config.js","*.config.js", "**rc.js","*rc.js","**.config.mjs","*.config.mjs", "**rc.mjs","*rc.mjs","**.config.cjs","*.config.cjs", "**rc.cjs","*rc.cjs"],
-	},
-	{
-		extends: ["plugin:@onedotprojects/browser"],
+5. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more rules; it'd probably be better to update the plugin in that case).
 
-		// Client-side scripts (including HTML files)
-		files: ["**.html","*.html", "**.htm","*.htm","**.md/*.html","*.md/*.html"],
-	},
-	{
-		extends: ["plugin:@onedotprojects/sample"],
+6. Add an npm script to lint your code. It should be named `lint:eslint` and have the following content:
 
-		// Files including samples (AKA docs) (including HTML and Markdown files)
-		files: ["**.md","*.md","**.md/*", "*.md/*"],
-	},
-],
+    ```bash
+    eslint --fix --cache .
+    ```
 
-```
+7. To lint your code, simply run
+    ```bash
+    npm run lint:eslint
+    ```
 
-You can remove any objects that have an empty or unchanged `files` array.
-
-Make sure that the scripts stay in this order. Otherwise, you may get some false-positive errors.
-
-4. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more rules; it'd probably be better to update the plugin in that case).
-
-5. Add an npm script to lint your code. It should be named `lint:eslint` and have the following content:
-
-```bash
-eslint --fix --cache .
-```
-
-6. To lint your code, simply run
-
-```bash
-npm run lint:eslint
-```
-
-7. The first few times you run `npm run lint:eslint`, you may see an error `ESLint couldn't find the plugin ...`. If this happens, run the command it suggests.
-
-Congrats! You've successfully integrated ESLint into your project with @onedotprojects/eslint-plugin!
+Congrats! You've successfully integrated ESLint into your project with @redguy13/eslint-plugin!
 
 ## For All
 
-While this was made specifically for OneDot, anyone can use it!
-
-If you have any feedback or require support, please open a discussion and I will get back to you as soon as I can.
+While this was made specifically for me, anyone can use it! If you have any feedback or require support, please open a discussion and I will get back to you as soon as I can.
 
 ## Contributing
 

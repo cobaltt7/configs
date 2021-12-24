@@ -1,6 +1,9 @@
+"use strict";
+
+/** @file Browser-specific Rules. */
+
 module.exports = {
 	env: { browser: true, es2020: false, es6: false, node: false },
-	extends: ["plugin:compat/recommended"],
 	parserOptions: { ecmaVersion: 3 },
 
 	rules: {
