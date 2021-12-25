@@ -22,7 +22,9 @@ My ESLint Style Guide
     "use strict";
 
     /** @file ESLint Configuration file. */
+    require("@rushstack/eslint-patch/modern-module-resolution");
     module.exports = {
+	"root": true,
     	extends: ["plugin:@redguy12/recommended"],
     };
     ```
@@ -75,6 +77,14 @@ My ESLint Style Guide
     		// Files including samples (AKA docs) (including HTML and Markdown files)
     		files: ["**.md", "*.md", "**.md/*", "*.md/*"],
     	},
+		{
+		"extends": ["plugin:@redguy12/ts"],
+		// TypeScript files
+		"files": [
+			"*.ts",
+			"**.ts"
+		],
+	},
     ];
     ```
 

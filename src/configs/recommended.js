@@ -78,6 +78,13 @@ module.exports = {
 			files: ["**.md/*", "*.md/*"],
 		},
 		{
+			"files": [
+				"*.ts",
+				"**.ts"
+			],
+			"extends": ["plugin:@redguy12/ts"],
+		},
+		{
 			files: ["**.json", "*.json"],
 			rules: { "jsdoc/require-file-overview": 0 },
 			extends: ["plugin:json/recommended"],
