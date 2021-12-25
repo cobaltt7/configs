@@ -22,5 +22,14 @@ module.exports = {
 		"node/global-require": 0,
 		"unicorn/no-keyword-prefix": 0,
 		"unicorn/prevent-abbreviations": 0,
+		"import/no-anonymous-default-export": [2, {
+			"allowArray": false,
+			"allowArrowFunction": false,
+			"allowAnonymousClass": false,
+			"allowAnonymousFunction": false,
+			"allowCallExpression": false,
+			"allowLiteral": false,
+			"allowObject": false
+		  }],
 	},
 };

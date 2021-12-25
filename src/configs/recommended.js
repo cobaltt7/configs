@@ -104,7 +104,7 @@ module.exports = {
 		sourceType: "script",
 	},
 
-	plugins: ["html", "jsdoc", "regexp", "@redguy12", "@typescript-eslint"],
+	plugins: ["html", "jsdoc", "regexp", "@redguy12"],
 	reportUnusedDisableDirectives: true,
 	root: true,
 
@@ -148,7 +148,15 @@ module.exports = {
 		"import/newline-after-import": 2,
 		"import/no-absolute-path": 2,
 		"import/no-amd": 2,
-		"import/no-anonymous-default-export": 0,
+		"import/no-anonymous-default-export": [2, {
+			"allowArray": false,
+			"allowArrowFunction": false,
+			"allowAnonymousClass": false,
+			"allowAnonymousFunction": false,
+			"allowCallExpression": true,
+			"allowLiteral": true,
+			"allowObject": false
+		  }],
 		"import/no-commonjs": 0,
 		"import/no-cycle": 2,
 		"import/no-dynamic-require": 0,
