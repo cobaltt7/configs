@@ -3,7 +3,7 @@
 /** @file Recomended Rules. */
 
 module.exports = {
-	extends: ["./_recommended.js"],
+	extends: [require("path").resolve(__dirname, "./_recommended.js")],
 
 	overrides: [
 		{

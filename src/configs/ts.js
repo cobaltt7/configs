@@ -1,12 +1,11 @@
-"use strict";
-
 /** @file TypeScript-Specific rules. */
+"use strict";
 
 module.exports = {
 
 	"extends": [
 		"hardcore/ts",
-		"./_recommended.js",
+		require("path").resolve(__dirname, "./_recommended.js"),
 		"plugin:@redguy12/esm"
 	],
 	"rules": {
