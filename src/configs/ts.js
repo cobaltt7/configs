@@ -8,7 +8,8 @@ module.exports = {
 		"hardcore/ts",
 		"plugin:@redguy12/esm"
 	],
-	"rules":{
+	"rules": {
+		"no-tabs":0,
 		"jsdoc/require-jsdoc": 0,
 		"@typescript-eslint/no-namespace": 0,
 		"@typescript-eslint/consistent-type-definitions": 0,
