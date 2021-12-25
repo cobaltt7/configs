@@ -6,7 +6,7 @@ module.exports = {
 
 	"extends": [
 		"hardcore/ts",
-		"plugin:@redguy12/recommended",
+		"./_recommended.js",
 		"plugin:@redguy12/esm"
 	],
 	"rules": {
