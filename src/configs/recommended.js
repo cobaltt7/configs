@@ -109,7 +109,7 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 6,
 		sourceType: "script",
-		"extraFileExtensions": ["js","ts","jsx","tsx","vue","cjs","mjs"]
+		"extraFileExtensions": [".js",".ts",".jsx",".tsx",".vue",".cjs",".mjs"]
 	},
 
 	plugins: ["html", "jsdoc", "regexp", "@redguy12"],
