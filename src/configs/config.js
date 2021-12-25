@@ -3,7 +3,7 @@
 /** @file Configuration File-specific rules. */
 
 module.exports = {
-	extends: ["plugin:@redguy13/cli", "plugin:@redguy13/node"],
+	extends: ["plugin:@redguy12/cli", "plugin:@redguy12/node"],
 	rules: {
 		"id-length": 0,
 		"id-match": 0,

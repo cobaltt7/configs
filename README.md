@@ -1,4 +1,4 @@
-# @redguy13/eslint-plugin
+# @redguy12/eslint-plugin
 
 My ESLint Style Guide
 
@@ -7,7 +7,7 @@ My ESLint Style Guide
 1. Install the plugin by running:
 
     ```bash
-    npm install @redguy13/eslint-plugin --save-dev
+    npm install @redguy12/eslint-plugin --save-dev
     ```
 
 2. Copy the `peerDependencies` section from the `package.json` file into the `devDependencies` section in your project's `package.json` and run
@@ -23,7 +23,7 @@ My ESLint Style Guide
 
     /** @file ESLint Configuration file. */
     module.exports = {
-    	extends: ["plugin:@redguy13/recommended"],
+    	extends: ["plugin:@redguy12/recommended"],
     };
     ```
 
@@ -32,22 +32,22 @@ My ESLint Style Guide
     ```js
     [
     	{
-    		extends: ["plugin:@redguy13/node"],
+    		extends: ["plugin:@redguy12/node"],
     		// Node.JS scripts
     		files: [],
     	},
     	{
-    		extends: ["plugin:@redguy13/esm"],
+    		extends: ["plugin:@redguy12/esm"],
     		// ESM files
     		files: ["**.mjs", "*.mjs"],
     	},
     	{
-    		extends: ["plugin:@redguy13/cli"],
+    		extends: ["plugin:@redguy12/cli"],
     		// CLIs (including JS GitHub Actions)
     		files: ["bin/**.js", "bin/*.js", ".github/**.js", ".github/*.js"],
     	},
     	{
-    		extends: ["plugin:@redguy13/config"],
+    		extends: ["plugin:@redguy12/config"],
 
     		// Configuration files
     		files: [
@@ -66,12 +66,12 @@ My ESLint Style Guide
     		],
     	},
     	{
-    		extends: ["plugin:@redguy13/browser"],
+    		extends: ["plugin:@redguy12/browser"],
     		// Client-side scripts (including HTML files)
     		files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html"],
     	},
     	{
-    		extends: ["plugin:@redguy13/sample"],
+    		extends: ["plugin:@redguy12/sample"],
     		// Files including samples (AKA docs) (including HTML and Markdown files)
     		files: ["**.md", "*.md", "**.md/*", "*.md/*"],
     	},
@@ -93,7 +93,7 @@ My ESLint Style Guide
     npm run lint:eslint
     ```
 
-Congrats! You've successfully integrated ESLint into your project with @redguy13/eslint-plugin!
+Congrats! You've successfully integrated ESLint into your project with @redguy12/eslint-plugin!
 
 ## For All
 

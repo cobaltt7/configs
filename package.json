@@ -1,6 +1,6 @@
 {
-	"name": "@redguy13/eslint-plugin",
-	"version": "3.0.0-beta.0",
+	"name": "@redguy12/eslint-plugin",
+	"version": "3.0.0-beta.1",
 	"description": "My ESLint Style Guide",
 	"keywords": [
 		"eslint",
@@ -123,8 +123,9 @@
 		"type": "git",
 		"url": "git+https://github.com/RedGuy12/eslint-plugin.git"
 	},
+	"peerDependencies": {
+		"@rushstack/eslint-patch": "1.1.0"},
 	"dependencies": {
-		"@rushstack/eslint-patch": "^1.1.0",
 		"eslint": "8.5.0",
 		"eslint-config-hardcore": "23.6.2",
 		"eslint-config-prettier": "8.3.0",
@@ -132,7 +133,7 @@
 		"eslint-plugin-html": "6.2.0",
 		"eslint-plugin-import": "2.25.3",
 		"eslint-plugin-jsdoc": "37.4.0",
-		"eslint-plugin-json": "^3.1.0",
+		"eslint-plugin-json": "3.1.0",
 		"eslint-plugin-markdown": "2.2.1",
 		"eslint-plugin-node": "11.1.0",
 		"eslint-plugin-promise": "6.0.0",

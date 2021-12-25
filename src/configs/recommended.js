@@ -38,15 +38,15 @@ module.exports = {
 
 	overrides: [
 		{
-			extends: ["plugin:@redguy13/cli"],
+			extends: ["plugin:@redguy12/cli"],
 			files: ["bin/**.js", "bin/*.js", ".github/**.js", ".github/*.js"],
 		},
 		{
-			extends: ["plugin:@redguy13/esm"],
+			extends: ["plugin:@redguy12/esm"],
 			files: ["**.mjs", "*.mjs"],
 		},
 		{
-			extends: ["plugin:@redguy13/config"],
+			extends: ["plugin:@redguy12/config"],
 
 			files: [
 				"**.config.js",
@@ -64,17 +64,17 @@ module.exports = {
 			],
 		},
 		{
-			extends: ["plugin:@redguy13/sample"],
+			extends: ["plugin:@redguy12/sample"],
 			files: ["**.md", "*.md"],
 			processor: "markdown/markdown",
 		},
 		{
-			extends: ["plugin:@redguy13/browser"],
+			extends: ["plugin:@redguy12/browser"],
 			files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html"],
 			rules: { "putout/putout": 0 },
 		},
 		{
-			extends: ["plugin:@redguy13/sample"],
+			extends: ["plugin:@redguy12/sample"],
 			files: ["**.md/*", "*.md/*"],
 		},
 		{
@@ -104,7 +104,7 @@ module.exports = {
 		sourceType: "script",
 	},
 
-	plugins: ["html", "jsdoc", "regexp", "@redguy13"],
+	plugins: ["html", "jsdoc", "regexp", "@redguy12", "@typescript-eslint"],
 	reportUnusedDisableDirectives: true,
 	root: true,
 
