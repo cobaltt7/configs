@@ -1,6 +1,6 @@
 {
 	"name": "@redguy12/eslint-plugin",
-	"version": "3.0.0-beta.10",
+	"version": "3.0.0-beta.11",
 	"description": "My ESLint Style Guide",
 	"keywords": [
 		"eslint",
@@ -124,9 +124,15 @@
 		"url": "git+https://github.com/RedGuy12/eslint-plugin.git"
 	},
 	"peerDependencies": {
-		"@rushstack/eslint-patch": "1.1.0"},
-	"dependencies": {
+		"@rushstack/eslint-patch": "1.1.0",
 		"eslint": "8.5.0",
+		"prettier": "2.5.1",
+		"prettier-plugin-ini": "0.3.1",
+		"prettier-plugin-jsdoc": "0.3.24"
+	},
+	"dependencies": {
+		"@vue/eslint-config-typescript": "10.0.0",
+		"eslint-plugin-vue": "8.2.0",
 		"eslint-config-hardcore": "23.6.2",
 		"eslint-config-prettier": "8.3.0",
 		"eslint-plugin-eslint-comments": "3.2.0",
@@ -139,9 +145,6 @@
 		"eslint-plugin-promise": "6.0.0",
 		"eslint-plugin-regexp": "1.5.1",
 		"eslint-plugin-sonarjs": "0.11.0",
-		"eslint-plugin-unicorn": "39.0.0",
-		"prettier": "2.5.1",
-		"prettier-plugin-ini": "0.3.1",
-		"prettier-plugin-jsdoc": "0.3.24"
+		"eslint-plugin-unicorn": "39.0.0"
 	}
 }

@@ -12,5 +12,6 @@ module.exports = {
 		recommended: require("./configs/recommended.js"),
 		sample: require("./configs/sample.js"),
 		ts: require("./configs/ts.js"),
+		vue: require("./configs/vue.js"),
 	},
 };

@@ -70,8 +70,14 @@ module.exports = {
 		},
 		{
 			extends: ["plugin:@redguy12/browser"],
-			files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html"],
+			files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html","**.vue", "*.vue", "**.md/*.vue", "*.md/*.vue"],
 			rules: { "putout/putout": 0 },
+		},
+		{
+			files: ["*.vue", "**.vue"],
+			extends: [
+				"plugin:@redguy12/vue",
+			]
 		},
 		{
 			extends: ["plugin:@redguy12/sample"],
@@ -443,7 +449,10 @@ module.exports = {
 	},
 
 	settings: {
-		html: { "xml-extensions": [".svg"] },
+		html: {
+			"xml-extensions": [".svg",
+			".vue"]
+		},
 
 		jsdoc: {
 			augmentsExtendsReplacesDocs: true,

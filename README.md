@@ -72,7 +72,12 @@ My ESLint Style Guide
     		// Client-side scripts (including HTML files)
     		files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html"],
     	},
-    	{
+		{
+			extends: ["plugin:@redguy12/vue"],
+			// Vue templates
+			files: ["*.vue", "**.vue"],
+		},
+		{
     		extends: ["plugin:@redguy12/sample"],
     		// Files including samples (AKA docs) (including HTML and Markdown files)
     		files: ["**.md", "*.md", "**.md/*", "*.md/*"],
