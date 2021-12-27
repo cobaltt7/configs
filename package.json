@@ -1,6 +1,6 @@
 {
 	"name": "@redguy12/eslint-plugin",
-	"version": "3.0.0-beta.11",
+	"version": "3.0.0-beta.12",
 	"description": "My ESLint Style Guide",
 	"keywords": [
 		"eslint",

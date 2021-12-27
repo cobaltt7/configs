@@ -2,6 +2,8 @@
 
 /** @file Recomended Rules. */
 
+require("@rushstack/eslint-patch/modern-module-resolution");
+
 module.exports = {
 	extends: [require("path").resolve(__dirname, "./_recommended.js")],
 
