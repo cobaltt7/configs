@@ -1,7 +1,6 @@
 /**
  * @file Ensures That, if present, `use strict` directives always come after `@file` comments, and
  *   ensures consistent spacing around them.
- * @todo Autofix (PRs welcome)
  */
 "use strict";
 
@@ -23,25 +22,61 @@ const rule = {
 					const actualStrictLine = loc?.end.line || 0;
 
 					if (supposedStrictLine !== actualStrictLine) {
+						const beforeStrict = {
+							end: { column: 0, line: actualStrictLine },
+							start: { column: 0, line: supposedStrictLine },
+						};
+
 						context.report({
-							loc: {
-								end: { column: 0, line: actualStrictLine },
-								start: { column: 0, line: supposedStrictLine },
+							fix(fixer) {
+								return fixer.removeRange([
+									sourceCode.getIndexFromLoc({
+										column: 0,
+										line: supposedStrictLine,
+									}),
+									sourceCode.getIndexFromLoc({
+										column: 0,
+										line: actualStrictLine,
+									}),
+								]);
 							},
+
+							loc: beforeStrict,
 
 							message:
 								"Unexpected blank line between @file comment and use strict directive",
 						});
 					}
 
-					const codeStartLine = sourceCode.getTokenAfter(node)?.loc.end.line || 0;
+					const firstCode = sourceCode.getTokenAfter(node);
 
-					if (actualStrictLine + 2 > codeStartLine) {
+					if (!firstCode) {
 						context.report({
-							loc: {
-								end: { column: 0, line: codeStartLine },
-								start: { column: 0, line: actualStrictLine + 2 },
+							loc: { column: 0, line: 0 },
+							message: "File has no content.",
+						});
+
+						return;
+					}
+
+					const codeStartLine = firstCode?.loc.end.line || 0;
+
+					const commentStartLine =
+						sourceCode.getCommentsBefore(firstCode)?.at(-1)?.loc?.end.line ||
+						codeStartLine;
+
+					if (actualStrictLine + 2 > commentStartLine) {
+						const beforeCode = {
+							end: { column: 0, line: commentStartLine },
+							start: { column: 0, line: actualStrictLine + 2 },
+						};
+
+						context.report({
+							fix(fixer) {
+								return fixer.insertTextAfter(node, "\n");
 							},
+
+							loc: beforeCode,
 
 							message:
 								"Expected one blank line between use strict directive and start of code",
@@ -55,6 +90,11 @@ const rule = {
 				}
 			},
 		};
+	},
+
+	meta: {
+		fixable: "whitespace",
+		type: "layout",
 	},
 };
 
