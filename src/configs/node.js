@@ -1,8 +1,8 @@
+/** @file Node-specific Rules. */
 "use strict";
 
-/** @file Node-specific Rules. */
-
-module.exports = {
+/** @type {import("eslint").Linter.Config} */
+const config = {
 	env: { node: true },
 	extends: ["plugin:node/recommended", "plugin:node/recommended-script", "hardcore/node"],
 	parserOptions: { ecmaVersion: 10 },
@@ -11,12 +11,25 @@ module.exports = {
 		"id-match": [
 			2,
 			/^_?(?:[A-Za-z]+|(?:[A-Z]+_){1,2}|(?:_(?:dirname|filename))?)$/.source,
-			{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
+			{
+				ignoreDestructuring: false,
+				onlyDeclarations: false,
+				properties: true,
+			},
 		],
 
-		"no-unused-vars": [2, { args: "all", argsIgnorePattern: "_", caughtErrors: "all" }],
+		"no-unused-vars": [
+			2,
+			{
+				args: "all",
+				argsIgnorePattern: "_",
+				caughtErrors: "all",
+			},
+		],
+
 		"node/callback-return": 0,
 		"node/exports-style": 2,
+		"node/global-require": 0,
 		"node/handle-callback-err": 2,
 		"node/no-callback-literal": 2,
 		"node/no-mixed-requires": 0,
@@ -42,10 +55,7 @@ module.exports = {
 				checkShorthandProperties: true,
 
 				replacements: {
-					cmd: {
-						command: true,
-					},
-
+					cmd: { command: true },
 					i18n: { internationalization: true },
 					l10n: { localization: true },
 					lang: { language: true },
@@ -57,3 +67,5 @@ module.exports = {
 		],
 	},
 };
+
+module.exports = config;

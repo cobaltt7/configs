@@ -3,6 +3,6 @@
 .github
 node_modules
 .eslintcache
+.eslintrc.js
 .gitignore
 .npmignore
-.eslintrc.js

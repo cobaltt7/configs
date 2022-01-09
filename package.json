@@ -1,47 +1,82 @@
 {
-	"name": "@redguy12/eslint-plugin",
-	"version": "3.0.0-beta.13",
+	"private": false,
+	"author": "Paul Reid",
+	"bugs": {
+		"email": "paul@reid-family.org",
+		"url": "https://github.com/redguy12/eslint-plugin/issues"
+	},
 	"description": "My ESLint Style Guide",
+	"devDependencies": {
+		"@redguy12/eslint-plugin": "file:.",
+		"@types/eslint": "^8.2.2",
+		"eslint": "8.5.0",
+		"eslint-config-hardcore": "23.6.2",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-plugin-eslint-comments": "3.2.0",
+		"eslint-plugin-html": "6.2.0",
+		"eslint-plugin-import": "2.25.3",
+		"eslint-plugin-jsdoc": "37.4.0",
+		"eslint-plugin-jsonc": "2.0.0",
+		"eslint-plugin-markdown": "2.2.1",
+		"eslint-plugin-node": "11.1.0",
+		"eslint-plugin-promise": "6.0.0",
+		"eslint-plugin-regexp": "1.5.1",
+		"eslint-plugin-sonarjs": "0.11.0",
+		"eslint-plugin-unicorn": "39.0.0",
+		"eslint-plugin-vue": "8.2.0",
+		"prettier": "2.5.1",
+		"prettier-plugin-ini": "0.3.1",
+		"prettier-plugin-jsdoc": "0.3.24"
+	},
+	"dependencies": {
+		"eslint-disable": "^1.0.2"
+	},
+	"homepage": "https://github.com/redguy12/eslint-plugin#readme",
 	"keywords": [
 		"eslint",
 		"eslint-plugin",
 		"eslint-config"
 	],
-	"homepage": "https://github.com/redguy12/eslint-plugin#readme",
-	"bugs": {
-		"url": "https://github.com/redguy12/eslint-plugin/issues",
-		"email": "paul@reid-family.org"
-	},
 	"license": "MIT",
-	"author": "Paul Reid",
 	"main": "src/index.js",
-	"scripts": {
-		"lint": "prettier --write ."
+	"name": "@redguy12/eslint-plugin",
+	"peerDependencies": {
+		"eslint": "8.5.0",
+		"eslint-config-hardcore": "23.6.2",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-plugin-eslint-comments": "3.2.0",
+		"eslint-plugin-html": "6.2.0",
+		"eslint-plugin-import": "2.25.3",
+		"eslint-plugin-jsdoc": "37.4.0",
+		"eslint-plugin-jsonc": "2.0.0",
+		"eslint-plugin-markdown": "2.2.1",
+		"eslint-plugin-node": "11.1.0",
+		"eslint-plugin-promise": "6.0.0",
+		"eslint-plugin-regexp": "1.5.1",
+		"eslint-plugin-sonarjs": "0.11.0",
+		"eslint-plugin-unicorn": "39.0.0",
+		"eslint-plugin-vue": "8.2.0",
+		"prettier": "2.5.1",
+		"prettier-plugin-ini": "0.3.1",
+		"prettier-plugin-jsdoc": "0.3.24"
 	},
 	"prettier": {
-		"jsdocSeparateTagGroups": true,
-		"jsdocAddDefaultToDescription": true,
+		"bracketSameLine": false,
 		"iniSpaceAroundEquals": true,
-		"printWidth": 100,
-		"proseWrap": "always",
-		"quoteProps": "consistent",
-		"tabWidth": 4,
-		"trailingComma": "all",
-		"useTabs": true,
+		"jsdocAddDefaultToDescription": true,
 		"jsdocDescriptionWithDot": true,
 		"jsdocPrintWidth": 100,
 		"jsdocSeparateReturnsFromParam": true,
-		"bracketSameLine": false,
-		"vueIndentScriptAndStyle": true,
+		"jsdocSeparateTagGroups": true,
 		"overrides": [
 			{
 				"files": [
 					"**.md"
 				],
 				"options": {
-					"trailingComma": "es5",
+					"parser": "markdown",
 					"proseWrap": "never",
-					"parser": "markdown"
+					"trailingComma": "es5"
 				}
 			},
 			{
@@ -51,9 +86,9 @@
 					"**.xml"
 				],
 				"options": {
-					"trailingComma": "none",
+					"bracketSameLine": true,
 					"parser": "html",
-					"bracketSameLine": true
+					"trailingComma": "none"
 				}
 			},
 			{
@@ -117,31 +152,21 @@
 		"plugins": [
 			"prettier-plugin-jsdoc",
 			"prettier-plugin-ini"
-		]
+		],
+		"printWidth": 100,
+		"proseWrap": "always",
+		"quoteProps": "consistent",
+		"tabWidth": 4,
+		"trailingComma": "all",
+		"useTabs": true,
+		"vueIndentScriptAndStyle": true
 	},
+	"version": "3.0.0-beta.14",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/RedGuy12/eslint-plugin.git"
 	},
-	"peerDependencies": {
-		"eslint": "8.5.0",
-		"prettier": "2.5.1",
-		"prettier-plugin-ini": "0.3.1",
-		"prettier-plugin-jsdoc": "0.3.24",
-		"@vue/eslint-config-typescript": "10.0.0",
-		"eslint-plugin-vue": "8.2.0",
-		"eslint-config-hardcore": "23.6.2",
-		"eslint-config-prettier": "8.3.0",
-		"eslint-plugin-eslint-comments": "3.2.0",
-		"eslint-plugin-html": "6.2.0",
-		"eslint-plugin-import": "2.25.3",
-		"eslint-plugin-jsdoc": "37.4.0",
-		"eslint-plugin-json": "3.1.0",
-		"eslint-plugin-markdown": "2.2.1",
-		"eslint-plugin-node": "11.1.0",
-		"eslint-plugin-promise": "6.0.0",
-		"eslint-plugin-regexp": "1.5.1",
-		"eslint-plugin-sonarjs": "0.11.0",
-		"eslint-plugin-unicorn": "39.0.0"
+	"scripts": {
+		"lint": "prettier --write ."
 	}
 }

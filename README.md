@@ -4,35 +4,49 @@ My ESLint Style Guide
 
 ## Adding To A Project
 
-1. Install the plugin by running:
+1.  Install the plugin by running:
 
     ```bash
     npm install @redguy12/eslint-plugin --save-dev
     ```
 
-2. Copy the `peerDependencies` section from the `package.json` file into the `devDependencies` section in your project's `package.json` and run
+2.  Copy the `peerDependencies` section from our **package.json** file into your project's **package.json** file's `devDependencies`.
+3.  Run
 
     ```bash
     npm install
     ```
 
-3. Add a .eslintrc.js file with the following contents:
+4.  Add a **.eslintrc.js** file with the following contents:
 
-    ```js
-    "use strict";
+        ```js
+        /** @file ESLint Configuration file. */
+        "use strict";
 
-    /** @file ESLint Configuration file. */
-    require("@rushstack/eslint-patch/modern-module-resolution");
-    module.exports = {
-	"root": true,
-    	extends: ["plugin:@redguy12/recommended"],
-    };
-    ```
+        /** @type {import("eslint").Linter.Config} */
 
-4. Add overrides for specific files by adding an `overrides` key:
+    const config = { extends: ["plugin:@redguy12/recommended"],
+
+        	overrides: [
+        		{
+        			files: ["!**.md/*"],
+        			parserOptions: { project: "./jsconfig.json" },
+        		},
+        	],
+
+        	root: true,
+        };
+        ```
+
+5.  Add more overrides for specific files. Keep `!**.md/*` (added in the previous step) last.
 
     ```js
     [
+    	{
+    		extends: ["plugin:@redguy12/typescript"],
+    		// TypeScript files
+    		files: ["**.ts"],
+    	},
     	{
     		extends: ["plugin:@redguy12/node"],
     		// Node.JS scripts
@@ -41,12 +55,12 @@ My ESLint Style Guide
     	{
     		extends: ["plugin:@redguy12/esm"],
     		// ESM files
-    		files: ["**.mjs", "*.mjs"],
+    		files: ["**.mjs"],
     	},
     	{
     		extends: ["plugin:@redguy12/cli"],
     		// CLIs (including JS GitHub Actions)
-    		files: ["bin/**.js", "bin/*.js", ".github/**.js", ".github/*.js"],
+    		files: ["bin/**.js", ".github/**.js"],
     	},
     	{
     		extends: ["plugin:@redguy12/config"],
@@ -54,56 +68,43 @@ My ESLint Style Guide
     		// Configuration files
     		files: [
     			"**.config.js",
-    			"*.config.js",
     			"**rc.js",
-    			"*rc.js",
     			"**.config.mjs",
-    			"*.config.mjs",
     			"**rc.mjs",
-    			"*rc.mjs",
     			"**.config.cjs",
-    			"*.config.cjs",
     			"**rc.cjs",
-    			"*rc.cjs",
     		],
     	},
     	{
     		extends: ["plugin:@redguy12/browser"],
     		// Client-side scripts (including HTML files)
-    		files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html"],
+    		files: ["**.html", "**.htm", "**.vue"],
     	},
-		{
-			extends: ["plugin:@redguy12/vue"],
-			// Vue templates
-			files: ["*.vue", "**.vue"],
-		},
-		{
+    	{
     		extends: ["plugin:@redguy12/sample"],
     		// Files including samples (AKA docs) (including HTML and Markdown files)
-    		files: ["**.md", "*.md", "**.md/*", "*.md/*"],
+    		files: ["**.md", "**.md/*"],
     	},
-		{
-		"extends": ["plugin:@redguy12/ts"],
-		// TypeScript files
-		"files": [
-			"*.ts",
-			"**.ts"
-		],
-	},
+    	{
+    		extends: ["plugin:@redguy12/vue"],
+    		// Vue SFC (v2)
+    		files: ["**.vue"],
+    	},
     ];
     ```
 
     You can remove any objects that have an empty or unchanged `files` array. However, please make sure that the entries stay in this order.
 
-5. Add project-specific configuration (such as `ecmaVersion`). (You should not need to add more rules; it'd probably be better to update the plugin in that case).
+6.  Add project-specific configuration (such as `ecmaVersion` or change the `parserOptions.project`). Note that `ecmaVersion` is overridden in some plugins, so you may want to put it in the `!**.md/*` entry. (You should not need to add more rules; it'd probably be better to update the plugin in that case).
 
-6. Add an npm script to lint your code. It should be named `lint:eslint` and have the following content:
+7.  Add an npm script to lint your code. It should be named `lint:eslint` and have the following content:
 
     ```bash
     eslint --fix --cache .
     ```
 
-7. To lint your code, simply run
+8.  To lint your code, simply run
+
     ```bash
     npm run lint:eslint
     ```

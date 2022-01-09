@@ -1,8 +1,27 @@
 /** @file ESLint Configuration file. */
 "use strict";
-const path=require("path")
-module.exports = {
-	extends: [path.resolve(__dirname, "./src/configs/recommended.js"), path.resolve(__dirname, "./src/configs/node.js"), path.resolve(__dirname, "./src/configs/config.js")],
+
+const path = require("path");
+
+/** @type {import("eslint").Linter.Config} */
+const config = {
+	extends: [
+		path.resolve(__dirname, "./src/configs/recommended.js"),
+		path.resolve(__dirname, "./src/configs/cli.js"),
+	],
+
+	overrides: [
+		{
+			extends: [path.resolve(__dirname, "./src/configs/config.js")],
+			files: ["src/configs/*.js"],
+		},
+		{
+			files: ["!**.md/*"],
+			parserOptions: { project: "./jsconfig.json" },
+		},
+	],
+
 	root: true,
-	parserOptions: { project: "./package.json", },
 };
+
+module.exports = config;

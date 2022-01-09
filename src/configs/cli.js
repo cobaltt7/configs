@@ -1,11 +1,11 @@
+/** @file CLI-specific Rules. */
 "use strict";
 
-/** @file CLI-specific Rules. */
-
-module.exports = {
+/** @type {import("eslint").Linter.Config} */
+const config = {
 	extends: ["plugin:@redguy12/node"],
-	rules: {
-		"fp/no-throw": 0,
-		"no-console": 0,
-	},
+	parserOptions: { ecmaVersion: "latest" },
+	rules: { "fp/no-throw": 0, "no-console": 0 },
 };
+
+module.exports = config;

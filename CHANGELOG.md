@@ -28,19 +28,19 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 -   Allow `_status` as a property name.
 -   Update matches.
 -   Revert "Remove `@babel/syntax-top-level-await`".
--    Update dependencies.
--    Create `src/configs` directory.
--    Remove `@babel/syntax-top-level-await`.
--    Disable `putout/putout` due to conflicts.
--    Update logo.
--    Update matches.
--    Enable `regexp/no-invalid-regexp`.
--    Disable `no-param-reassign` for `request` and `response`.
--    Update branding.
--    Remove `eslint-plugin-switch-case`.
--    Disable `putout/putout`'s `remove-nested-blocks`.
--    Disable `default-case`.
--    Update dependencies.
+-   Update dependencies.
+-   Create `src/configs` directory.
+-   Remove `@babel/syntax-top-level-await`.
+-   Disable `putout/putout` due to conflicts.
+-   Update logo.
+-   Update matches.
+-   Enable `regexp/no-invalid-regexp`.
+-   Disable `no-param-reassign` for `request` and `response`.
+-   Update branding.
+-   Remove `eslint-plugin-switch-case`.
+-   Disable `putout/putout`'s `remove-nested-blocks`.
+-   Disable `default-case`.
+-   Update dependencies.
 
 ## [2.0.4](https://www.npmjs.com/package/@onedotprojects/eslint-plugin/v/2.0.6) (2021-08-14) - **Latest**
 

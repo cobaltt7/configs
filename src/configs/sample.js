@@ -1,14 +1,17 @@
+/** @file Sample File-specific rules. */
 "use strict";
 
-/** @file Sample File-specific rules. */
-
-module.exports = {
-	env: { browser: true, es2020: true, es6: true, node: true },
-	extends: ["plugin:markdown/recommended"],
-
-	parserOptions: {
-		ecmaVersion: 12,
+/** @type {import("eslint").Linter.Config} */
+const config = {
+	env: {
+		browser: true,
+		es2020: true,
+		es6: true,
+		node: true,
 	},
+
+	extends: ["plugin:markdown/recommended"],
+	parserOptions: { ecmaVersion: 12 },
 
 	rules: {
 		"import/no-extraneous-dependencies": [2, { devDependencies: false }],
@@ -23,3 +26,5 @@ module.exports = {
 		"node/no-missing-require": 0,
 	},
 };
+
+module.exports = config;

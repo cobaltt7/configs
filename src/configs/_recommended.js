@@ -1,8 +1,8 @@
+/** @file Recomended Rules minus typescript. */
 "use strict";
 
-/** @file Recomended Rules. */
-
-module.exports = {
+/** @type {import("eslint").Linter.Config} */
+const config = {
 	env: { es2020: false, es6: true },
 
 	extends: [
@@ -15,14 +15,15 @@ module.exports = {
 		"plugin:unicorn/recommended",
 		"prettier",
 		"plugin:import/recommended",
-		"hardcore",
+		require("path").resolve(__dirname, "./_hardcore-with-excludes.js"),
 		"hardcore/fp",
 		"hardcore/ts-for-js",
+		"plugin:jsonc/all",
+		"plugin:jsonc/prettier",
 	],
 
 	ignorePatterns: [
 		"!**",
-		"!*",
 		"node_modules",
 		".git",
 		"plugin_packages",
@@ -34,62 +35,106 @@ module.exports = {
 		".nvm",
 		".eslintcache",
 		".node_repl_history",
+		"npm-shrinkwrap.json",
+		"package-lock.json",
 	],
 
 	overrides: [
-		{
-			extends: ["plugin:@redguy12/cli"],
-			files: ["bin/**.js", "bin/*.js", ".github/**.js", ".github/*.js"],
-		},
-		{
-			extends: ["plugin:@redguy12/esm"],
-			files: ["**.mjs", "*.mjs"],
-		},
+		{ extends: ["plugin:@redguy12/cli"], files: ["bin/**.js", ".github/**.js"] },
+		{ extends: ["plugin:@redguy12/esm"], files: ["**.mjs"] },
 		{
 			extends: ["plugin:@redguy12/config"],
 
 			files: [
 				"**.config.js",
-				"*.config.js",
 				"**rc.js",
-				"*rc.js",
 				"**.config.mjs",
-				"*.config.mjs",
 				"**rc.mjs",
-				"*rc.mjs",
 				"**.config.cjs",
-				"*.config.cjs",
 				"**rc.cjs",
-				"*rc.cjs",
+				"**.json",
 			],
 		},
 		{
 			extends: ["plugin:@redguy12/sample"],
-			files: ["**.md", "*.md"],
+			files: ["**.md"],
 			processor: "markdown/markdown",
 		},
 		{
 			extends: ["plugin:@redguy12/browser"],
-			files: ["**.html", "*.html", "**.htm", "*.htm", "**.md/*.html", "*.md/*.html","**.vue", "*.vue", "**.md/*.vue", "*.md/*.vue"],
+			files: ["**.html", "**.htm", "**.vue"],
 			rules: { "putout/putout": 0 },
 		},
 		{
-			files: ["*.vue", "**.vue"],
-			extends: [
-				"plugin:@redguy12/vue",
-			]
+			files: ["**.html", "**.htm"],
+			plugins: ["html"],
+
+			rules: { "@redguy12/html-file-comment": 2 },
+		},
+		{ extends: ["plugin:@redguy12/sample"], files: ["**.md/**"] },
+		{
+			files: ["**.md/**", "**.json"],
+
+			// Type information can't be obtained: see https://github.com/eslint/eslint-plugin-markdown/pull/155#issuecomment-671620312
+			// So these rules must unfortunately be disabled.
+			rules: {
+				"@typescript-eslint/await-thenable": 0,
+				"@typescript-eslint/consistent-type-exports": 0,
+				"@typescript-eslint/dot-notation": 0,
+				"@typescript-eslint/no-base-to-string": 0,
+				"@typescript-eslint/no-confusing-void-expression": 0,
+				"@typescript-eslint/no-floating-promises": 0,
+				"@typescript-eslint/no-for-in-array": 0,
+				"@typescript-eslint/no-implied-eval": 0,
+				"@typescript-eslint/no-meaningless-void-operator": 0,
+				"@typescript-eslint/no-misused-promises": 0,
+				"@typescript-eslint/no-throw-literal": 0,
+				"@typescript-eslint/no-unnecessary-boolean-literal-compare": 0,
+				"@typescript-eslint/no-unnecessary-condition": 0,
+				"@typescript-eslint/no-unnecessary-qualifier": 0,
+				"@typescript-eslint/no-unnecessary-type-arguments": 0,
+				"@typescript-eslint/no-unnecessary-type-assertion": 0,
+				"@typescript-eslint/no-unsafe-argument": 0,
+				"@typescript-eslint/no-unsafe-assignment": 0,
+				"@typescript-eslint/no-unsafe-call": 0,
+				"@typescript-eslint/no-unsafe-member-access": 0,
+				"@typescript-eslint/no-unsafe-return": 0,
+				"@typescript-eslint/non-nullable-type-assertion-style": 0,
+				"@typescript-eslint/prefer-includes": 0,
+				"@typescript-eslint/prefer-nullish-coalescing": 0,
+				"@typescript-eslint/prefer-readonly": 0,
+				"@typescript-eslint/prefer-readonly-parameter-types": 0,
+				"@typescript-eslint/prefer-reduce-type-parameter": 0,
+				"@typescript-eslint/prefer-regexp-exec": 0,
+				"@typescript-eslint/prefer-return-this-type": 0,
+				"@typescript-eslint/prefer-string-starts-ends-with": 0,
+				"@typescript-eslint/promise-function-async": 0,
+				"@typescript-eslint/require-array-sort-compare": 0,
+				"@typescript-eslint/require-await": 0,
+				"@typescript-eslint/restrict-plus-operands": 0,
+				"@typescript-eslint/restrict-template-expressions": 0,
+				"@typescript-eslint/return-await": 0,
+				"@typescript-eslint/strict-boolean-expressions": 0,
+				"@typescript-eslint/switch-exhaustiveness-check": 0,
+				"@typescript-eslint/unbound-method": 0,
+			},
 		},
 		{
-			extends: ["plugin:@redguy12/sample"],
-			files: ["**.md/*", "*.md/*"],
+			files: ["**.json"],
+			parser: "jsonc-eslint-parser",
+
+			rules: {
+				"jsdoc/require-file-overview": 0,
+				"jsonc/key-name-casing": 0,
+				"strict": 0,
+			},
 		},
 		{
-			files: ["**.json", "*.json"],
-			rules: { "jsdoc/require-file-overview": 0 },
-			extends: ["plugin:json/recommended"],
+			files: ["package.json"],
+			rules: { "jsonc/sort-keys": 0 },
 		},
 		{
-			files: [".github/**.js", ".github/*.js"],
+			files: [".github/**.js"],
 
 			rules: {
 				"import/no-extraneous-dependencies": [
@@ -105,17 +150,15 @@ module.exports = {
 		},
 	],
 
-	parserOptions: {
-		ecmaVersion: 6,
-		sourceType: "script",
-	},
-
-	plugins: ["html", "jsdoc", "regexp", "@redguy12"],
+	parserOptions: { ecmaVersion: 6, sourceType: "script" },
+	plugins: ["jsdoc", "regexp", "@redguy12"],
 	reportUnusedDisableDirectives: true,
 	root: true,
 
 	rules: {
 		"@html-eslint/require-doctype": 0,
+		"@redguy12/file-comment-before-use-strict": 2,
+		"@typescript-eslint/naming-convention": 0,
 		"arrow-body-style": 2,
 		"camelcase": 0,
 		"capitalized-comments": 2,
@@ -127,41 +170,57 @@ module.exports = {
 		"default-case": 0,
 		"dot-location": [2, "property"],
 		"eslint-comments/require-description": 2,
+		"etc/no-commented-out-code": 0,
 		"fp/no-let": 0,
 		"fp/no-loops": 0,
 		"fp/no-mutating-methods": 0,
 		"fp/no-mutation": 0,
-		"line-comment-position": 0,
 		"fp/no-this": 0,
 		"fp/no-throw": 2,
 		"func-style": [2, "declaration", { allowArrowFunctions: true }],
 		"function-call-argument-newline": [2, "consistent"],
 		"function-paren-newline": 0,
-		"id-length": [2, { exceptions: ["_"], max: 20, min: 3 }],
+
+		"id-length": [
+			2,
+			{
+				exceptions: ["_"],
+				max: 20,
+				min: 3,
+			},
+		],
 
 		"id-match": [
 			2,
 			/^_?(?:[A-Za-z]+|(?:[A-Z]+_){1,2}|(?:_(?:dirname|filename))?)$/.source,
-			{ ignoreDestructuring: false, onlyDeclarations: false, properties: true },
+			{
+				ignoreDestructuring: false,
+				onlyDeclarations: false,
+				properties: true,
+			},
 		],
 
 		"import/extensions": [2, "ignorePackages", { ts: "never", tsx: "never" }],
-		"etc/no-commented-out-code": 0,
 		"import/first": 2,
 		"import/group-exports": 0,
 		"import/max-dependencies": 0,
 		"import/newline-after-import": 2,
 		"import/no-absolute-path": 2,
 		"import/no-amd": 2,
-		"import/no-anonymous-default-export": [2, {
-			"allowArray": false,
-			"allowArrowFunction": false,
-			"allowAnonymousClass": false,
-			"allowAnonymousFunction": false,
-			"allowCallExpression": true,
-			"allowLiteral": true,
-			"allowObject": false
-		  }],
+
+		"import/no-anonymous-default-export": [
+			2,
+			{
+				allowAnonymousClass: false,
+				allowAnonymousFunction: false,
+				allowArray: false,
+				allowArrowFunction: false,
+				allowCallExpression: true,
+				allowLiteral: true,
+				allowObject: false,
+			},
+		],
+
 		"import/no-commonjs": 0,
 		"import/no-cycle": 2,
 		"import/no-dynamic-require": 0,
@@ -197,7 +256,8 @@ module.exports = {
 		"jsdoc/check-alignment": 2,
 
 		"jsdoc/check-examples": [
-			0, // todo: enable after https://github.com/eslint/eslint/issues/14745
+			0,
+			// Todo: enable after https://github.com/eslint/eslint/issues/14745. See https://github.com/gajus/eslint-plugin-jsdoc/pull/792#issuecomment-939587814
 			{
 				captionRequired: true,
 				matchingFileName: "dummy.md/*.js",
@@ -242,7 +302,7 @@ module.exports = {
 		"jsdoc/require-throws": 2,
 		"jsdoc/require-yields": 2,
 		"jsdoc/require-yields-check": 2,
-		"json/*": 0,
+		"line-comment-position": 0,
 		"linebreak-style": 0,
 		"lines-around-comment": 0,
 		"max-depth": [1, { max: 5 }],
@@ -260,18 +320,39 @@ module.exports = {
 			},
 		],
 
-		"max-lines": [1, { max: 500, skipBlankLines: true, skipComments: true }],
+		"max-lines": [
+			1,
+			{
+				max: 500,
+				skipBlankLines: true,
+				skipComments: true,
+			},
+		],
 
 		"max-lines-per-function": [
 			1,
-			{ IIFEs: true, max: 100, skipBlankLines: true, skipComments: true },
+			{
+				IIFEs: true,
+				max: 100,
+				skipBlankLines: true,
+				skipComments: true,
+			},
 		],
 
 		"max-params": [1, { max: 5 }],
 		"max-statements": 0,
 		"multiline-comment-style": [2, "separate-lines"],
 		"multiline-ternary": [2, "always-multiline"],
-		"new-cap": [2, { capIsNew: true, newIsCap: true, properties: true }],
+
+		"new-cap": [
+			2,
+			{
+				capIsNew: true,
+				newIsCap: true,
+				properties: true,
+			},
+		],
+
 		"no-confusing-arrow": 0,
 		"no-console": 1,
 		"no-continue": 0,
@@ -297,36 +378,45 @@ module.exports = {
 		"no-undef": [2, { typeof: true }],
 		"no-undefined": 0,
 		"no-underscore-dangle": [2, { enforceInMethodNames: true }],
-		"no-unused-vars": [2, { args: "all", argsIgnorePattern: "_", caughtErrors: "all" }],
+
+		"no-unused-vars": [
+			2,
+			{
+				args: "all",
+				argsIgnorePattern: "_",
+				caughtErrors: "all",
+			},
+		],
+
 		"no-useless-escape": 0,
 		"no-warning-comments": [1, { location: "anywhere" }],
+
+		"object-curly-newline": [
+			2,
+			{
+				ExportDeclaration: "never",
+				ImportDeclaration: "never",
+				ObjectExpression: { minProperties: 3, multiline: true },
+				ObjectPattern: "never",
+			},
+		],
+
 		"object-curly-spacing": [2, "always"],
 		"one-var": 0,
 		"padded-blocks": [2, "never"],
 		"prefer-arrow-callback": 2,
-		"unicorn/prefer-code-point": 2,
 
 		"prefer-destructuring": [
 			2,
 			{
-				AssignmentExpression: {
-					array: true,
-					object: true,
-				},
-
-				VariableDeclarator: {
-					array: true,
-					object: true,
-				},
+				AssignmentExpression: { array: true, object: true },
+				VariableDeclarator: { array: true, object: true },
 			},
-			{
-				enforceForRenamedProperties: false,
-			},
+			{ enforceForRenamedProperties: false },
 		],
 
-		"unicorn/prefer-export-from": 0,
-		"@typescript-eslint/naming-convention": 0,
 		"prettier/prettier": 0,
+		"promise/avoid-new": 0,
 		"promise/no-callback-in-promise": 0,
 		"promise/no-nesting": 0,
 		"promise/prefer-await-to-then": 0,
@@ -390,7 +480,11 @@ module.exports = {
 
 		"space-before-function-paren": [
 			2,
-			{ anonymous: "always", asyncArrow: "always", named: "never" },
+			{
+				anonymous: "always",
+				asyncArrow: "always",
+				named: "never",
+			},
 		],
 
 		"strict": [2, "global"],
@@ -405,13 +499,14 @@ module.exports = {
 		"unicorn/no-array-for-each": 2,
 		"unicorn/no-array-reduce": 0,
 		"unicorn/no-await-expression-member": 0,
-		"promise/avoid-new": 0,
 		"unicorn/no-empty-file": 2,
 		"unicorn/no-keyword-prefix": 2,
 		"unicorn/no-unsafe-regex": 0,
 		"unicorn/no-unused-properties": 2,
 		"unicorn/no-useless-undefined": 2,
 		"unicorn/numeric-separators-style": [2, { onlyIfContainsSeparator: true }],
+		"unicorn/prefer-code-point": 2,
+		"unicorn/prefer-export-from": 0,
 		"unicorn/prefer-module": 0,
 		"unicorn/prefer-node-protocol": 0,
 		"unicorn/prefer-object-has-own": 0,
@@ -429,10 +524,7 @@ module.exports = {
 				checkShorthandProperties: true,
 
 				replacements: {
-					cmd: {
-						command: true,
-					},
-
+					cmd: { command: true },
 					i18n: { internationalization: true },
 					l10n: { localization: true },
 					lang: { language: true },
@@ -449,10 +541,7 @@ module.exports = {
 	},
 
 	settings: {
-		html: {
-			"xml-extensions": [".svg",
-			".vue"]
-		},
+		html: { "xml-extensions": [".svg", ".vue"] },
 
 		jsdoc: {
 			augmentsExtendsReplacesDocs: true,
@@ -462,3 +551,5 @@ module.exports = {
 		},
 	},
 };
+
+module.exports = config;

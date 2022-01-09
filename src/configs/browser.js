@@ -1,14 +1,18 @@
+/** @file Browser-specific Rules. */
 "use strict";
 
-/** @file Browser-specific Rules. */
+/** @type {import("eslint").Linter.Config} */
+const config = {
+	env: {
+		browser: true,
+		es2020: false,
+		es6: false,
+		node: false,
+	},
 
-module.exports = {
-	env: { browser: true, es2020: false, es6: false, node: false },
 	parserOptions: { ecmaVersion: 3 },
 
 	rules: {
-		"@html-eslint/id-naming-convention": [2, "kebab-case"],
-		"@html-eslint/require-meta-charset": 2,
 		"comma-dangle": 0,
 		"jsdoc/require-file-overview": 0,
 		"no-console": 2,
@@ -78,3 +82,5 @@ module.exports = {
 		"prettier/prettier": 0,
 	},
 };
+
+module.exports = config;
