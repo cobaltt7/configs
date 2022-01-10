@@ -12,7 +12,6 @@ const config = {
 		"plugin:markdown/recommended",
 		"plugin:promise/recommended",
 		"plugin:unicorn/all",
-		"plugin:unicorn/recommended",
 		"prettier",
 		"plugin:import/recommended",
 		require("path").resolve(__dirname, "./_hardcore-with-excludes.js"),
@@ -541,7 +540,7 @@ const config = {
 	},
 
 	settings: {
-		html: { "xml-extensions": [".svg", ".vue"] },
+		html: { "xml-extensions": [".svg"] },
 
 		jsdoc: {
 			augmentsExtendsReplacesDocs: true,
