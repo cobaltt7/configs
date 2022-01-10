@@ -14,6 +14,7 @@ const config = {
 	parserOptions: { ecmaVersion: 12 },
 
 	rules: {
+		"@redguy12/html-file-comment":0,
 		"import/no-extraneous-dependencies": [2, { devDependencies: false }],
 		"import/no-unresolved": 0,
 		"import/unambiguous": 0,

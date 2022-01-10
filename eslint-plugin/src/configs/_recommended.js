@@ -68,7 +68,6 @@ const config = {
 		{
 			files: ["**.html", "**.htm"],
 			plugins: ["html"],
-
 			rules: { "@redguy12/html-file-comment": 2 },
 		},
 		{ extends: ["plugin:@redguy12/sample"], files: ["**.md/**"] },
@@ -171,12 +170,12 @@ const config = {
 		"dot-location": [2, "property"],
 		"eslint-comments/require-description": 2,
 		"etc/no-commented-out-code": 0,
-		"fp/no-let": 0,
+		"fp/no-class": 0,
 		"fp/no-loops": 0,
 		"fp/no-mutating-methods": 0,
 		"fp/no-mutation": 0,
 		"fp/no-this": 0,
-		"fp/no-throw": 2,
+		"fp/no-throw": 1,
 		"func-style": [2, "declaration", { allowArrowFunctions: true }],
 		"function-call-argument-newline": [2, "consistent"],
 		"function-paren-newline": 0,
@@ -192,7 +191,7 @@ const config = {
 
 		"id-match": [
 			2,
-			/^_?(?:[A-Za-z]+|(?:[A-Z]+_){1,2}|(?:_(?:dirname|filename))?)$/.source,
+			/^_?(?:(?:[A-Z]+_){0,3}[A-Z]+|[A-Z]?[a-z]+(?:[A-Z][a-z]+){0,3}|_(?:dirname|filename))?$/.source,
 			{
 				ignoreDestructuring: false,
 				onlyDeclarations: false,
@@ -241,7 +240,7 @@ const config = {
 		"import/no-namespace": 0,
 		"import/no-relative-parent-imports": 0,
 		"import/no-self-import": 2,
-		"import/no-unassigned-import": [2, { allow: ["isomorphic-fetch", "**.css"] }],
+		"import/no-unassigned-import": [2, { allow: ["**/*.css"] }],
 		"import/no-unresolved": 0,
 		"import/no-unused-modules": 0,
 		"import/no-useless-path-segments": 2,
@@ -541,7 +540,7 @@ const config = {
 	},
 
 	settings: {
-		html: { "xml-extensions": [".svg", ".vue"] },
+		html: { "xml-extensions": [".svg"] },
 
 		jsdoc: {
 			augmentsExtendsReplacesDocs: true,

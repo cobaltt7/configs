@@ -3,11 +3,13 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: ["plugin:@redguy12/typescript", "plugin:vue/recommended", "plugin:@redguy12/browser"],
+	extends: [ "plugin:@redguy12/browser", "plugin:@redguy12/typescript", "plugin:vue/recommended"],
 	overrides: [{ files: ["src/views/**.vue"], rules: { "vue/multi-word-component-names": 0 } }],
 	parser: "vue-eslint-parser",
 
 	parserOptions: {
+		ecmaFeatures: { jsx: true },
+		extraFileExtensions: [".vue"],
 		parser: "@typescript-eslint/parser",
 		sourceType: "module",
 		vueFeatures: { filter: true, interpolationAsNonHTML: false },
@@ -16,6 +18,8 @@ const config = {
 	rules: {
 		"@redguy12/html-file-comment": 2,
 		"eol-last": 0,
+		"import/extensions": [2, "never", {vue: "always"}],
+		"import/no-unassigned-import":0,
 		"import/no-unused-modules": 0,
 		"jsdoc/require-file-overview": 0,
 		"linebreak-style": 0,
@@ -26,7 +30,10 @@ const config = {
 		"vue/array-bracket-newline": 2,
 		"vue/array-bracket-spacing": 2,
 		"vue/arrow-spacing": 2,
-		"vue/block-lang": 2,
+
+		"vue/block-lang": [2,
+			{ script: { lang: "ts" } }],
+
 		"vue/block-spacing": 2,
 		"vue/block-tag-newline": 2,
 		"vue/brace-style": 2,
@@ -42,12 +49,27 @@ const config = {
 		"vue/eqeqeq": 2,
 		"vue/func-call-spacing": 2,
 		"vue/html-button-has-type": 2,
+		"vue/html-closing-bracket-newline": 0,
 		"vue/html-comment-content-newline": 2,
 		"vue/html-comment-content-spacing": 2,
 		"vue/html-comment-indent": 2,
+		"vue/html-indent": 0,
+
+		"vue/html-self-closing": ["error", {
+			html: {
+			  void: "always",
+			  normal: "always",
+			  component: "always",
+			},
+
+			svg: "always",
+			math: "always",
+		  }],
+
 		"vue/key-spacing": 2,
 		"vue/keyword-spacing": 2,
 		"vue/match-component-file-name": 2,
+		"vue/max-attributes-per-line":0,
 
 		"vue/max-len": [
 			1,
@@ -62,9 +84,8 @@ const config = {
 			},
 		],
 
-		"vue/new-line-between-multi-line-property": 2,
+		"vue/new-line-between-multi-line-property": 0,
 		"vue/next-tick-style": 2,
-		"vue/no-bare-strings-in-template": 2,
 		"vue/no-boolean-default": 2,
 		"vue/no-child-content": 2,
 		"vue/no-constant-condition": 2,
@@ -88,11 +109,9 @@ const config = {
 		"vue/no-restricted-syntax": 2,
 		"vue/no-restricted-v-bind": 2,
 		"vue/no-sparse-arrays": 2,
-		"vue/no-static-inline-styles": 2,
 		"vue/no-template-target-blank": 2,
 		"vue/no-this-in-before-route-enter": 2,
 		"vue/no-undef-properties": 2,
-		"vue/no-unregistered-components": 2,
 		"vue/no-unsupported-features": 2,
 		"vue/no-unused-properties": 2,
 		"vue/no-unused-refs": 2,
@@ -118,11 +137,11 @@ const config = {
 		"vue/padding-line-between-blocks": 2,
 		"vue/prefer-separate-static-class": 2,
 		"vue/prefer-template": 2,
-		"vue/require-direct-export": 2,
 		"vue/require-emit-validator": 2,
 		"vue/require-expose": 2,
 		"vue/require-name-property": 2,
-		"vue/script-indent": 2,
+		"vue/script-indent": 0,
+		"vue/singleline-html-element-content-newline":0,
 		"vue/sort-keys": 2,
 		"vue/space-in-parens": 2,
 		"vue/space-infix-ops": 2,

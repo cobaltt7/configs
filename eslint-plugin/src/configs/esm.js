@@ -9,7 +9,7 @@ const config = {
 	rules: {
 		"id-match": [
 			2,
-			/^_?(?:[A-Za-z]+|(?:[A-Z]+_){1,2})$/.source,
+			/^_?(?:(?:[A-Z]+_){0,3}[A-Z]+|[A-Z]?[a-z]+(?:[A-Z][a-z]+){0,3})?$/.source,
 			{
 				ignoreDestructuring: false,
 				onlyDeclarations: false,
