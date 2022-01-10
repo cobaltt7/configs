@@ -16,7 +16,7 @@ const config = {
 	},
 
 	rules: {
-		// "@redguy12/html-file-comment": 2,
+		"@redguy12/html-file-comment": 2,
 		"eol-last": 0,
 		"import/extensions": [2, "never", {vue: "always"}],
 		"import/no-unassigned-import":0,
