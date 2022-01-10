@@ -5,6 +5,8 @@
 const config = {
 	extends: ["plugin:@redguy12/esm", "hardcore/ts"],
 
+globals: { NodeJS:"readonly" },
+
 	overrides: [
 		{
 			files: ["!**.md/*"],
@@ -38,7 +40,6 @@ const config = {
 		"@typescript-eslint/member-ordering": 2,
 		"@typescript-eslint/method-signature-style": 2,
 		"@typescript-eslint/naming-convention": 0,
-		"@typescript-eslint/no-base-to-string": 2,
 		"@typescript-eslint/no-confusing-non-null-assertion": 2,
 		"@typescript-eslint/no-confusing-void-expression": 2,
 		"@typescript-eslint/no-dupe-class-members": 2,
@@ -85,6 +86,7 @@ const config = {
 		"@typescript-eslint/promise-function-async": 2,
 		"@typescript-eslint/quotes": [2, "double", { avoidEscape: true }],
 		"@typescript-eslint/require-array-sort-compare": 2,
+		"@typescript-eslint/restrict-template-expressions": 0,
 		"@typescript-eslint/return-await": 2,
 		"@typescript-eslint/semi": 2,
 		"@typescript-eslint/sort-type-union-intersection-members": 2,
@@ -103,9 +105,11 @@ const config = {
 		"@typescript-eslint/switch-exhaustiveness-check": 2,
 		"@typescript-eslint/type-annotation-spacing": 2,
 		"@typescript-eslint/typedef": 2,
+		"@typescript-eslint/unbound-method": 0,
 		"@typescript-eslint/unified-signatures": 2,
 		"etc/prefer-interface": 0,
 		"jsdoc/require-jsdoc": 0,
+		"new-cap":0, // It doesn't support decorators
 		"no-duplicate-imports": 0,
 		"no-tabs": 0,
 	},

@@ -21,16 +21,10 @@ const rule = {
 		}
 
 		const file = readFileSync(context.getPhysicalFilename(), "utf8");
-		const match = /^<!--\s@file .+\s-->/su.exec(file)?.[0];
+		const match = /^<!--\s@file .+?\s-->/su.exec(file)?.[0];
 
 		if (!match) {
 			report("Expected file to start with a @file comment.");
-
-			return {};
-		}
-
-		if ((match.match(/-->/g)?.length || 0) <= 1) {
-			report("Expected file to start with a single comment.");
 
 			return {};
 		}
@@ -39,6 +33,7 @@ const rule = {
 			report(
 				"Expected a single blank line between the @file comment and the opening <template> tag at start of file.",
 			);
+			// Todo: autofix
 
 			return {};
 		}
