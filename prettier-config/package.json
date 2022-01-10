@@ -1,0 +1,34 @@
+{
+	"private": false,
+	"author": "Paul Reid",
+	"bugs": {
+		"email": "paul@reid-family.org",
+		"url": "https://github.com/redguy12/configs/issues"
+	},
+	"description": "My Prettier Config",
+	"dependencies": {
+		"prettier": "2.5.1",
+		"prettier-plugin-ini": "0.3.1",
+		"prettier-plugin-jsdoc": "0.3.24"
+	},
+	"homepage": "https://github.com/redguy12/configs/tree/main/prettier-config#readme",
+	"keywords": [
+		"prettier",
+		"prettier-plugin",
+		"prettier-config"
+	],
+	"license": "MIT",
+	"main": "index.js",
+	"name": "@redguy12/prettier-config",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RedGuy12/eslint-plugin.git"
+	},
+	"scripts": {
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"@types/prettier": "^2.4.2"
+	}
+}

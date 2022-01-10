@@ -1,7 +1,7 @@
 /** @file ESLint Plugin configuration file. */
 "use strict";
 
-/** @type {import("../node_modules/eslint/lib/shared/types").Plugin} */
+/** @type {import("../types").Plugin} */
 const plugin = {
 	configs: {
 		browser: require("./configs/browser.js"),

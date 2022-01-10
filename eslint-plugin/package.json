@@ -3,7 +3,7 @@
 	"author": "Paul Reid",
 	"bugs": {
 		"email": "paul@reid-family.org",
-		"url": "https://github.com/redguy12/eslint-plugin/issues"
+		"url": "https://github.com/redguy12/configs/issues"
 	},
 	"description": "My ESLint Style Guide",
 	"devDependencies": {
@@ -38,7 +38,7 @@
 	"dependencies": {
 		"eslint-disable": "^1.0.2"
 	},
-	"homepage": "https://github.com/redguy12/eslint-plugin#readme",
+	"homepage": "https://github.com/redguy12/configs/tree/main/eslint-plugin#readme",
 	"keywords": [
 		"eslint",
 		"eslint-plugin",
@@ -70,111 +70,7 @@
 		"eslint-plugin-sonarjs": "0.11.0",
 		"eslint-plugin-sort-class-members": "1.14.1",
 		"eslint-plugin-unicorn": "39.0.0",
-		"eslint-plugin-vue": "8.2.0",
-		"prettier": "2.5.1",
-		"prettier-plugin-ini": "0.3.1",
-		"prettier-plugin-jsdoc": "0.3.24"
-	},
-	"prettier": {
-		"bracketSameLine": false,
-		"iniSpaceAroundEquals": true,
-		"jsdocAddDefaultToDescription": true,
-		"jsdocDescriptionWithDot": true,
-		"jsdocPrintWidth": 100,
-		"jsdocSeparateReturnsFromParam": true,
-		"jsdocSeparateTagGroups": true,
-		"overrides": [
-			{
-				"files": [
-					"**.md"
-				],
-				"options": {
-					"parser": "markdown",
-					"proseWrap": "never",
-					"trailingComma": "es5"
-				}
-			},
-			{
-				"files": [
-					"**.svg",
-					"**.html",
-					"**.xml"
-				],
-				"options": {
-					"bracketSameLine": true,
-					"parser": "html",
-					"trailingComma": "none"
-				}
-			},
-			{
-				"files": [
-					"**.sass",
-					"**.scss",
-					"**.css"
-				],
-				"options": {
-					"parser": "scss"
-				}
-			},
-			{
-				"files": [
-					"**.env",
-					"**.replit",
-					"**/.tx/config"
-				],
-				"options": {
-					"parser": "ini"
-				}
-			},
-			{
-				"files": [
-					"**.json",
-					"**.map"
-				],
-				"options": {
-					"parser": "json"
-				}
-			},
-			{
-				"files": [
-					"package.json",
-					"package-lock.json",
-					"npm-shrinkwrap.json"
-				],
-				"options": {
-					"parser": "json-stringify"
-				}
-			},
-			{
-				"files": [
-					"**.code-workspace",
-					".code-snippets",
-					"**/settings.json",
-					"**/launch.json",
-					"**/extensions.json",
-					"**.jsonc",
-					"**.eslintrc",
-					"**.eslintrc.json",
-					"jsconfig.json"
-				],
-				"options": {
-					"parser": "json5",
-					"quoteProps": "preserve",
-					"trailingComma": "none"
-				}
-			}
-		],
-		"plugins": [
-			"prettier-plugin-jsdoc",
-			"prettier-plugin-ini"
-		],
-		"printWidth": 100,
-		"proseWrap": "always",
-		"quoteProps": "consistent",
-		"tabWidth": 4,
-		"trailingComma": "all",
-		"useTabs": true,
-		"vueIndentScriptAndStyle": true
+		"eslint-plugin-vue": "8.2.0"
 	},
 	"version": "3.0.0",
 	"repository": {
@@ -182,6 +78,7 @@
 		"url": "git+https://github.com/RedGuy12/eslint-plugin.git"
 	},
 	"scripts": {
-		"lint": "prettier --write ."
+		"format": "prettier --write .",
+		"postinstall":"cp ./node_modules/eslint/lib/shared/types.js ./eslint-types.js"
 	}
 }
