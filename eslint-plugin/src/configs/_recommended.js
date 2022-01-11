@@ -40,7 +40,10 @@ const config = {
 	],
 
 	overrides: [
-		{ extends: ["plugin:@redguy12/cli"], files: ["bin/**.js", ".github/**.js"] },
+		{
+			extends: ["plugin:@redguy12/cli"],
+			files: ["bin/**.js", ".github/**.js"],
+		},
 		{ extends: ["plugin:@redguy12/esm"], files: ["**.mjs"] },
 		{
 			extends: ["plugin:@redguy12/config"],
@@ -191,7 +194,8 @@ const config = {
 
 		"id-match": [
 			2,
-			/^_?(?:(?:[A-Z]+_){0,3}[A-Z]+|[A-Z]?[a-z]+(?:[A-Z][a-z]+){0,3}|_(?:dirname|filename))?$/.source,
+			/^_?(?:(?:[A-Z]+_){0,3}[A-Z]+|[A-Z]?[a-z]+(?:[A-Z][a-z]+){0,3}|_(?:dirname|filename))?$/
+				.source,
 			{
 				ignoreDestructuring: false,
 				onlyDeclarations: false,
@@ -367,7 +371,10 @@ const config = {
 
 		"no-param-reassign": [
 			2,
-			{ ignorePropertyModificationsFor: ["request", "response"], props: true },
+			{
+				ignorePropertyModificationsFor: ["request", "response"],
+				props: true,
+			},
 		],
 
 		"no-plusplus": 0,

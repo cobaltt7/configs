@@ -3,8 +3,15 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: [ "plugin:@redguy12/browser", "plugin:@redguy12/typescript", "plugin:vue/recommended"],
-	overrides: [{ files: ["src/views/**.vue"], rules: { "vue/multi-word-component-names": 0 } }],
+	extends: ["plugin:@redguy12/browser", "plugin:@redguy12/typescript", "plugin:vue/recommended"],
+
+	overrides: [
+		{
+			files: ["src/views/**.vue"],
+			rules: { "vue/multi-word-component-names": 0 },
+		},
+	],
+
 	parser: "vue-eslint-parser",
 
 	parserOptions: {
@@ -18,8 +25,8 @@ const config = {
 	rules: {
 		"@redguy12/html-file-comment": 2,
 		"eol-last": 0,
-		"import/extensions": [2, "never", {vue: "always"}],
-		"import/no-unassigned-import":0,
+		"import/extensions": [2, "never", { vue: "always" }],
+		"import/no-unassigned-import": 0,
 		"import/no-unused-modules": 0,
 		"jsdoc/require-file-overview": 0,
 		"linebreak-style": 0,
@@ -31,8 +38,7 @@ const config = {
 		"vue/array-bracket-spacing": 2,
 		"vue/arrow-spacing": 2,
 
-		"vue/block-lang": [2,
-			{ script: { lang: "ts" } }],
+		"vue/block-lang": [2, { script: { lang: "ts" } }],
 
 		"vue/block-spacing": 2,
 		"vue/block-tag-newline": 2,
@@ -55,21 +61,24 @@ const config = {
 		"vue/html-comment-indent": 2,
 		"vue/html-indent": 0,
 
-		"vue/html-self-closing": ["error", {
-			html: {
-			  void: "always",
-			  normal: "always",
-			  component: "always",
-			},
+		"vue/html-self-closing": [
+			"error",
+			{
+				html: {
+					component: "always",
+					normal: "always",
+					void: "always",
+				},
 
-			svg: "always",
-			math: "always",
-		  }],
+				svg: "always",
+				math: "always",
+			},
+		],
 
 		"vue/key-spacing": 2,
 		"vue/keyword-spacing": 2,
 		"vue/match-component-file-name": 2,
-		"vue/max-attributes-per-line":0,
+		"vue/max-attributes-per-line": 0,
 
 		"vue/max-len": [
 			1,
@@ -141,7 +150,7 @@ const config = {
 		"vue/require-expose": 2,
 		"vue/require-name-property": 2,
 		"vue/script-indent": 0,
-		"vue/singleline-html-element-content-newline":0,
+		"vue/singleline-html-element-content-newline": 0,
 		"vue/sort-keys": 2,
 		"vue/space-in-parens": 2,
 		"vue/space-infix-ops": 2,

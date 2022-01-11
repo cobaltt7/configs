@@ -4,6 +4,8 @@ My ESLint Style Guide
 
 ## Adding To A Project
 
+0.  Note: this project is meant to be used alongside `@redguy12/prettier-config` so install that first.
+
 1.  Install the plugin by running:
 
     ```bash

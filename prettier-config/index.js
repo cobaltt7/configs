@@ -71,6 +71,9 @@ const config = {
 			},
 		},
 	],
-	plugins: [require.resolve("prettier-plugin-jsdoc"), require.resolve("prettier-plugin-ini")],
+	plugins: [
+		require.resolve("prettier-plugin-jsdoc"),
+		require.resolve("prettier-plugin-ini"),
+	],
 };
 module.exports = config;

@@ -2,54 +2,60 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v3.0.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/3.0.0) (2022-01-10) - **Latest**
+## [v3.0.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/3.0.1) (2022-01-10) - **Latest**
+
+-   Remove broken postinstall script.
+-   Add a note about @redguy12/prettier-config to the README.md and add it as a peerDependency.
+-   Lint.
+
+## [v3.0.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/3.0.0) (2022-01-10)
 
 ### Core
 
-- Transition from `@onedotprojects/eslint-plugin` to `@redguy12/eslint-plugin`.
-- Require ESLint 8.
-- Remove `@babel/eslint-parser`.
-- Typecheck and lint the config.
-- Rewrite the README.md.
-- Fix typos in changelog.
-- Add Typescript and Vue configurations.
-- Simplify globbing patterns used.
+-   Transition from `@onedotprojects/eslint-plugin` to `@redguy12/eslint-plugin`.
+-   Require ESLint 8.
+-   Remove `@babel/eslint-parser`.
+-   Typecheck and lint the config.
+-   Rewrite the README.md.
+-   Fix typos in changelog.
+-   Add Typescript and Vue configurations.
+-   Simplify globbing patterns used.
 
 ### Recomended
 
-- Disable `@html-eslint/eslint-plugin`, `eslint-plugin-compat`, and `eslint-plugin-json` plugins.
-- Disable `etc/no-commented-out-code`, `fp/no-class`, `import/unambiguous`, `jsdoc/check-examples`, `jsdoc/require-description-complete-sentence`, `line-comment-position`, `node/global-require`, `node/no-unsupported-features/es-syntax`, `one-var`, `regexp/require-unicode-regexp`, `unicorn/no-await-expression-member`, and `unicorn/prefer-export-from`.
-- Disable importing isomorphic-fetch without assigning.
+-   Disable `@html-eslint/eslint-plugin`, `eslint-plugin-compat`, and `eslint-plugin-json` plugins.
+-   Disable `etc/no-commented-out-code`, `fp/no-class`, `import/unambiguous`, `jsdoc/check-examples`, `jsdoc/require-description-complete-sentence`, `line-comment-position`, `node/global-require`, `node/no-unsupported-features/es-syntax`, `one-var`, `regexp/require-unicode-regexp`, `unicorn/no-await-expression-member`, and `unicorn/prefer-export-from`.
+-   Disable importing isomorphic-fetch without assigning.
 
-- Require putting `import type ...` last in the imports.
-- Make `fp/no-throw` a warning instead of an error.
-- Make `function-call-argument-newline`, `multiline-comment-style`, `multiline-ternary`, `new-cap`, `unicorn/no-array-for-each`, and `unicorn/no-useless-undefined` errors instead of warnings.
-- Update the regular expression used in the `id-match` rule.
+-   Require putting `import type ...` last in the imports.
+-   Make `fp/no-throw` a warning instead of an error.
+-   Make `function-call-argument-newline`, `multiline-comment-style`, `multiline-ternary`, `new-cap`, `unicorn/no-array-for-each`, and `unicorn/no-useless-undefined` errors instead of warnings.
+-   Update the regular expression used in the `id-match` rule.
 
-- Allow importing CSS files without assigning again.
-- Enable `prefer-destructuring` when assigning variables to items in arrays.
-- Enable `@redguy12/html-file-comment`, `@redguy12/file-comment-before-use-strict`, `fp/no-let`, `import/no-anonymous-default-export`, `no-nested-await`, `object-curly-newline`, `promise/avoid-new`, `unicorn/no-empty-file`, `unicorn/prefer-code-point`, and `unicorn/template-indent`.
-- Enable `hardcore/ts-for-js` config.
-- Add `eslint-plugin-jsonc`.
+-   Allow importing CSS files without assigning again.
+-   Enable `prefer-destructuring` when assigning variables to items in arrays.
+-   Enable `@redguy12/html-file-comment`, `@redguy12/file-comment-before-use-strict`, `fp/no-let`, `import/no-anonymous-default-export`, `no-nested-await`, `object-curly-newline`, `promise/avoid-new`, `unicorn/no-empty-file`, `unicorn/prefer-code-point`, and `unicorn/template-indent`.
+-   Enable `hardcore/ts-for-js` config.
+-   Add `eslint-plugin-jsonc`.
 
 ### Browser
 
-- Make `browser` extend `esm`.
+-   Make `browser` extend `esm`.
 
 ### CLI
 
-- Make `cli` extend `node`.
+-   Make `cli` extend `node`.
 
 ### Config
 
-- Make `config` extend `cli`.
-- Disable `id-match` in configuration files.
-- Enable `import/no-anonymous-default-export` in configuration files.
-- Allow importing peer and developer dependencies in configuration files.
+-   Make `config` extend `cli`.
+-   Disable `id-match` in configuration files.
+-   Enable `import/no-anonymous-default-export` in configuration files.
+-   Allow importing peer and developer dependencies in configuration files.
 
 ### Sample
 
-- Disable `no-labels` and `no-unused-labels` in sample files.
+-   Disable `no-labels` and `no-unused-labels` in sample files.
 
 ## [v2.2.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/2.2.1) (2021-09-08)
 
@@ -100,9 +106,9 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 -   Fix typo
 -   Update matches for Markdown files.
 -   Bump dependencies. Changes needed with the new versions:
-  -   Enable `fp/no-throw` again.
-  -   Explicitly configure `prefer-destructuring` instead of relying on `eslint-plugin-hardcore`'s settings.
-  -   Add `i18n` and `l10n` to `unicorn/prevent-abbreviations`.
+-   Enable `fp/no-throw` again.
+-   Explicitly configure `prefer-destructuring` instead of relying on `eslint-plugin-hardcore`'s settings.
+-   Add `i18n` and `l10n` to `unicorn/prevent-abbreviations`.
 
 ## [2.0.3](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/2.0.4) (2021-08-09)
 
@@ -124,13 +130,13 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 
 -   Make it modular.
 -   Disable rules in sample files:
-  -   `no-undef`
-  -   `jsdoc/require-jsdoc`
-  -   `import/no-unresolved`
-  -   `import/unambiguous`
-  -   `node/no-missing-import`
-  -   `node/no-missing-require`
-  -   `strict`
+-   `no-undef`
+-   `jsdoc/require-jsdoc`
+-   `import/no-unresolved`
+-   `import/unambiguous`
+-   `node/no-missing-import`
+-   `node/no-missing-require`
+-   `strict`
 -   Remove `eslint-plugin-optimize-regex` and disable `unicorn/better-regex` in favor of `eslint-plugin-regexp`.
 -   Fix errors being reported when `devDependencies` are imported in GitHub Actions.
 -   Fix default files in the `esm` configuration.
@@ -201,10 +207,10 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 -   Fix `sourceType: "module"` crashing the plugin.
 -   Don't report errors on `node:` modules (didn't work in v1.1.3).
 -   Disable rules related to imports:
-  -   `node/no-unsupported-features/es-syntax` (it is supported).
-  -   `import/exports-last` (I don't care).
-  -   `import/no-relative-parent-imports` (I don't care).
-  -   `node/file-extension-in-import` (conflicts with `import/extensions`).
+-   `node/no-unsupported-features/es-syntax` (it is supported).
+-   `import/exports-last` (I don't care).
+-   `import/no-relative-parent-imports` (I don't care).
+-   `node/file-extension-in-import` (conflicts with `import/extensions`).
 -   Reorder overrides.
 -   Fix typos in CHANGELOG.md and README.md.
 -   Update .gitignore.
@@ -250,9 +256,9 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 ## [v1.0.3](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/1.0.3) (2021-07-04)
 
 -   Disable rules related to regular expressions:
-  -   `unicorn/escape-case` (conflicts with `regexp/letter-case`).
-  -   `regexp/no-super-linear-backtracking` (I have no idea how I could fix these errors).
-  -   `regexp/no-super-linear-move` (ditto).
+-   `unicorn/escape-case` (conflicts with `regexp/letter-case`).
+-   `regexp/no-super-linear-backtracking` (I have no idea how I could fix these errors).
+-   `regexp/no-super-linear-move` (ditto).
 
 ## [v1.0.2](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/1.0.2) (2021-07-04)
 

@@ -6,14 +6,16 @@ const path = require("path");
 /** @type {import("eslint").Linter.Config} */
 const config = {
 	extends: [
-		path.resolve(__dirname, "./eslint-plugin/src/configs/recommended.js"),
-		path.resolve(__dirname, "./eslint-plugin/src/configs/cli.js"),
+		path.resolve(__dirname, "./src/configs/recommended.js"),
+		path.resolve(__dirname, "./src/configs/cli.js"),
 	],
+
+	ignorePatterns: ["eslint-types.js"],
 
 	overrides: [
 		{
-			extends: [path.resolve(__dirname, "./eslint-plugin/src/configs/config.js")],
-			files: ["src/configs/*.js","prettier-config/*.js"],
+			extends: [path.resolve(__dirname, "./src/configs/config.js")],
+			files: ["src/configs/*.js", "prettier-config/*.js"],
 		},
 		{
 			files: ["!**.md/*"],

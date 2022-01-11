@@ -5,7 +5,7 @@
 const config = {
 	extends: ["plugin:@redguy12/esm", "hardcore/ts"],
 
-globals: { NodeJS:"readonly" },
+	globals: { NodeJS: "readonly" },
 
 	overrides: [
 		{
@@ -109,7 +109,7 @@ globals: { NodeJS:"readonly" },
 		"@typescript-eslint/unified-signatures": 2,
 		"etc/prefer-interface": 0,
 		"jsdoc/require-jsdoc": 0,
-		"new-cap":0, // It doesn't support decorators
+		"new-cap": 0, // It doesn't support decorators
 		"no-duplicate-imports": 0,
 		"no-tabs": 0,
 	},
