@@ -2,11 +2,15 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v3.1.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/3.1.0) (2022-01-12) - **Latest**
+## [v3.1.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/3.1.0) (2022-01-12) - **Latest**
 
-- Use strings instead of arrays where possible internally.
-- Declare `eslint-disable` as a peer dependency instead of a direct dependency.
-- Update `vue` config to Vue v3.
+-   Fix not being able to install.
+
+## [v3.1.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/3.1.0) (2022-01-12)
+
+-   Use strings instead of arrays where possible internally.
+-   Declare `eslint-disable` as a peer dependency instead of a direct dependency.
+-   Update `vue` config to Vue v3.
 
 ## [v3.0.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/3.0.1) (2022-01-10)
 
