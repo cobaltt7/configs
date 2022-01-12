@@ -9,7 +9,7 @@
 	"dependencies": {
 		"prettier": "2.5.1",
 		"prettier-plugin-ini": "0.3.1",
-		"prettier-plugin-jsdoc": "0.3.24"
+		"prettier-plugin-jsdoc": "0.3.30"
 	},
 	"homepage": "https://github.com/redguy12/configs/tree/main/prettier-config#readme",
 	"keywords": [
