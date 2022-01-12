@@ -9,3 +9,5 @@ updates:
       directory: /prettier-config
       schedule:
           interval: daily
+      ignore:
+          - dependency-name: "eslint*"
