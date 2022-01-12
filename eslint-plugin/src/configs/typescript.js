@@ -9,7 +9,7 @@ const config = {
 
 	overrides: [
 		{
-			files: ["!**.md/*"],
+			files: "!**.md/*",
 			parserOptions: { project: "./jsconfig.json" },
 		},
 	],

@@ -14,7 +14,7 @@ const config = {
 	vueIndentScriptAndStyle: true,
 	overrides: [
 		{
-			files: ["**.md"],
+			files: "**.md",
 			options: {
 				trailingComma: "es5",
 				proseWrap: "never",

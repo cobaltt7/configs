@@ -3,11 +3,11 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: ["plugin:@redguy12/browser", "plugin:@redguy12/typescript", "plugin:vue/recommended"],
+	extends: ["plugin:@redguy12/browser", "plugin:@redguy12/typescript","plugin:vue/vue3-recommended"],
 
 	overrides: [
 		{
-			files: ["src/views/**.vue"],
+			files: "src/views/**.vue",
 			rules: { "vue/multi-word-component-names": 0 },
 		},
 	],

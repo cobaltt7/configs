@@ -3,15 +3,15 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: [require("path").resolve(__dirname, "./_recommended.js")],
+	extends: require("path").resolve(__dirname, "./_recommended.js"),
 
 	overrides: [
-		{ extends: ["plugin:@redguy12/typescript"], files: ["**.ts"] },
+		{ extends: "plugin:@redguy12/typescript", files: "**.ts" },
 		{
-			files: ["!**.md/*"],
+			files: "!**.md/*",
 			parserOptions: { project: "./jsconfig.json" },
 		},
-		{ extends: ["plugin:@redguy12/vue"], files: ["**.vue"] },
+		{ extends: "plugin:@redguy12/vue", files: "**.vue" },
 	],
 
 	parserOptions: { extraFileExtensions: [".vue", ".cjs", ".mjs"] },

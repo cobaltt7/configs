@@ -10,7 +10,7 @@ const config = {
 		node: true,
 	},
 
-	extends: ["plugin:markdown/recommended"],
+	extends: "plugin:markdown/recommended",
 	parserOptions: { ecmaVersion: 12 },
 
 	rules: {

@@ -27,11 +27,11 @@ My ESLint Style Guide
 
         /** @type {import("eslint").Linter.Config} */
 
-    const config = { extends: ["plugin:@redguy12/recommended"],
+    const config = { extends: "plugin:@redguy12/recommended",
 
         	overrides: [
         		{
-        			files: ["!**.md/*"],
+        			files: "!**.md/*",
         			parserOptions: { project: "./jsconfig.json" },
         		},
         	],
@@ -45,27 +45,27 @@ My ESLint Style Guide
     ```js
     [
     	{
-    		extends: ["plugin:@redguy12/typescript"],
+    		extends: "plugin:@redguy12/typescript",
     		// TypeScript files
-    		files: ["**.ts"],
+    		files: "**.ts",
     	},
     	{
-    		extends: ["plugin:@redguy12/node"],
+    		extends: "plugin:@redguy12/node",
     		// Node.JS scripts
     		files: [],
     	},
     	{
-    		extends: ["plugin:@redguy12/esm"],
+    		extends: "plugin:@redguy12/esm",
     		// ESM files
-    		files: ["**.mjs"],
+    		files: "**.mjs",
     	},
     	{
-    		extends: ["plugin:@redguy12/cli"],
+    		extends: "plugin:@redguy12/cli",
     		// CLIs (including JS GitHub Actions)
     		files: ["bin/**.js", ".github/**.js"],
     	},
     	{
-    		extends: ["plugin:@redguy12/config"],
+    		extends: "plugin:@redguy12/config",
 
     		// Configuration files
     		files: [
@@ -78,19 +78,19 @@ My ESLint Style Guide
     		],
     	},
     	{
-    		extends: ["plugin:@redguy12/browser"],
+    		extends: "plugin:@redguy12/browser",
     		// Client-side scripts (including HTML files)
     		files: ["**.html", "**.htm", "**.vue"],
     	},
     	{
-    		extends: ["plugin:@redguy12/sample"],
+    		extends: "plugin:@redguy12/sample",
     		// Files including samples (AKA docs) (including HTML and Markdown files)
     		files: ["**.md", "**.md/*"],
     	},
     	{
-    		extends: ["plugin:@redguy12/vue"],
-    		// Vue SFC (v2)
-    		files: ["**.vue"],
+    		extends: "plugin:@redguy12/vue",
+    		// Vue SFCs (v3)
+    		files: "**.vue",
     	},
     ];
     ```

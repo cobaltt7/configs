@@ -1,6 +1,11 @@
 version: 2
 updates:
     - package-ecosystem: npm
-      directory: /
+      directory: /eslint-plugin
+      schedule:
+          interval: daily
+
+    - package-ecosystem: npm
+      directory: /prettier-config
       schedule:
           interval: daily

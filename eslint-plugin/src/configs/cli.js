@@ -3,7 +3,7 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: ["plugin:@redguy12/node"],
+	extends: "plugin:@redguy12/node",
 	parserOptions: { ecmaVersion: "latest" },
 	rules: { "fp/no-throw": 0, "no-console": 0 },
 };

@@ -41,12 +41,12 @@ const config = {
 
 	overrides: [
 		{
-			extends: ["plugin:@redguy12/cli"],
+			extends: "plugin:@redguy12/cli",
 			files: ["bin/**.js", ".github/**.js"],
 		},
-		{ extends: ["plugin:@redguy12/esm"], files: ["**.mjs"] },
+		{ extends: "plugin:@redguy12/esm", files: "**.mjs" },
 		{
-			extends: ["plugin:@redguy12/config"],
+			extends: "plugin:@redguy12/config",
 
 			files: [
 				"**.config.js",
@@ -59,12 +59,12 @@ const config = {
 			],
 		},
 		{
-			extends: ["plugin:@redguy12/sample"],
-			files: ["**.md"],
+			extends: "plugin:@redguy12/sample",
+			files: "**.md",
 			processor: "markdown/markdown",
 		},
 		{
-			extends: ["plugin:@redguy12/browser"],
+			extends: "plugin:@redguy12/browser",
 			files: ["**.html", "**.htm", "**.vue"],
 			rules: { "putout/putout": 0 },
 		},
@@ -73,7 +73,7 @@ const config = {
 			plugins: ["html"],
 			rules: { "@redguy12/html-file-comment": 2 },
 		},
-		{ extends: ["plugin:@redguy12/sample"], files: ["**.md/**"] },
+		{ extends: "plugin:@redguy12/sample", files: "**.md/**" },
 		{
 			files: ["**.md/**", "**.json"],
 
@@ -122,7 +122,7 @@ const config = {
 			},
 		},
 		{
-			files: ["**.json"],
+			files: "**.json",
 			parser: "jsonc-eslint-parser",
 
 			rules: {
@@ -132,11 +132,11 @@ const config = {
 			},
 		},
 		{
-			files: ["package.json"],
+			files: "package.json",
 			rules: { "jsonc/sort-keys": 0 },
 		},
 		{
-			files: [".github/**.js"],
+			files: ".github/**.js",
 
 			rules: {
 				"import/no-extraneous-dependencies": [

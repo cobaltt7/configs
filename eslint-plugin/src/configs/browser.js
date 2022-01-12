@@ -10,7 +10,7 @@ const config = {
 		node: false,
 	},
 
-	extends: ["plugin:@redguy12/esm"],
+	extends: "plugin:@redguy12/esm",
 
 	parserOptions: { ecmaVersion: 3 },
 

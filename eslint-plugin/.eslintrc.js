@@ -10,15 +10,15 @@ const config = {
 		path.resolve(__dirname, "./src/configs/cli.js"),
 	],
 
-	ignorePatterns: ["eslint-types.js"],
+	ignorePatterns: "eslint-types.js",
 
 	overrides: [
 		{
-			extends: [path.resolve(__dirname, "./src/configs/config.js")],
+			extends: path.resolve(__dirname, "./src/configs/config.js"),
 			files: ["src/configs/*.js", "prettier-config/*.js"],
 		},
 		{
-			files: ["!**.md/*"],
+			files: "!**.md/*",
 			parserOptions: { project: "./jsconfig.json" },
 		},
 	],

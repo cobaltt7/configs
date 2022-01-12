@@ -3,7 +3,7 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: ["plugin:@redguy12/cli"],
+	extends: "plugin:@redguy12/cli",
 
 	rules: {
 		"id-length": 0,

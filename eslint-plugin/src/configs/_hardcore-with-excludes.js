@@ -6,7 +6,7 @@ const { extractConfig, disablePlugins } = require("eslint-disable");
 /** @type {import("eslint").Linter.Config} */
 const config = disablePlugins(
 	extractConfig({
-		extends: ["hardcore"],
+		extends: "hardcore",
 		root: true,
 	}),
 	["json", "@html-eslint"],
