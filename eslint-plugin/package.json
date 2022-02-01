@@ -9,7 +9,7 @@
 	"devDependencies": {
 		"@shopify/eslint-plugin": "41.0.1",
 		"@types/eslint": "8.2.2",
-		"@typescript-eslint/eslint-plugin": "5.9.0",
+		"@typescript-eslint/eslint-plugin": "5.10.2",
 		"eslint": "8.5.0",
 		"eslint-config-hardcore": "23.6.2",
 		"eslint-config-prettier": "8.3.0",
@@ -48,7 +48,7 @@
 		"@redguy12/prettier-config": "1.0.0",
 		"@shopify/eslint-plugin": "41.0.1",
 		"@types/eslint": "8.2.2",
-		"@typescript-eslint/eslint-plugin": "5.9.0",
+		"@typescript-eslint/eslint-plugin": "5.10.2",
 		"eslint": "8.5.0",
 		"eslint-config-hardcore": "23.6.2",
 		"eslint-config-prettier": "8.3.0",
