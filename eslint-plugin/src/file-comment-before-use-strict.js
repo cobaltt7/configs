@@ -60,10 +60,9 @@ const rule = {
 					}
 
 					const codeStartLine = firstCode?.loc.end.line || 0;
-
+					const comments = sourceCode.getCommentsBefore(firstCode);
 					const commentStartLine =
-						sourceCode.getCommentsBefore(firstCode)?.at(-1)?.loc?.end.line ||
-						codeStartLine;
+						comments?.[comments.length - 1]?.loc?.end.line || codeStartLine;
 
 					if (actualStrictLine + 2 > commentStartLine) {
 						const beforeCode = {

@@ -20,6 +20,7 @@ const config = {
 		"import/exports-last": 0,
 		"import/extensions": [2, "ignorePackages", { ts: "never", tsx: "never" }],
 		"import/no-commonjs": 2,
+		"import/no-unassigned-import": [2, { allow: ["**/*.css"] }],
 		"import/no-unresolved": 0,
 
 		"import/order": [
@@ -44,4 +45,4 @@ const config = {
 	},
 };
 
-module.exports = config;
+module.exports = (config);

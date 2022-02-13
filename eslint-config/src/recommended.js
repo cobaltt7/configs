@@ -3,19 +3,19 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: require("path").resolve(__dirname, "./_recommended.js"),
+	extends: require.resolve("./_recommended.js"),
 
 	overrides: [
-		{ extends: "plugin:@redguy12/typescript", files: "**.ts" },
+		{ extends: require.resolve("./typescript.js"), files: "**.ts" },
 		{
 			files: "!**.md/*",
 			parserOptions: { project: "./jsconfig.json" },
 		},
-		{ extends: "plugin:@redguy12/vue", files: "**.vue" },
+		{ extends: require.resolve("./vue.js"), files: "**.vue" },
 	],
 
-	parserOptions: { extraFileExtensions: [".vue", ".cjs", ".mjs"] },
+	parserOptions: { extraFileExtensions: [".vue", ".cjs", ".mjs", ".json", ".html"] },
 	rules: { "@typescript-eslint/no-empty-function": 0 },
 };
 
-module.exports = config;
+module.exports = (config);

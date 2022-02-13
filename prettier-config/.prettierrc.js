@@ -7,11 +7,14 @@ const config = {
 	tabWidth: 4,
 	trailingComma: "all",
 	useTabs: true,
+	jsdocSeparateTagGroups: true,
 	jsdocDescriptionWithDot: true,
 	jsdocPrintWidth: 100,
+	jsdocAddDefaultToDescription: false,
 	jsdocSeparateReturnsFromParam: true,
 	bracketSameLine: false,
 	vueIndentScriptAndStyle: true,
+	embeddedLanguageFormatting: "auto",
 	overrides: [
 		{
 			files: "**.md",
@@ -53,17 +56,7 @@ const config = {
 			},
 		},
 		{
-			files: [
-				"**.code-workspace",
-				".code-snippets",
-				"**/settings.json",
-				"**/launch.json",
-				"**/extensions.json",
-				"**.jsonc",
-				"**.eslintrc",
-				"**.eslintrc.json",
-				"jsconfig.json",
-			],
+			files: ["**/.vscode/*", "**.eslintrc", "**.eslintrc.json", "jsconfig.json"],
 			options: {
 				parser: "json5",
 				quoteProps: "preserve",
@@ -71,9 +64,6 @@ const config = {
 			},
 		},
 	],
-	plugins: [
-		require.resolve("prettier-plugin-jsdoc"),
-		require.resolve("prettier-plugin-ini"),
-	],
+	plugins: [require.resolve("prettier-plugin-jsdoc"), require.resolve("prettier-plugin-ini")],
 };
 module.exports = config;

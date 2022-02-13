@@ -3,7 +3,7 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: ["plugin:@redguy12/esm", "hardcore/ts"],
+	extends: [require.resolve("./esm.js"), "hardcore/ts"],
 
 	globals: { NodeJS: "readonly" },
 
@@ -41,7 +41,6 @@ const config = {
 		"@typescript-eslint/method-signature-style": 2,
 		"@typescript-eslint/naming-convention": 0,
 		"@typescript-eslint/no-confusing-non-null-assertion": 2,
-		"@typescript-eslint/no-confusing-void-expression": 2,
 		"@typescript-eslint/no-dupe-class-members": 2,
 		"@typescript-eslint/no-dynamic-delete": 2,
 		"@typescript-eslint/no-extra-parens": 0,
@@ -64,6 +63,11 @@ const config = {
 		"@typescript-eslint/no-unnecessary-qualifier": 2,
 		"@typescript-eslint/no-unnecessary-type-arguments": 2,
 		"@typescript-eslint/no-unused-expressions": 2,
+		"@typescript-eslint/no-unsafe-argument": 0,
+		"@typescript-eslint/no-unsafe-assignment": 0,
+		"@typescript-eslint/no-unsafe-call": 0,
+		"@typescript-eslint/no-unsafe-member-access": 0,
+		"@typescript-eslint/no-unsafe-return": 0,
 		"@typescript-eslint/no-use-before-define": 2,
 		"@typescript-eslint/no-useless-constructor": 2,
 		"@typescript-eslint/non-nullable-type-assertion-style": 2,
@@ -108,11 +112,14 @@ const config = {
 		"@typescript-eslint/unbound-method": 0,
 		"@typescript-eslint/unified-signatures": 2,
 		"etc/prefer-interface": 0,
-		"jsdoc/require-jsdoc": 0,
+		"jsdoc/no-types":[2,{contexts:["any"]}],
+		"jsdoc/require-param-type": 0,
+		"jsdoc/require-property-type": 0,
+		"jsdoc/require-returns-type": 0,
 		"new-cap": 0, // It doesn't support decorators
-		"no-duplicate-imports": 0,
+		"no-return-await": 0,
 		"no-tabs": 0,
 	},
 };
 
-module.exports = config;
+module.exports = (config);

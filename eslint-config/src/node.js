@@ -4,7 +4,7 @@
 /** @type {import("eslint").Linter.Config} */
 const config = {
 	env: { node: true },
-	extends: ["plugin:node/recommended", "plugin:node/recommended-script", "hardcore/node"],
+	extends: ["plugin:node/recommended", "hardcore/node"],
 	parserOptions: { ecmaVersion: 10 },
 
 	rules: {
@@ -69,4 +69,4 @@ const config = {
 	},
 };
 
-module.exports = config;
+module.exports = (config);

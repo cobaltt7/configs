@@ -3,7 +3,7 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	env: { es2020: false, es6: true },
+	env: { es2022: false, es6: true },
 
 	extends: [
 		"eslint:all",
@@ -12,10 +12,8 @@ const config = {
 		"plugin:markdown/recommended",
 		"plugin:promise/recommended",
 		"plugin:unicorn/all",
-		"plugin:unicorn/recommended",
-		"prettier",
 		"plugin:import/recommended",
-		require("path").resolve(__dirname, "./_hardcore-with-excludes.js"),
+		require.resolve("./third-party/hardcore-base.js"),
 		"hardcore/fp",
 		"hardcore/ts-for-js",
 		"plugin:jsonc/all",
@@ -37,45 +35,54 @@ const config = {
 		".node_repl_history",
 		"npm-shrinkwrap.json",
 		"package-lock.json",
+		"vendor",
+		"lib-cov",
+		"coverage",
+		".cache",
+		"tmp",
+		"**/*.min.*",
 	],
 
 	overrides: [
 		{
-			extends: "plugin:@redguy12/cli",
-			files: ["bin/**.js", ".github/**.js"],
+			extends: require.resolve("./cli.js"),
+			files: ["bin/**/*.js", ".github/**/*.js"],
 		},
-		{ extends: "plugin:@redguy12/esm", files: "**.mjs" },
+		{ extends: require.resolve("./esm.js"), files: "**/*.mjs" },
 		{
-			extends: "plugin:@redguy12/config",
+			extends: require.resolve("./config.js"),
 
 			files: [
-				"**.config.js",
-				"**rc.js",
-				"**.config.mjs",
-				"**rc.mjs",
-				"**.config.cjs",
-				"**rc.cjs",
-				"**.json",
+				"**/*.config.js",
+				"**/*rc.js",
+				"**/*.config.mjs",
+				"**/*rc.mjs",
+				"**/*.config.cjs",
+				"**/*rc.cjs",
+				"**/*.json",
 			],
 		},
 		{
-			extends: "plugin:@redguy12/sample",
-			files: "**.md",
+			extends: require.resolve("./sample.js"),
+			files: "**/*.md",
 			processor: "markdown/markdown",
 		},
 		{
-			extends: "plugin:@redguy12/browser",
-			files: ["**.html", "**.htm", "**.vue"],
-			rules: { "putout/putout": 0 },
+			extends: require.resolve("./browser.js"),
+			files: ["**/*.html", "**/*.htm", "**/*.vue"],
+			rules: {
+				"putout/putout": 0,
+				"jsdoc/require-file-overview": 0,
+				"@redguy12/html-file-comment": 2,
+			},
 		},
 		{
-			files: ["**.html", "**.htm"],
+			files: ["**/*.html", "**/*.htm"],
 			plugins: ["html"],
-			rules: { "@redguy12/html-file-comment": 2 },
 		},
-		{ extends: "plugin:@redguy12/sample", files: "**.md/**" },
+		{ extends: require.resolve("./sample.js"), files: "**/*.md/**" },
 		{
-			files: ["**.md/**", "**.json"],
+			files: ["**/*.md/**", "**/*.json"],
 
 			// Type information can't be obtained: see https://github.com/eslint/eslint-plugin-markdown/pull/155#issuecomment-671620312
 			// So these rules must unfortunately be disabled.
@@ -96,11 +103,6 @@ const config = {
 				"@typescript-eslint/no-unnecessary-qualifier": 0,
 				"@typescript-eslint/no-unnecessary-type-arguments": 0,
 				"@typescript-eslint/no-unnecessary-type-assertion": 0,
-				"@typescript-eslint/no-unsafe-argument": 0,
-				"@typescript-eslint/no-unsafe-assignment": 0,
-				"@typescript-eslint/no-unsafe-call": 0,
-				"@typescript-eslint/no-unsafe-member-access": 0,
-				"@typescript-eslint/no-unsafe-return": 0,
 				"@typescript-eslint/non-nullable-type-assertion-style": 0,
 				"@typescript-eslint/prefer-includes": 0,
 				"@typescript-eslint/prefer-nullish-coalescing": 0,
@@ -122,9 +124,12 @@ const config = {
 			},
 		},
 		{
-			files: "**.json",
+			files: "*.json",
 			parser: "jsonc-eslint-parser",
 
+			parserOptions: {
+				jsonSyntax: "JSON",
+			},
 			rules: {
 				"jsdoc/require-file-overview": 0,
 				"jsonc/key-name-casing": 0,
@@ -136,7 +141,7 @@ const config = {
 			rules: { "jsonc/sort-keys": 0 },
 		},
 		{
-			files: ".github/**.js",
+			files: ".github/**/*.js",
 
 			rules: {
 				"import/no-extraneous-dependencies": [
@@ -153,8 +158,7 @@ const config = {
 	],
 
 	parserOptions: { ecmaVersion: 6, sourceType: "script" },
-	plugins: ["jsdoc", "regexp", "@redguy12"],
-	reportUnusedDisableDirectives: true,
+	plugins: ["eslint-comments", "@redguy12", "jsdoc"],
 	root: true,
 
 	rules: {
@@ -162,23 +166,38 @@ const config = {
 		"@redguy12/file-comment-before-use-strict": 2,
 		"@typescript-eslint/naming-convention": 0,
 		"arrow-body-style": 2,
+		"array-element-newline": 0,
 		"camelcase": 0,
-		"capitalized-comments": 2,
+		"capitalized-comments": [
+			2,
+			"always",
+			{
+				block: {
+					ignorePattern:
+						"do|if|in|for|let|new|try|var|case|else|enum|eval|null|this|true|void|with|await|break|catch|class|const|false|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof|	",
+				},
+				line: {
+					ignorePattern:
+						"do|if|in|for|let|new|try|var|case|else|enum|eval|null|this|true|void|with|await|break|catch|class|const|false|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof|	",
+					ignoreConsecutiveComments: true,
+				},
+			},
+		],
 		"class-methods-use-this": 2,
 		"comma-dangle": [2, "always-multiline"],
 		"complexity": [1, 15],
-		"consistent-return": 2,
+		"consistent-return": 0,
 		"curly": [2, "multi-or-nest", "consistent"],
 		"default-case": 0,
 		"dot-location": [2, "property"],
 		"eslint-comments/require-description": 2,
-		"etc/no-commented-out-code": 0,
+		"etc/no-commented-out-code": 1,
 		"fp/no-class": 0,
 		"fp/no-loops": 0,
 		"fp/no-mutating-methods": 0,
 		"fp/no-mutation": 0,
 		"fp/no-this": 0,
-		"fp/no-throw": 1,
+		"fp/no-throw": 0,
 		"func-style": [2, "declaration", { allowArrowFunctions: true }],
 		"function-call-argument-newline": [2, "consistent"],
 		"function-paren-newline": 0,
@@ -203,6 +222,7 @@ const config = {
 			},
 		],
 
+		"implicit-arrow-linebreak": 0,
 		"import/extensions": [2, "ignorePackages", { ts: "never", tsx: "never" }],
 		"import/first": 2,
 		"import/group-exports": 0,
@@ -244,7 +264,7 @@ const config = {
 		"import/no-namespace": 0,
 		"import/no-relative-parent-imports": 0,
 		"import/no-self-import": 2,
-		"import/no-unassigned-import": [2, { allow: ["**/*.css"] }],
+		"import/no-unassigned-import": 0,
 		"import/no-unresolved": 0,
 		"import/no-unused-modules": 0,
 		"import/no-useless-path-segments": 2,
@@ -283,6 +303,7 @@ const config = {
 		"jsdoc/newline-after-description": 2,
 		"jsdoc/no-bad-blocks": 2,
 		"jsdoc/no-defaults": 2,
+		"jsdoc/no-multi-asterisks":[2,{allowWhitespace: true}],
 		"jsdoc/no-undefined-types": 0,
 		"jsdoc/require-asterisk-prefix": 2,
 		"jsdoc/require-description": 2,
@@ -305,6 +326,7 @@ const config = {
 		"jsdoc/require-throws": 2,
 		"jsdoc/require-yields": 2,
 		"jsdoc/require-yields-check": 2,
+		"jsdoc/valid-types":2,
 		"line-comment-position": 0,
 		"linebreak-style": 0,
 		"lines-around-comment": 0,
@@ -319,7 +341,7 @@ const config = {
 				ignoreStrings: false,
 				ignoreTemplateLiterals: false,
 				ignoreUrls: true,
-				tabWidth: 0,
+				tabWidth: 4,
 			},
 		],
 
@@ -366,6 +388,7 @@ const config = {
 		"no-invalid-this": 0,
 		"no-magic-numbers": 0,
 		"no-mixed-operators": 0,
+		"no-mixed-spaces-and-tabs": 0,
 		"no-nested-await": 0,
 		"no-nested-ternary": 0,
 
@@ -379,6 +402,7 @@ const config = {
 
 		"no-plusplus": 0,
 		"no-process-exit": 2,
+		"no-promise-executor-return": 0,
 		"no-tabs": 0,
 		"no-ternary": 0,
 		"no-undef": [2, { typeof: true }],
@@ -396,18 +420,21 @@ const config = {
 
 		"no-useless-escape": 0,
 		"no-warning-comments": [1, { location: "anywhere" }],
+		"nonblock-statement-body-position": 0,
+		"newline-per-chained-call": 0,
 
 		"object-curly-newline": [
 			2,
 			{
 				ExportDeclaration: "never",
 				ImportDeclaration: "never",
-				ObjectExpression: { minProperties: 3, multiline: true },
+				ObjectExpression: { consistent: true },
 				ObjectPattern: "never",
 			},
 		],
 
 		"object-curly-spacing": [2, "always"],
+		"object-property-newline": 0,
 		"one-var": 0,
 		"padded-blocks": [2, "never"],
 		"prefer-arrow-callback": 2,
@@ -424,6 +451,7 @@ const config = {
 		"prettier/prettier": 0,
 		"promise/avoid-new": 0,
 		"promise/no-callback-in-promise": 0,
+		"promise/no-promise-in-callback": 0,
 		"promise/no-nesting": 0,
 		"promise/prefer-await-to-then": 0,
 		"putout/putout": 0,
@@ -494,11 +522,11 @@ const config = {
 		],
 
 		"strict": [2, "global"],
-		"unicorn/better-regex": 0,
+		"unicorn/better-regex": 2,
 		"unicorn/consistent-function-scoping": 0,
 		"unicorn/custom-error-definition": 2,
 		"unicorn/escape-case": 0,
-		"unicorn/expiring-todo-comments": 2,
+		"unicorn/expiring-todo-comments": 0,
 		"unicorn/filename-case": 0,
 		"unicorn/import-index": [2, { ignoreImports: true }],
 		"unicorn/no-array-callback-reference": 0,
@@ -507,6 +535,7 @@ const config = {
 		"unicorn/no-await-expression-member": 0,
 		"unicorn/no-empty-file": 2,
 		"unicorn/no-keyword-prefix": 2,
+		"unicorn/no-nested-ternary": 0,
 		"unicorn/no-unsafe-regex": 0,
 		"unicorn/no-unused-properties": 2,
 		"unicorn/no-useless-undefined": 2,
@@ -541,6 +570,7 @@ const config = {
 			},
 		],
 
+		"unicorn/relative-url-style": [2,"always"],
 		"unicorn/template-indent": 2,
 		"vars-on-top": 2,
 		"wrap-iife": [2, "inside"],
@@ -552,7 +582,6 @@ const config = {
 		jsdoc: {
 			augmentsExtendsReplacesDocs: true,
 			implementsReplacesDocs: true,
-			maxLines: 5,
 			mode: "typescript",
 		},
 	},

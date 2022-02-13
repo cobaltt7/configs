@@ -5,18 +5,17 @@
 const config = {
 	env: {
 		browser: true,
-		es2020: false,
+		es2022: false,
 		es6: false,
 		node: false,
 	},
 
-	extends: "plugin:@redguy12/esm",
+	extends: require.resolve("./esm.js"),
 
 	parserOptions: { ecmaVersion: 3 },
 
 	rules: {
 		"comma-dangle": 0,
-		"jsdoc/require-file-overview": 0,
 		"no-console": 2,
 
 		"no-restricted-globals": [
@@ -80,9 +79,7 @@ const config = {
 			"toolbar",
 			"top",
 		],
-
-		"prettier/prettier": 0,
 	},
 };
 
-module.exports = config;
+module.exports = (config);

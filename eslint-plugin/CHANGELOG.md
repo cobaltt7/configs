@@ -2,7 +2,16 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v3.1.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/3.1.0) (2022-01-12) - **Latest**
+## [v4.0.1](https://www.npmjs.com/package/@redguy12/eslint-config/v/4.0.1) (2022-02-13) - **Latest**
+
+-   Update dependencies.
+
+## [v4.0.0](https://www.npmjs.com/package/@redguy12/eslint-config/v/4.0.0) (2022-02-13)
+
+-   Split `@redguy12/eslint-plugin` into `@redguy12/eslint-plugin` and `@redguy12/eslint-config`.
+-   Fix `file-comment-before-use-strict` crashing with old Node.JS versions.
+
+## [v3.1.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/3.1.0) (2022-01-12)
 
 -   Fix not being able to install.
 
@@ -117,7 +126,7 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 -   Update matches for Markdown files.
 -   Bump dependencies. Changes needed with the new versions:
 -   Enable `fp/no-throw` again.
--   Explicitly configure `prefer-destructuring` instead of relying on `eslint-plugin-hardcore`'s settings.
+-   Explicitly configure `prefer-destructuring` instead of relying on `eslint-config-hardcore`'s settings.
 -   Add `i18n` and `l10n` to `unicorn/prevent-abbreviations`.
 
 ## [2.0.3](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/2.0.4) (2021-08-09)
@@ -202,7 +211,7 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 
 -   Update prettier configuration.
 -   Add more files to the default `config` and `cli` configurations.
--   Bump `eslint-plugin-hardcore`.
+-   Bump `eslint-config-hardcore`.
 -   Move to `@babel/eslint-parser` for module top-level `await` support.
 -   Disable `node/no-missing-import` (conflicts with `import/no-unresolved`).
 -   Allow importing devDependencies in GitHub Actions.
@@ -280,4 +289,4 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 
 ## [v1.0.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/1.0.0) (2021-07-03)
 
--   Initial commit.
+-   Initial release.

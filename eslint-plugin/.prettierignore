@@ -1,0 +1,11 @@
+!**
+**/logs/
+**/.git/
+**/dist/
+**/node_modules/
+**/.npm/
+**/.upm/
+**/.nvm/
+**/.eslintcache
+**/.node_repl_history
+**/.husky/_/

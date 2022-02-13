@@ -5,7 +5,7 @@
 const config = {
 	env: {
 		browser: true,
-		es2020: true,
+		es2022: true,
 		es6: true,
 		node: true,
 	},
@@ -28,4 +28,4 @@ const config = {
 	},
 };
 
-module.exports = config;
+module.exports = (config);

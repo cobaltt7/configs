@@ -3,7 +3,7 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: "plugin:@redguy12/cli",
+	extends: require.resolve("./cli.js"),
 
 	rules: {
 		"id-length": 0,
@@ -38,4 +38,4 @@ const config = {
 	},
 };
 
-module.exports = config;
+module.exports = (config);

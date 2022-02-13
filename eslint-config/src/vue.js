@@ -3,7 +3,11 @@
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: ["plugin:@redguy12/browser", "plugin:@redguy12/typescript","plugin:vue/vue3-recommended"],
+	extends: [
+		require.resolve("./browser.js"),
+		require.resolve("./typescript.js"),
+		"plugin:vue/vue3-recommended",
+	],
 
 	overrides: [
 		{
@@ -23,7 +27,6 @@ const config = {
 	},
 
 	rules: {
-		"@redguy12/html-file-comment": 2,
 		"eol-last": 0,
 		"import/extensions": [2, "never", { vue: "always" }],
 		"import/no-unassigned-import": 0,
@@ -58,7 +61,7 @@ const config = {
 		"vue/html-closing-bracket-newline": 0,
 		"vue/html-comment-content-newline": 2,
 		"vue/html-comment-content-spacing": 2,
-		"vue/html-comment-indent": 2,
+		"vue/html-comment-indent": [2, "tab"],
 		"vue/html-indent": 0,
 
 		"vue/html-self-closing": [
@@ -89,7 +92,7 @@ const config = {
 				ignoreStrings: false,
 				ignoreTemplateLiterals: false,
 				ignoreUrls: true,
-				tabWidth: 0,
+				tabWidth: 4,
 			},
 		],
 
@@ -120,6 +123,7 @@ const config = {
 		"vue/no-sparse-arrays": 2,
 		"vue/no-template-target-blank": 2,
 		"vue/no-this-in-before-route-enter": 2,
+		"vue/no-undef-components": 2,
 		"vue/no-undef-properties": 2,
 		"vue/no-unsupported-features": 2,
 		"vue/no-unused-properties": 2,
@@ -129,23 +133,26 @@ const config = {
 		"vue/no-useless-mustaches": 2,
 		"vue/no-useless-v-bind": 2,
 		"vue/no-v-text": 2,
+		"vue/no-v-text-v-html-on-component": 2,
 
 		"vue/object-curly-newline": [
 			2,
 			{
 				ExportDeclaration: "never",
 				ImportDeclaration: "never",
-				ObjectExpression: { minProperties: 3, multiline: true },
+				ObjectExpression: { consistent: true },
 				ObjectPattern: "never",
 			},
 		],
 
 		"vue/object-curly-spacing": [2, "always"],
-		"vue/object-property-newline": 2,
+		"vue/object-property-newline": 0,
+		"vue/object-shorthand": 2,
 		"vue/operator-linebreak": 2,
 		"vue/padding-line-between-blocks": 2,
 		"vue/prefer-separate-static-class": 2,
 		"vue/prefer-template": 2,
+		"vue/quote-props": [2, "consistent-as-needed"],
 		"vue/require-emit-validator": 2,
 		"vue/require-expose": 2,
 		"vue/require-name-property": 2,
