@@ -2,11 +2,11 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v4.0.1](https://www.npmjs.com/package/@redguy12/eslint-config/v/4.0.1) (2022-02-13) - **Latest**
+## [v4.0.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/4.0.1) (2022-02-13) - **Latest**
 
 -   Update dependencies.
 
-## [v4.0.0](https://www.npmjs.com/package/@redguy12/eslint-config/v/4.0.0) (2022-02-13)
+## [v4.0.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/4.0.0) (2022-02-13)
 
 -   Split `@redguy12/eslint-plugin` into `@redguy12/eslint-plugin` and `@redguy12/eslint-config`.
 -   Fix `file-comment-before-use-strict` crashing with old Node.JS versions.

@@ -23,10 +23,9 @@
 	"name": "@redguy12/eslint-config",
 	"peerDependencies": {
 		"@rushstack/eslint-patch": "1.1.0",
-		"prettier": "2.5.1",
-		"@redguy12/prettier-config": "1.1.0"
+		"@redguy12/prettier-config": "1.1.1"
 	},
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/RedGuy12/configs.git"

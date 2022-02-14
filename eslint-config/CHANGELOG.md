@@ -2,7 +2,11 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.0.0](https://www.npmjs.com/package/@redguy12/eslint-config/v/1.0.0) (2022-01-13) - **Latest**
+## [v4.0.1](https://www.npmjs.com/package/@redguy12/eslint-config/v/4.0.1) (2022-02-13) - **Latest**
+
+-   Update dependencies.
+
+## [v1.0.0](https://www.npmjs.com/package/@redguy12/eslint-config/v/1.0.0) (2022-01-13)
 
 -   Split `@redguy12/eslint-plugin` into `@redguy12/eslint-plugin` and `@redguy12/eslint-config`.
 -   Ignore `vendor`, `lib-cov`, `coverage`, `.cache`, `tmp`, and `**/*.min.*`.
