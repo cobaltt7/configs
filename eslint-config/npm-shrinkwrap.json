@@ -1,13 +1,13 @@
 {
 	"name": "@redguy12/eslint-config",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"lockfileVersion": 2,
 	"requires": true,
 	"dev": true,
 	"packages": {
 		"": {
 			"name": "@redguy12/eslint-config",
-			"version": "1.0.1",
+			"version": "1.0.2",
 			"license": "MIT",
 			"dependencies": {
 				"@redguy12/eslint-plugin": "4.0.1",

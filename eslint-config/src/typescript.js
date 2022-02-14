@@ -81,7 +81,7 @@ const config = {
 		"@typescript-eslint/prefer-nullish-coalescing": 2,
 		"@typescript-eslint/prefer-optional-chain": 2,
 		"@typescript-eslint/prefer-readonly": 2,
-		"@typescript-eslint/prefer-readonly-parameter-types": 2,
+		"@typescript-eslint/prefer-readonly-parameter-types": 0,
 		"@typescript-eslint/prefer-reduce-type-parameter": 2,
 		"@typescript-eslint/prefer-regexp-exec": 2,
 		"@typescript-eslint/prefer-return-this-type": 2,
@@ -112,7 +112,7 @@ const config = {
 		"@typescript-eslint/unbound-method": 0,
 		"@typescript-eslint/unified-signatures": 2,
 		"etc/prefer-interface": 0,
-		"jsdoc/no-types":[2,{contexts:["any"]}],
+		"jsdoc/no-types": [2, { contexts: ["any"] }],
 		"jsdoc/require-param-type": 0,
 		"jsdoc/require-property-type": 0,
 		"jsdoc/require-returns-type": 0,
@@ -122,4 +122,4 @@ const config = {
 	},
 };
 
-module.exports = (config);
+module.exports = config;

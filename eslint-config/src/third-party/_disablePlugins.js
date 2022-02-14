@@ -1,5 +1,6 @@
 /**
  * @template {import("eslint").Linter.Config | import("eslint").Linter.ConfigOverride} T
+ *
  * @param {T} config
  * @param {string[]} pluginNames
  *

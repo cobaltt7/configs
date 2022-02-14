@@ -8,4 +8,4 @@ const config = {
 	rules: { "fp/no-throw": 0, "no-console": 0 },
 };
 
-module.exports = (config);
+module.exports = config;

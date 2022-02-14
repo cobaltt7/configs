@@ -123,7 +123,7 @@ const config = {
 		"vue/no-sparse-arrays": 2,
 		"vue/no-template-target-blank": 2,
 		"vue/no-this-in-before-route-enter": 2,
-		"vue/no-undef-components": 2,
+		"vue/no-undef-components": 0,
 		"vue/no-undef-properties": 2,
 		"vue/no-unsupported-features": 2,
 		"vue/no-unused-properties": 2,

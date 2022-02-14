@@ -9,7 +9,7 @@ My ESLint Style Guide
 2.  Install the config by running:
 
     ```bash
-    npm install @redguy12/eslint-config @rushstack/eslint-patch @types/eslint eslint --save-dev;
+    npm install @redguy12/eslint-config @rushstack/eslint-patch @types/eslint eslint --save-dev
     ```
 
 3.  Add an **.eslintrc.js** file (or **.eslintrc.cjs** if you are using Node _and_ ESM in the rest of your project) with the following content:
@@ -100,13 +100,13 @@ My ESLint Style Guide
 6.  Add an npm script to lint your code as so:
 
     ```json
-    "lint:eslint": "cd \"node_modules/@redguy12/eslint-config/\"; npx eslint ../../../ --resolve-plugins-relative-to . --fix; cd \"../../../\";"
+    "lint:eslint": "cd \"node_modules/@redguy12/eslint-config/\" && npx eslint ../../../ --resolve-plugins-relative-to . --fix && cd \"../../../\""
     ```
 
 7.  To lint your code, simply run
 
     ```bash
-    npm run lint:eslint;
+    npm run lint:eslint
     ```
 
 Congrats! You've successfully integrated ESLint into your project with `@redguy12/eslint-config`!

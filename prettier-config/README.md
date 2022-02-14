@@ -6,7 +6,7 @@ My Prettier style guide
 
 1. Install the config by running:
     ```bash
-    npm install @redguy12/prettier-config prettier-package-json prettier --save-dev;
+    npm install @redguy12/prettier-config prettier-package-json prettier --save-dev
     ```
 2. Add the following to your `package.json`:
     ```json
@@ -39,7 +39,7 @@ My Prettier style guide
 4. To format your code, simply run
 
     ```bash
-    npm run lint:prettier;
+    npm run lint:prettier
     ```
 
 Congrats! You've successfully integrated ESLint into your project with `@redguy12/prettier-config`!

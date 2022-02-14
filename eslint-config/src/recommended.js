@@ -18,4 +18,4 @@ const config = {
 	rules: { "@typescript-eslint/no-empty-function": 0 },
 };
 
-module.exports = (config);
+module.exports = config;
