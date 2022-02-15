@@ -12,7 +12,7 @@
 			"devDependencies": {
 				"@redguy12/prettier-config": "1.1.1",
 				"@types/eslint": "8.4.1",
-				"@types/node": "17.0.17",
+				"@types/node": "17.0.18",
 				"eslint": "8.9.0",
 				"prettier": "2.5.1",
 				"prettier-package-json": "2.6.0",
@@ -282,12 +282,6 @@
 			"integrity": "sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==",
 			"dev": true,
 			"peer": true
-		},
-		"node_modules/@redguy12/prettier-config/node_modules/@types/prettier": {
-			"version": "2.4.2",
-			"resolved": "https://registry.npmjs.org/@types/prettier/-/prettier-2.4.2.tgz",
-			"integrity": "sha512-ekoj4qOQYp7CvjX8ZDBgN86w3MqQhLE1hczEJbEIjgFEumDy+na/4AJAbLXfgEWFNB2pKadM5rPFtuSGMWK7xA==",
-			"extraneous": true
 		},
 		"node_modules/@redguy12/prettier-config/node_modules/@types/unist": {
 			"version": "2.0.6",
@@ -998,9 +992,9 @@
 			"dev": true
 		},
 		"node_modules/@types/node": {
-			"version": "17.0.17",
-			"resolved": "https://registry.npmjs.org/@types/node/-/node-17.0.17.tgz",
-			"integrity": "sha512-e8PUNQy1HgJGV3iU/Bp2+D/DXh3PYeyli8LgIwsQcs1Ar1LoaWHSIT6Rw+H2rNJmiq6SNWiDytfx8+gYj7wDHw==",
+			"version": "17.0.18",
+			"resolved": "https://registry.npmjs.org/@types/node/-/node-17.0.18.tgz",
+			"integrity": "sha512-eKj4f/BsN/qcculZiRSujogjvp5O/k4lOW5m35NopjZM/QwLOR075a8pJW5hD+Rtdm2DaCVPENS6KtSQnUD6BA==",
 			"dev": true
 		},
 		"node_modules/@types/parse-json": {
@@ -2257,11 +2251,6 @@
 					"dev": true,
 					"peer": true
 				},
-				"@types/prettier": {
-					"version": "https://registry.npmjs.org/@types/prettier/-/prettier-2.4.2.tgz",
-					"integrity": "sha512-ekoj4qOQYp7CvjX8ZDBgN86w3MqQhLE1hczEJbEIjgFEumDy+na/4AJAbLXfgEWFNB2pKadM5rPFtuSGMWK7xA==",
-					"extraneous": true
-				},
 				"@types/unist": {
 					"version": "2.0.6",
 					"resolved": "https://registry.npmjs.org/@types/unist/-/unist-2.0.6.tgz",
@@ -2818,9 +2807,9 @@
 			"dev": true
 		},
 		"@types/node": {
-			"version": "17.0.17",
-			"resolved": "https://registry.npmjs.org/@types/node/-/node-17.0.17.tgz",
-			"integrity": "sha512-e8PUNQy1HgJGV3iU/Bp2+D/DXh3PYeyli8LgIwsQcs1Ar1LoaWHSIT6Rw+H2rNJmiq6SNWiDytfx8+gYj7wDHw==",
+			"version": "17.0.18",
+			"resolved": "https://registry.npmjs.org/@types/node/-/node-17.0.18.tgz",
+			"integrity": "sha512-eKj4f/BsN/qcculZiRSujogjvp5O/k4lOW5m35NopjZM/QwLOR075a8pJW5hD+Rtdm2DaCVPENS6KtSQnUD6BA==",
 			"dev": true
 		},
 		"@types/parse-json": {
