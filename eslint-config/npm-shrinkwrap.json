@@ -26,7 +26,7 @@
 				"eslint-plugin-node": "11.1.0",
 				"eslint-plugin-prettier": "4.0.0",
 				"eslint-plugin-promise": "6.0.0",
-				"eslint-plugin-putout": "13.11.0",
+				"eslint-plugin-putout": "13.12.0",
 				"eslint-plugin-regexp": "1.5.1",
 				"eslint-plugin-sonarjs": "0.11.0",
 				"eslint-plugin-sort-class-members": "1.14.1",
@@ -6680,9 +6680,9 @@
 			}
 		},
 		"node_modules/eslint-plugin-putout": {
-			"version": "13.11.0",
-			"resolved": "https://registry.npmjs.org/eslint-plugin-putout/-/eslint-plugin-putout-13.11.0.tgz",
-			"integrity": "sha512-R0qkqy2PY6sUIf1b6Z0GGVfLjbqXntdQVY+GLnmZ/93XbO9T5V2ZbipiRRRLKIpWcCML7jDR+9N/bahBo8GGFw==",
+			"version": "13.12.0",
+			"resolved": "https://registry.npmjs.org/eslint-plugin-putout/-/eslint-plugin-putout-13.12.0.tgz",
+			"integrity": "sha512-9G0uzATfhVHYS8ojl4HOjr1FjhyAKWYzPOJrOGXeWfq2xfHijfjycYRHvFlgNkgs8KZPtX6fEjOQchIMGjwY8Q==",
 			"dependencies": {
 				"@babel/core": "^7.12.3",
 				"@babel/eslint-parser": "^7.15.0",
@@ -16847,9 +16847,9 @@
 			"requires": {}
 		},
 		"eslint-plugin-putout": {
-			"version": "13.11.0",
-			"resolved": "https://registry.npmjs.org/eslint-plugin-putout/-/eslint-plugin-putout-13.11.0.tgz",
-			"integrity": "sha512-R0qkqy2PY6sUIf1b6Z0GGVfLjbqXntdQVY+GLnmZ/93XbO9T5V2ZbipiRRRLKIpWcCML7jDR+9N/bahBo8GGFw==",
+			"version": "13.12.0",
+			"resolved": "https://registry.npmjs.org/eslint-plugin-putout/-/eslint-plugin-putout-13.12.0.tgz",
+			"integrity": "sha512-9G0uzATfhVHYS8ojl4HOjr1FjhyAKWYzPOJrOGXeWfq2xfHijfjycYRHvFlgNkgs8KZPtX6fEjOQchIMGjwY8Q==",
 			"requires": {
 				"@babel/core": "^7.12.3",
 				"@babel/eslint-parser": "^7.15.0",
