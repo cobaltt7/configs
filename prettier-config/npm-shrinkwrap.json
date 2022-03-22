@@ -14,11 +14,11 @@
 			},
 			"devDependencies": {
 				"@types/prettier": "2.4.4",
-				"prettier": "2.5.1",
+				"prettier": "2.6.0",
 				"prettier-package-json": "2.6.3"
 			},
 			"peerDependencies": {
-				"prettier": "2.5.1",
+				"prettier": "2.6.0",
 				"prettier-package-json": "2.6.3"
 			}
 		},
@@ -584,14 +584,17 @@
 			}
 		},
 		"node_modules/prettier": {
-			"version": "2.5.1",
-			"resolved": "https://registry.npmjs.org/prettier/-/prettier-2.5.1.tgz",
-			"integrity": "sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==",
+			"version": "2.6.0",
+			"resolved": "https://registry.npmjs.org/prettier/-/prettier-2.6.0.tgz",
+			"integrity": "sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A==",
 			"bin": {
 				"prettier": "bin-prettier.js"
 			},
 			"engines": {
 				"node": ">=10.13.0"
+			},
+			"funding": {
+				"url": "https://github.com/prettier/prettier?sponsor=1"
 			}
 		},
 		"node_modules/prettier-package-json": {
@@ -1140,9 +1143,9 @@
 			"dev": true
 		},
 		"prettier": {
-			"version": "2.5.1",
-			"resolved": "https://registry.npmjs.org/prettier/-/prettier-2.5.1.tgz",
-			"integrity": "sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg=="
+			"version": "2.6.0",
+			"resolved": "https://registry.npmjs.org/prettier/-/prettier-2.6.0.tgz",
+			"integrity": "sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A=="
 		},
 		"prettier-package-json": {
 			"version": "2.6.3",
