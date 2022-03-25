@@ -10,7 +10,7 @@
 			"license": "MIT",
 			"dependencies": {
 				"prettier-plugin-ini": "0.3.1",
-				"prettier-plugin-jsdoc": "0.3.30"
+				"prettier-plugin-jsdoc": "0.3.33"
 			},
 			"devDependencies": {
 				"@types/prettier": "2.4.4",
@@ -623,9 +623,9 @@
 			}
 		},
 		"node_modules/prettier-plugin-jsdoc": {
-			"version": "0.3.30",
-			"resolved": "https://registry.npmjs.org/prettier-plugin-jsdoc/-/prettier-plugin-jsdoc-0.3.30.tgz",
-			"integrity": "sha512-BTBojOMmrUA1qsWLpJN5whUfU/E72WBUQAB5AvrDkha+O8TxmqaAivnuW+87ItYGRPBFWWzj2r5iWELhBml1Ag==",
+			"version": "0.3.33",
+			"resolved": "https://registry.npmjs.org/prettier-plugin-jsdoc/-/prettier-plugin-jsdoc-0.3.33.tgz",
+			"integrity": "sha512-DvSuTArH2nUFCa0DrSkLfJwsIpXxhpvxwIIvE2Gs0zEyDIdjFGKa9oCj/h17MQk640Gzm4Eey3u4NwyfMq0uiw==",
 			"dependencies": {
 				"binary-search-bounds": "^2.0.5",
 				"comment-parser": "^1.1.4",
@@ -1170,9 +1170,9 @@
 			}
 		},
 		"prettier-plugin-jsdoc": {
-			"version": "0.3.30",
-			"resolved": "https://registry.npmjs.org/prettier-plugin-jsdoc/-/prettier-plugin-jsdoc-0.3.30.tgz",
-			"integrity": "sha512-BTBojOMmrUA1qsWLpJN5whUfU/E72WBUQAB5AvrDkha+O8TxmqaAivnuW+87ItYGRPBFWWzj2r5iWELhBml1Ag==",
+			"version": "0.3.33",
+			"resolved": "https://registry.npmjs.org/prettier-plugin-jsdoc/-/prettier-plugin-jsdoc-0.3.33.tgz",
+			"integrity": "sha512-DvSuTArH2nUFCa0DrSkLfJwsIpXxhpvxwIIvE2Gs0zEyDIdjFGKa9oCj/h17MQk640Gzm4Eey3u4NwyfMq0uiw==",
 			"requires": {
 				"binary-search-bounds": "^2.0.5",
 				"comment-parser": "^1.1.4",
