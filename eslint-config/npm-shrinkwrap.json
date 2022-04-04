@@ -30,7 +30,7 @@
 				"eslint-plugin-regexp": "1.5.1",
 				"eslint-plugin-sonarjs": "0.11.0",
 				"eslint-plugin-sort-class-members": "1.14.1",
-				"eslint-plugin-unicorn": "40.1.0",
+				"eslint-plugin-unicorn": "42.0.0",
 				"eslint-plugin-vue": "8.4.1"
 			},
 			"devDependencies": {
@@ -6076,6 +6076,44 @@
 				}
 			}
 		},
+		"node_modules/eslint-config-hardcore/node_modules/eslint-plugin-unicorn": {
+			"version": "40.1.0",
+			"resolved": "https://registry.npmjs.org/eslint-plugin-unicorn/-/eslint-plugin-unicorn-40.1.0.tgz",
+			"integrity": "sha512-y5doK2DF9Sr5AqKEHbHxjFllJ167nKDRU01HDcWyv4Tnmaoe9iNxMrBnaybZvWZUaE3OC5Unu0lNIevYamloig==",
+			"dependencies": {
+				"@babel/helper-validator-identifier": "^7.15.7",
+				"ci-info": "^3.3.0",
+				"clean-regexp": "^1.0.0",
+				"eslint-utils": "^3.0.0",
+				"esquery": "^1.4.0",
+				"indent-string": "^4.0.0",
+				"is-builtin-module": "^3.1.0",
+				"lodash": "^4.17.21",
+				"pluralize": "^8.0.0",
+				"read-pkg-up": "^7.0.1",
+				"regexp-tree": "^0.1.24",
+				"safe-regex": "^2.1.1",
+				"semver": "^7.3.5",
+				"strip-indent": "^3.0.0"
+			},
+			"engines": {
+				"node": ">=12"
+			},
+			"funding": {
+				"url": "https://github.com/sindresorhus/eslint-plugin-unicorn?sponsor=1"
+			},
+			"peerDependencies": {
+				"eslint": ">=7.32.0"
+			}
+		},
+		"node_modules/eslint-config-hardcore/node_modules/safe-regex": {
+			"version": "2.1.1",
+			"resolved": "https://registry.npmjs.org/safe-regex/-/safe-regex-2.1.1.tgz",
+			"integrity": "sha512-rx+x8AMzKb5Q5lQ95Zoi6ZbJqwCLkqi3XuJXp5P3rT8OEc6sZCJG5AE5dU3lsgRr/F4Bs31jSlVN+j5KrsGu9A==",
+			"dependencies": {
+				"regexp-tree": "~0.1.1"
+			}
+		},
 		"node_modules/eslint-config-prettier": {
 			"version": "8.4.0",
 			"resolved": "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-8.4.0.tgz",
@@ -6907,9 +6945,9 @@
 			}
 		},
 		"node_modules/eslint-plugin-unicorn": {
-			"version": "40.1.0",
-			"resolved": "https://registry.npmjs.org/eslint-plugin-unicorn/-/eslint-plugin-unicorn-40.1.0.tgz",
-			"integrity": "sha512-y5doK2DF9Sr5AqKEHbHxjFllJ167nKDRU01HDcWyv4Tnmaoe9iNxMrBnaybZvWZUaE3OC5Unu0lNIevYamloig==",
+			"version": "42.0.0",
+			"resolved": "https://registry.npmjs.org/eslint-plugin-unicorn/-/eslint-plugin-unicorn-42.0.0.tgz",
+			"integrity": "sha512-ixBsbhgWuxVaNlPTT8AyfJMlhyC5flCJFjyK3oKE8TRrwBnaHvUbuIkCM1lqg8ryYrFStL/T557zfKzX4GKSlg==",
 			"dependencies": {
 				"@babel/helper-validator-identifier": "^7.15.7",
 				"ci-info": "^3.3.0",
@@ -6933,7 +6971,7 @@
 				"url": "https://github.com/sindresorhus/eslint-plugin-unicorn?sponsor=1"
 			},
 			"peerDependencies": {
-				"eslint": ">=7.32.0"
+				"eslint": ">=8.8.0"
 			}
 		},
 		"node_modules/eslint-plugin-unicorn/node_modules/safe-regex": {
@@ -16441,6 +16479,35 @@
 					"requires": {
 						"@typescript-eslint/utils": "^5.10.0"
 					}
+				},
+				"eslint-plugin-unicorn": {
+					"version": "40.1.0",
+					"resolved": "https://registry.npmjs.org/eslint-plugin-unicorn/-/eslint-plugin-unicorn-40.1.0.tgz",
+					"integrity": "sha512-y5doK2DF9Sr5AqKEHbHxjFllJ167nKDRU01HDcWyv4Tnmaoe9iNxMrBnaybZvWZUaE3OC5Unu0lNIevYamloig==",
+					"requires": {
+						"@babel/helper-validator-identifier": "^7.15.7",
+						"ci-info": "^3.3.0",
+						"clean-regexp": "^1.0.0",
+						"eslint-utils": "^3.0.0",
+						"esquery": "^1.4.0",
+						"indent-string": "^4.0.0",
+						"is-builtin-module": "^3.1.0",
+						"lodash": "^4.17.21",
+						"pluralize": "^8.0.0",
+						"read-pkg-up": "^7.0.1",
+						"regexp-tree": "^0.1.24",
+						"safe-regex": "^2.1.1",
+						"semver": "^7.3.5",
+						"strip-indent": "^3.0.0"
+					}
+				},
+				"safe-regex": {
+					"version": "2.1.1",
+					"resolved": "https://registry.npmjs.org/safe-regex/-/safe-regex-2.1.1.tgz",
+					"integrity": "sha512-rx+x8AMzKb5Q5lQ95Zoi6ZbJqwCLkqi3XuJXp5P3rT8OEc6sZCJG5AE5dU3lsgRr/F4Bs31jSlVN+j5KrsGu9A==",
+					"requires": {
+						"regexp-tree": "~0.1.1"
+					}
 				}
 			}
 		},
@@ -17007,9 +17074,9 @@
 			}
 		},
 		"eslint-plugin-unicorn": {
-			"version": "40.1.0",
-			"resolved": "https://registry.npmjs.org/eslint-plugin-unicorn/-/eslint-plugin-unicorn-40.1.0.tgz",
-			"integrity": "sha512-y5doK2DF9Sr5AqKEHbHxjFllJ167nKDRU01HDcWyv4Tnmaoe9iNxMrBnaybZvWZUaE3OC5Unu0lNIevYamloig==",
+			"version": "42.0.0",
+			"resolved": "https://registry.npmjs.org/eslint-plugin-unicorn/-/eslint-plugin-unicorn-42.0.0.tgz",
+			"integrity": "sha512-ixBsbhgWuxVaNlPTT8AyfJMlhyC5flCJFjyK3oKE8TRrwBnaHvUbuIkCM1lqg8ryYrFStL/T557zfKzX4GKSlg==",
 			"requires": {
 				"@babel/helper-validator-identifier": "^7.15.7",
 				"ci-info": "^3.3.0",
