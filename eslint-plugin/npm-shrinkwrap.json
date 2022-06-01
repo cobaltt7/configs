@@ -12,7 +12,7 @@
 			"devDependencies": {
 				"@redguy12/prettier-config": "1.1.1",
 				"@types/eslint": "8.4.1",
-				"@types/node": "17.0.34",
+				"@types/node": "17.0.38",
 				"eslint": "8.9.0",
 				"prettier": "2.5.1",
 				"prettier-package-json": "2.6.0",
@@ -992,9 +992,9 @@
 			"dev": true
 		},
 		"node_modules/@types/node": {
-			"version": "17.0.34",
-			"resolved": "https://registry.npmjs.org/@types/node/-/node-17.0.34.tgz",
-			"integrity": "sha512-XImEz7XwTvDBtzlTnm8YvMqGW/ErMWBsKZ+hMTvnDIjGCKxwK5Xpc+c/oQjOauwq8M4OS11hEkpjX8rrI/eEgA==",
+			"version": "17.0.38",
+			"resolved": "https://registry.npmjs.org/@types/node/-/node-17.0.38.tgz",
+			"integrity": "sha512-5jY9RhV7c0Z4Jy09G+NIDTsCZ5G0L5n+Z+p+Y7t5VJHM30bgwzSjVtlcBxqAj+6L/swIlvtOSzr8rBk/aNyV2g==",
 			"dev": true
 		},
 		"node_modules/@types/parse-json": {
@@ -2807,9 +2807,9 @@
 			"dev": true
 		},
 		"@types/node": {
-			"version": "17.0.34",
-			"resolved": "https://registry.npmjs.org/@types/node/-/node-17.0.34.tgz",
-			"integrity": "sha512-XImEz7XwTvDBtzlTnm8YvMqGW/ErMWBsKZ+hMTvnDIjGCKxwK5Xpc+c/oQjOauwq8M4OS11hEkpjX8rrI/eEgA==",
+			"version": "17.0.38",
+			"resolved": "https://registry.npmjs.org/@types/node/-/node-17.0.38.tgz",
+			"integrity": "sha512-5jY9RhV7c0Z4Jy09G+NIDTsCZ5G0L5n+Z+p+Y7t5VJHM30bgwzSjVtlcBxqAj+6L/swIlvtOSzr8rBk/aNyV2g==",
 			"dev": true
 		},
 		"@types/parse-json": {
