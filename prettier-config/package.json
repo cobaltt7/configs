@@ -24,12 +24,12 @@
 	},
 	"peerDependencies": {
 		"prettier": "2.5.1",
-		"prettier-package-json": "2.6.3"
+		"prettier-package-json": "2.6.4"
 	},
 	"devDependencies": {
 		"@types/prettier": "2.4.4",
 		"prettier": "2.5.1",
-		"prettier-package-json": "2.6.3"
+		"prettier-package-json": "2.6.4"
 	},
 	"keywords": [
 		"prettier",
