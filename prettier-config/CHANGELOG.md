@@ -2,13 +2,37 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v1.1.1](https://www.npmjs.com/package/@redguy12/prettier-config/v/1.0.1) (2022-02-13) - **Latest**
+## [v2.0.0](https://www.npmjs.com/package/@redguy12/prettier-config/v/2.0.0) (2022-08-09) - **Latest**
+
+Breaking change:
+
+-   Replace `prettier-package-json` with `prettier-plugin-packagejson`.
+
+Upgrade guide:
+
+-   Uninstall `prettier-package-json` with `npm rm prettier-package-json`.
+-   Remove the `prettier-package-json` field from your `package.json`.
+-   Remove the `&& prettier-package-json --write` portion of the `lint:prettier` NPM script.
+
+## [v1.2.0](https://www.npmjs.com/package/@redguy12/prettier-config/v/1.2.0) (2022-07-29)
+
+-   Version bump only.
+
+## [v1.1.2](https://www.npmjs.com/package/@redguy12/prettier-config/v/1.1.2) (2022-07-29)
+
+-   Bump the `jsdocPrintWidth` to 140.
+-   Enable `jsdocPreferCodeFences`.
+-   Enable `--cache`.
+-   Bump dependencies.
+-   Format code.
+
+## [v1.1.1](https://www.npmjs.com/package/@redguy12/prettier-config/v/1.1.1) (2022-07-29)
 
 -   Fix typo in README.
 -   Update dependencies.
 -   Fix crash.
 
-## [v1.1.0](https://www.npmjs.com/package/@redguy12/prettier-config/v/1.0.1) (2022-02-13)
+## [v1.1.0](https://www.npmjs.com/package/@redguy12/prettier-config/v/1.1.0) (2022-02-13)
 
 -   Explicitly enable `embeddedLanguageFormatting`.
 -   Always quote properties in JSONC files.

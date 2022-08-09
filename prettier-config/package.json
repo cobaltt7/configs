@@ -1,44 +1,37 @@
 {
-	"private": false,
 	"name": "@redguy12/prettier-config",
-	"version": "1.1.1",
+	"version": "2.0.0",
 	"description": "My Prettier style guide",
-	"license": "MIT",
-	"author": "Paul Reid",
-	"homepage": "https://github.com/redguy12/configs/tree/main/prettier-config#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/RedGuy12/configs.git"
-	},
-	"bugs": {
-		"email": "paul@reid-family.org",
-		"url": "https://github.com/redguy12/configs/issues"
-	},
-	"main": ".prettierrc.js",
-	"scripts": {
-		"format": "prettier --write \"**\" --ignore-unknown && prettier-package-json --write"
-	},
-	"dependencies": {
-		"prettier-plugin-ini": "0.3.1",
-		"prettier-plugin-jsdoc": "0.3.30"
-	},
-	"peerDependencies": {
-		"prettier": "2.5.1",
-		"prettier-package-json": "2.6.0"
-	},
-	"devDependencies": {
-		"@types/prettier": "2.4.4",
-		"prettier": "2.5.1",
-		"prettier-package-json": "2.6.0"
-	},
 	"keywords": [
 		"prettier",
 		"prettier-config",
 		"prettier-plugin"
 	],
-	"prettier-package-json": {
-		"tabWidth": 4,
-		"useTabs": true,
-		"expandUsers": true
+	"homepage": "https://github.com/redguy12/configs/tree/main/prettier-config#readme",
+	"bugs": {
+		"url": "https://github.com/redguy12/configs/issues",
+		"email": "paul@reid-family.org"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RedGuy12/configs.git"
+	},
+	"license": "MIT",
+	"author": "Paul Reid",
+	"main": ".prettierrc.js",
+	"scripts": {
+		"format": "prettier --write \"**\" --ignore-unknown"
+	},
+	"dependencies": {
+		"prettier-plugin-ini": "1.0.0",
+		"prettier-plugin-jsdoc": "0.3.38",
+		"prettier-plugin-packagejson": "2.2.18"
+	},
+	"devDependencies": {
+		"@types/prettier": "2.6.4",
+		"prettier": "2.7.1"
+	},
+	"peerDependencies": {
+		"prettier": "2.7.1"
 	}
 }
