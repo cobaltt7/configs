@@ -23,12 +23,12 @@
 		"prettier-plugin-jsdoc": "0.3.30"
 	},
 	"peerDependencies": {
-		"prettier": "2.5.1",
+		"prettier": "2.7.1",
 		"prettier-package-json": "2.6.4"
 	},
 	"devDependencies": {
-		"@types/prettier": "2.4.4",
-		"prettier": "2.5.1",
+		"@types/prettier": "2.6.3",
+		"prettier": "2.7.1",
 		"prettier-package-json": "2.6.4"
 	},
 	"keywords": [
