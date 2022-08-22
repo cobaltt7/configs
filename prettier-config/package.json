@@ -20,7 +20,7 @@
 	},
 	"dependencies": {
 		"prettier-plugin-ini": "1.1.0",
-		"prettier-plugin-jsdoc": "0.3.30"
+		"prettier-plugin-jsdoc": "0.4.1"
 	},
 	"peerDependencies": {
 		"prettier": "2.7.1",
