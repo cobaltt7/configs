@@ -1,6 +1,6 @@
 {
 	"name": "@redguy12/prettier-config",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "My Prettier style guide",
 	"keywords": [
 		"prettier",
@@ -29,9 +29,9 @@
 	},
 	"devDependencies": {
 		"@types/prettier": "2.6.4",
-		"prettier": "2.7.1"
+		"prettier": "2.8.0"
 	},
 	"peerDependencies": {
-		"prettier": "2.7.1"
+		"prettier": "2.8.0"
 	}
 }
