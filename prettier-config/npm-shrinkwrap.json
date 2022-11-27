@@ -11,7 +11,7 @@
 			"dependencies": {
 				"prettier-plugin-ini": "1.0.0",
 				"prettier-plugin-jsdoc": "0.4.2",
-				"prettier-plugin-packagejson": "2.2.18"
+				"prettier-plugin-packagejson": "2.3.0"
 			},
 			"devDependencies": {
 				"@types/prettier": "2.6.4",
@@ -967,14 +967,19 @@
 			}
 		},
 		"node_modules/prettier-plugin-packagejson": {
-			"version": "2.2.18",
-			"resolved": "https://registry.npmjs.org/prettier-plugin-packagejson/-/prettier-plugin-packagejson-2.2.18.tgz",
-			"integrity": "sha512-iBjQ3IY6IayFrQHhXvg+YvKprPUUiIJ04Vr9+EbeQPfwGajznArIqrN33c5bi4JcIvmLHGROIMOm9aYakJj/CA==",
+			"version": "2.3.0",
+			"resolved": "https://registry.npmjs.org/prettier-plugin-packagejson/-/prettier-plugin-packagejson-2.3.0.tgz",
+			"integrity": "sha512-2SAPMMk1UDkqsB7DifWKcwCm6VC52JXMrzLHfbcQHJRWhRCj9zziOy+s+2XOyPBeyqFqS+A/1IKzOrxKFTo6pw==",
 			"dependencies": {
 				"sort-package-json": "1.57.0"
 			},
 			"peerDependencies": {
 				"prettier": ">= 1.16.0"
+			},
+			"peerDependenciesMeta": {
+				"prettier": {
+					"optional": true
+				}
 			}
 		},
 		"node_modules/queue-microtask": {
@@ -1715,9 +1720,9 @@
 			}
 		},
 		"prettier-plugin-packagejson": {
-			"version": "2.2.18",
-			"resolved": "https://registry.npmjs.org/prettier-plugin-packagejson/-/prettier-plugin-packagejson-2.2.18.tgz",
-			"integrity": "sha512-iBjQ3IY6IayFrQHhXvg+YvKprPUUiIJ04Vr9+EbeQPfwGajznArIqrN33c5bi4JcIvmLHGROIMOm9aYakJj/CA==",
+			"version": "2.3.0",
+			"resolved": "https://registry.npmjs.org/prettier-plugin-packagejson/-/prettier-plugin-packagejson-2.3.0.tgz",
+			"integrity": "sha512-2SAPMMk1UDkqsB7DifWKcwCm6VC52JXMrzLHfbcQHJRWhRCj9zziOy+s+2XOyPBeyqFqS+A/1IKzOrxKFTo6pw==",
 			"requires": {
 				"sort-package-json": "1.57.0"
 			}
