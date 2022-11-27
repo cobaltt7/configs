@@ -1,12 +1,12 @@
 {
 	"name": "@redguy12/prettier-config",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"lockfileVersion": 2,
 	"requires": true,
 	"packages": {
 		"": {
 			"name": "@redguy12/prettier-config",
-			"version": "2.0.1",
+			"version": "2.0.2",
 			"license": "MIT",
 			"dependencies": {
 				"prettier-plugin-ini": "1.0.0",
