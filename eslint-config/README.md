@@ -43,27 +43,27 @@ My ESLint Style Guide
     ```js
     [
     	{
-    		extends: "@redguy12/typescript",
+    		extends: "@redguy12/eslint-config/typescript",
     		// TypeScript files
     		files: "**.ts",
     	},
     	{
-    		extends: "@redguy12/node",
+    		extends: "@redguy12/eslint-config/node",
     		// Node.JS scripts
     		files: [],
     	},
     	{
-    		extends: "@redguy12/esm",
+    		extends: "@redguy12/eslint-config/esm",
     		// ESM files
     		files: "**.mjs",
     	},
     	{
-    		extends: "@redguy12/cli",
+    		extends: "@redguy12/eslint-config/cli",
     		// CLIs (including JS GitHub Actions)
     		files: ["bin/**.js", ".github/**.js"],
     	},
     	{
-    		extends: "@redguy12/config",
+    		extends: "@redguy12/eslint-config/config",
 
     		// Configuration files
     		files: [
@@ -76,17 +76,17 @@ My ESLint Style Guide
     		],
     	},
     	{
-    		extends: "@redguy12/browser",
+    		extends: "@redguy12/eslint-config/browser",
     		// Client-side scripts (including HTML files)
     		files: ["**.html", "**.htm", "**.vue"],
     	},
     	{
-    		extends: "@redguy12/sample",
+    		extends: "@redguy12/eslint-config/sample",
     		// Files including samples (AKA docs) (including HTML and Markdown files)
     		files: ["**.md", "**.md/*"],
     	},
     	{
-    		extends: "@redguy12/vue",
+    		extends: "@redguy12/eslint-config/vue",
     		// Vue SFCs (v3)
     		files: "**.vue",
     	},

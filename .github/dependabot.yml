@@ -8,6 +8,13 @@ updates:
           - dependency-name: "prettier*"
 
     - package-ecosystem: npm
+      directory: /eslint-config
+      schedule:
+          interval: daily
+      ignore:
+          - dependency-name: "prettier*"
+
+    - package-ecosystem: npm
       directory: /prettier-config
       schedule:
           interval: daily
