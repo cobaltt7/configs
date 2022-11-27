@@ -2,6 +2,10 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
+## [v2.0.2](https://www.npmjs.com/package/@redguy12/prettier-config/v/2.0.2) (2022-11-27)
+
+-   Bump prettier-plugin-packagejson and @types/prettier.
+
 ## [v2.0.1](https://www.npmjs.com/package/@redguy12/prettier-config/v/2.0.1) (2022-11-26)
 
 -   Bump Prettier and prettier-plugin-jsdoc.
