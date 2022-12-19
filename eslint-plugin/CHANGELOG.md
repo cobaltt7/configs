@@ -2,7 +2,12 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v4.0.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/4.0.1) (2022-02-13) - **Latest**
+## [v4.1.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/4.1.0) (2022-12-19) - **Latest**
+
+-   `file-comment-before-use-strict`: Allow multiple comments before `"use strict"`.
+-   Update dependencies.
+
+## [v4.0.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/4.0.1) (2022-02-13)
 
 -   Update dependencies.
 
@@ -82,7 +87,7 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 -   Disallow importing `whatwg-fetch` without assigning.
 -   Allow importing `isomorphic-fetch` without assigning.
 
-# [2.2.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/2.2.0) (2021-09-06)
+## [2.2.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/2.2.0) (2021-09-06)
 
 -   Make all peer dependencies required.
 -   Remove `prettier-plugin-ini`.

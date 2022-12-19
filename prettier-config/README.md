@@ -14,7 +14,7 @@ My Prettier style guide
 
     ```json
     "prettier": "@redguy12/prettier-config",
-    "scripts": { "lint:prettier": "prettier --write \"**\" --ignore-unknown --cache" }
+    "scripts": { "format": "prettier --write \"**\" --ignore-unknown --cache" }
     ```
 
 3. Create a `.prettierignore` file with the following content:

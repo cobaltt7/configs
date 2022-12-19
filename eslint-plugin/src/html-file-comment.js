@@ -1,4 +1,4 @@
-/** @file Ensures Files start with a HTML-style `@file` comment. */
+/** @file Ensures files start with a HTML-style `@file` comment. */
 "use strict";
 
 const { readFileSync } = require("fs");

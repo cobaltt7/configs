@@ -1,7 +1,6 @@
 {
-	"private": false,
 	"name": "@redguy12/eslint-plugin",
-	"version": "4.0.1",
+	"version": "4.1.0",
 	"description": "Any ESLint rules that I want to use but can't find anywhere.",
 	"license": "MIT",
 	"author": "Paul Reid",
@@ -20,16 +19,16 @@
 		"lint": "npx tsc -p jsconfig.json"
 	},
 	"peerDependencies": {
-		"eslint": "8.9.0"
+		"eslint": "8.30.0"
 	},
 	"devDependencies": {
-		"@redguy12/prettier-config": "1.1.1",
-		"@types/eslint": "8.4.1",
-		"@types/node": "18.7.21",
-		"eslint": "8.9.0",
-		"prettier": "2.5.1",
+		"@redguy12/prettier-config": "2.0.2",
+		"@types/eslint": "8.4.10",
+		"@types/node": "18.11.17",
+		"eslint": "8.30.0",
+		"prettier": "2.8.0",
 		"prettier-package-json": "2.6.0",
-		"typescript": "4.7.4"
+		"typescript": "4.9.4"
 	},
 	"keywords": [
 		"eslint",

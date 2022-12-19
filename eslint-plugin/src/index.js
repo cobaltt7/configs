@@ -1,4 +1,4 @@
-/** @file ESLint Plugin configuration file. */
+/** @file ESLint configuration file. */
 "use strict";
 
 const plugin = {
