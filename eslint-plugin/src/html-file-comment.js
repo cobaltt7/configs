@@ -6,39 +6,29 @@ const { readFileSync } = require("fs");
 /** @type {import("eslint").Rule.RuleModule} */
 const rule = {
 	create(context) {
-		/**
-		 * Report a message at the start of the file.
-		 *
-		 * @param {string} message - Message to report.
-		 *
-		 * @returns {void}
-		 */
-		function report(message) {
-			context.report({
-				loc: { column: 0, line: 0 },
-				message,
-			});
-		}
-
 		const file = readFileSync(context.getPhysicalFilename(), "utf8");
 		const match = /^<!--\s@file .+?\s-->/su.exec(file)?.[0];
 
 		if (!match) {
-			report("Expected file to start with a @file comment.");
-
-			return {};
-		}
-
-		if (!file.split("-->")[1]?.startsWith("\n\n<template>")) {
-			report(
-				"Expected a single blank line between the @file comment and the opening <template> tag at start of file.",
-			);
-			// Todo: autofix
-
-			return {};
+			context.report({
+				loc: { column: 0, line: 0 },
+				message: "Expected file to start with a @file comment.",
+			});
+		} else if (!file.split("-->")[1]?.startsWith("\n\n<template>")) {
+			context.report({
+				loc: { column: 0, line: 0 },
+				message:
+					"Expected a single blank line between the @file comment and the opening <template> tag at start of file.",
+				// Todo: autofix
+			});
 		}
 
 		return {};
+	},
+
+	meta: {
+		fixable: "whitespace",
+		type: "layout",
 	},
 };
 

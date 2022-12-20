@@ -2,7 +2,11 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v4.1.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/4.1.0) (2022-12-19) - **Latest**
+## [v4.1.1](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/4.1.1) (2022-12-19) - **Latest**
+
+-   `file-comment-before-use-strict`: Fix extra comments before `"use strict"` dissapearing and enforce a lot more organization.
+
+## [v4.1.0](https://www.npmjs.com/package/@redguy12/eslint-plugin/v/4.1.0) (2022-12-19)
 
 -   `file-comment-before-use-strict`: Allow multiple comments before `"use strict"`.
 -   Update dependencies.

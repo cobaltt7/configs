@@ -6,76 +6,77 @@ const rule = {
 	create: (context) => {
 		const sourceCode = context.getSourceCode();
 
+		const comments = sourceCode.getAllComments();
+
+		if (comments[0]?.loc?.start.line === 1 && !comments[0].value.match(/(?:^| )\* @file/)) {
+			context.report({
+				loc: comments[0].loc,
+
+				message: `First comment is not a @file comment.`,
+			});
+		}
 		return {
 			ExpressionStatement(node) {
 				const { expression, loc } = node;
 
 				if (expression.type !== "Literal" || expression.value !== "use strict") return;
+				const preStrictComments = sourceCode.getCommentsBefore(node);
 
-				const commentsBefore = sourceCode.getCommentsBefore(node);
+				preStrictComments.forEach((comment, index) => {
+					const supposedNextLine = (comment.loc?.end.line || 0) + 1;
+					const actualNextLine =
+						(preStrictComments[index + 1]?.loc || loc)?.end.line || supposedNextLine;
 
-				if (!commentsBefore[0]) return;
-				const supposedStrictLine = (commentsBefore[0].loc?.end.line || 0) + 1;
-				const actualStrictLine = loc?.end.line || 0;
+					if (supposedNextLine !== actualNextLine) {
+						context.report({
+							fix(fixer) {
+								return fixer.removeRange([
+									sourceCode.getIndexFromLoc({
+										column: 0,
+										line: supposedNextLine,
+									}),
+									sourceCode.getIndexFromLoc({
+										column: 0,
+										line: actualNextLine,
+									}),
+								]);
+							},
+							loc: {
+								end: { column: 0, line: actualNextLine },
+								start: { column: 0, line: supposedNextLine },
+							},
 
-				if (supposedStrictLine !== actualStrictLine) {
-					const beforeStrict = {
-						end: { column: 0, line: actualStrictLine },
-						start: { column: 0, line: supposedStrictLine },
-					};
-
-					context.report({
-						fix(fixer) {
-							return fixer.removeRange([
-								sourceCode.getIndexFromLoc({
-									column: 0,
-									line: supposedStrictLine,
-								}),
-								sourceCode.getIndexFromLoc({
-									column: 0,
-									line: actualStrictLine,
-								}),
-							]);
-						},
-
-						loc: beforeStrict,
-
-						message:
-							"Unexpected blank line between @file comment and use strict directive",
-					});
-				}
+							message: `Unexpected blank line between comment${
+								preStrictComments[index + 1] ? "s" : " and use strict directive"
+							}.`,
+						});
+					}
+				});
 
 				const firstCode = sourceCode.getTokenAfter(node);
 
-				if (!firstCode) {
-					context.report({
-						loc: { column: 0, line: 0 },
-						message: "File has no content.",
-					});
+				if (!firstCode) return;
 
-					return;
-				}
+				const codeStartLine = firstCode.loc.end.line;
+				const preCodeComments = sourceCode.getCommentsBefore(firstCode);
+				const actualStartLine =
+					preCodeComments[preCodeComments.length - 1]?.loc?.start?.line || codeStartLine;
+				const supposedStartLine = (loc?.end.line || 1) + 2;
 
-				const codeStartLine = firstCode?.loc.end.line || 0;
-				const comments = sourceCode.getCommentsBefore(firstCode);
-				const commentStartLine =
-					comments?.[comments.length - 1]?.loc?.end.line || codeStartLine;
-
-				if (actualStrictLine + 2 > commentStartLine) {
-					const beforeCode = {
-						end: { column: 0, line: commentStartLine },
-						start: { column: 0, line: actualStrictLine + 2 },
-					};
+				if (supposedStartLine > actualStartLine) {
 
 					context.report({
 						fix(fixer) {
 							return fixer.insertTextAfter(node, "\n");
 						},
 
-						loc: beforeCode,
+						loc: {
+							end: { column: 0, line: actualStartLine },
+							start: { column: 0, line: supposedStartLine },
+						},
 
 						message:
-							"Expected one blank line between use strict directive and start of code",
+							"Expected one blank line between use strict directive and start of code.",
 					});
 				}
 			},

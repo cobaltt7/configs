@@ -1,13 +1,13 @@
 {
 	"name": "@redguy12/eslint-plugin",
-	"version": "4.1.0",
+	"version": "4.1.1",
 	"lockfileVersion": 2,
 	"requires": true,
 	"dev": true,
 	"packages": {
 		"": {
 			"name": "@redguy12/eslint-plugin",
-			"version": "4.1.0",
+			"version": "4.1.1",
 			"license": "MIT",
 			"devDependencies": {
 				"@redguy12/prettier-config": "2.0.2",

@@ -1,6 +1,6 @@
 {
 	"name": "@redguy12/eslint-plugin",
-	"version": "4.1.0",
+	"version": "4.1.1",
 	"description": "Any ESLint rules that I want to use but can't find anywhere.",
 	"license": "MIT",
 	"author": "Paul Reid",
@@ -16,7 +16,7 @@
 	"main": "src/index.js",
 	"scripts": {
 		"format": "prettier --write \"**\" --ignore-unknown && prettier-package-json --write",
-		"lint": "npx tsc -p jsconfig.json"
+		"types": "npx tsc -p jsconfig.json"
 	},
 	"peerDependencies": {
 		"eslint": "8.30.0"
