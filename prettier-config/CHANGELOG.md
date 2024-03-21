@@ -10,7 +10,6 @@ We use semantic versioning (SemVer). [More information here](https://semver.org/
 
 -   Bump Prettier and prettier-plugin-jsdoc.
 
-
 ## [v2.0.0](https://www.npmjs.com/package/@redguy12/prettier-config/v/2.0.0) (2022-08-09) - **Latest**
 
 Breaking change:

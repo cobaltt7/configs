@@ -1,4 +1,4 @@
-/** @type {import("prettier").Config & import('prettier-plugin-jsdoc').Options} */
+/** @type {import("prettier").Config & import("prettier-plugin-jsdoc").Options} */
 const config = {
 	experimentalTernaries: true,
 	printWidth: 90,
@@ -13,18 +13,16 @@ const config = {
 	jsdocAddDefaultToDescription: false,
 	jsdocPreferCodeFences: true,
 	overrides: [
-		{			files: "**.md",
-			options: { proseWrap: "never" },
-		},
-		{			files: ["**.svg", "**.xml"],
-			options: { parser: "html" },
-		},
+		{ files: "**.md", options: { proseWrap: "never" } },
+		{ files: ["**.svg", "**.xml"], options: { parser: "html" } },
 		{ files: ["**.env", "**.replit", "**/.tx/config"], options: { parser: "ini" } },
-		{			files: ["package.json", "package-lock.json", "npm-shrinkwrap.json"],
+		{
+			files: ["package.json", "package-lock.json", "npm-shrinkwrap.json"],
 			options: { parser: "json-stringify" },
 		},
-		{			files: ["**/.vscode/*.json", "tsconfig.json", "jsconfig.json"],
-			options: { trailingComma: "none", parser: "jsonc",  },
+		{
+			files: ["**/.vscode/*.json", "tsconfig.json", "jsconfig.json"],
+			options: { trailingComma: "none", parser: "jsonc" },
 		},
 	],
 	plugins: [
