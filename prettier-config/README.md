@@ -7,7 +7,7 @@ My Prettier style guide
 1. Install the config by running:
 
     ```bash
-    npm install @redguy12/prettier-config prettier --save-dev
+    npm install @redguy12/prettier-config prettier --save-dev --save-exact
     ```
 
 2. Add the following to your `package.json`:
@@ -20,23 +20,15 @@ My Prettier style guide
 3. Create a `.prettierignore` file with the following content:
 
     ```ignore
-    !**
-    **/logs/
-    **/.git/
-    **/dist/
-    **/node_modules/
-    **/.npm/
-    **/.upm/
-    **/.nvm/
-    **/.eslintcache
-    **/.node_repl_history
-    **/.husky/_/
+    node_modules
+    .eslintcache
+    dist/**
     ```
 
 4. To format your code, simply run
 
     ```bash
-    npm run lint:prettier
+    npm run format
     ```
 
 Congrats! You've successfully integrated ESLint into your project with `@redguy12/prettier-config`!
