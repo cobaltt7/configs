@@ -13,7 +13,6 @@ const config = {
 	jsdocAddDefaultToDescription: false,
 	jsdocPreferCodeFences: true,
 	overrides: [
-		{ files: "**.md", options: { proseWrap: "never" } },
 		{ files: ["**.svg", "**.xml"], options: { parser: "html" } },
 		{ files: ["**.env", "**.replit", "**/.tx/config"], options: { parser: "ini" } },
 		{
