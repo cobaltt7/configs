@@ -2,6 +2,10 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
+## [v3.0.1](https://www.npmjs.com/package/@redguy12/prettier-config/v/3.0.1) (2024-03-26)
+
+-   Revert `printWidth` change
+
 ## [v3.0.0](https://www.npmjs.com/package/@redguy12/prettier-config/v/3.0.0) (2024-03-21)
 
 -   Use Prettier v3

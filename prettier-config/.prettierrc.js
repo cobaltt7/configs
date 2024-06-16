@@ -1,7 +1,7 @@
 /** @type {import("prettier").Config & import("prettier-plugin-jsdoc").Options} */
 const config = {
 	experimentalTernaries: true,
-	printWidth: 90,
+	printWidth: 100,
 	tabWidth: 4,
 	useTabs: true,
 	quoteProps: "consistent",
