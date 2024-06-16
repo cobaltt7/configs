@@ -32,7 +32,3 @@ My Prettier style guide
     ```
 
 Congrats! You've successfully integrated ESLint into your project with `@redguy12/prettier-config`!
-
-## See also
-
-See also [`@redguy12/eslint-config`](https://www.npmjs.com/package/@redguy12/eslint-config) if you want even more consistent stylization and more.

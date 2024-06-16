@@ -2,6 +2,11 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
+## [v3.0.2](https://www.npmjs.com/package/@redguy12/prettier-config/v/3.0.2) (2024-06-15)
+
+-   Wrap prose in Markdown files
+-   Bump dependencies
+
 ## [v3.0.1](https://www.npmjs.com/package/@redguy12/prettier-config/v/3.0.1) (2024-03-26)
 
 -   Revert `printWidth` change
