@@ -54,7 +54,7 @@
 		"eslint-plugin-node": "11.1.0",
 		"eslint-plugin-prettier": "4.2.1",
 		"eslint-plugin-promise": "6.1.1",
-		"eslint-plugin-putout": "16.3.0",
+		"eslint-plugin-putout": "23.0.0",
 		"eslint-plugin-regexp": "1.11.0",
 		"eslint-plugin-sonarjs": "0.17.0",
 		"eslint-plugin-sort-class-members": "1.16.0",
