@@ -26,10 +26,7 @@ const rule = {
 		return {};
 	},
 
-	meta: {
-		fixable: "whitespace",
-		type: "layout",
-	},
+	meta: { type: "layout" },
 };
 
 module.exports = rule;

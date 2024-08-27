@@ -1,4 +1,4 @@
-/** @file Browser-specific Rules. */
+/** @file Browser-specific rules. */
 "use strict";
 
 /** @type {import("eslint").Linter.Config} */

@@ -1,4 +1,4 @@
-/** @file Recomended Rules minus typescript. */
+/** @file Recommended rules minus typescript. */
 "use strict";
 
 /** @type {import("eslint").Linter.Config} */
@@ -40,49 +40,30 @@ const config = {
 		"coverage",
 		".cache",
 		"tmp",
-		"**/*.min.*",
+		"*.min.*",
 	],
 
 	overrides: [
 		{
 			extends: require.resolve("./cli.js"),
-			files: ["bin/**/*.js", ".github/**/*.js"],
+			files: ["bin/*.js", ".github/*.js"],
 		},
-		{ extends: require.resolve("./esm.js"), files: "**/*.mjs" },
+		{ extends: require.resolve("./esm.js"), files: "*.mjs" },
 		{
 			extends: require.resolve("./config.js"),
 
 			files: [
-				"**/*.config.js",
-				"**/*rc.js",
-				"**/*.config.mjs",
-				"**/*rc.mjs",
-				"**/*.config.cjs",
-				"**/*rc.cjs",
-				"**/*.json",
+				"*.config.js",
+				"*rc.js",
+				"*.config.mjs",
+				"*rc.mjs",
+				"*.config.cjs",
+				"*rc.cjs",
+				"*.json",
 			],
 		},
 		{
-			extends: require.resolve("./sample.js"),
-			files: "**/*.md",
-			processor: "markdown/markdown",
-		},
-		{
-			extends: require.resolve("./browser.js"),
-			files: ["**/*.html", "**/*.htm", "**/*.vue"],
-			rules: {
-				"putout/putout": 0,
-				"jsdoc/require-file-overview": 0,
-				"@redguy12/html-file-comment": 2,
-			},
-		},
-		{
-			files: ["**/*.html", "**/*.htm"],
-			plugins: ["html"],
-		},
-		{ extends: require.resolve("./sample.js"), files: "**/*.md/**" },
-		{
-			files: ["**/*.md/**", "**/*.json"],
+			files: ["*.md/**", "*.json"],
 
 			// Type information can't be obtained: see https://github.com/eslint/eslint-plugin-markdown/pull/155#issuecomment-671620312
 			// So these rules must unfortunately be disabled.
@@ -106,6 +87,7 @@ const config = {
 				"@typescript-eslint/non-nullable-type-assertion-style": 0,
 				"@typescript-eslint/prefer-includes": 0,
 				"@typescript-eslint/prefer-nullish-coalescing": 0,
+				"@typescript-eslint/prefer-optional-chain": 0,
 				"@typescript-eslint/prefer-readonly": 0,
 				"@typescript-eslint/prefer-readonly-parameter-types": 0,
 				"@typescript-eslint/prefer-reduce-type-parameter": 0,
@@ -124,24 +106,47 @@ const config = {
 			},
 		},
 		{
-			files: "*.json",
-			parser: "jsonc-eslint-parser",
+			extends: require.resolve("./sample.js"),
+			files: "*.md",
+			processor: "markdown/markdown",
+		},
+		{
+			extends: require.resolve("./browser.js"),
+			files: ["*.html", "*.htm", "*.vue"],
 
-			parserOptions: {
-				jsonSyntax: "JSON",
+			rules: {
+				"@redguy12/html-file-comment": 2,
+				"jsdoc/require-file-overview": 0,
 			},
+		},
+		{
+			files: ["*.html", "*.htm"],
+			plugins: ["html"],
+		},
+		{ extends: require.resolve("./sample.js"), files: "*.md/**" },
+		{
+			files: "*.json",
+
+			parserOptions: { jsonSyntax: "JSON" },
+
 			rules: {
 				"jsdoc/require-file-overview": 0,
 				"jsonc/key-name-casing": 0,
+				"jsonc/sort-array-values": 0,
 				"strict": 0,
 			},
+		},
+		{
+			files: [".vscode/**.json", "*.eslintrc.json", "jsconfig.json"],
+
+			parserOptions: { jsonSyntax: "JSONC" },
 		},
 		{
 			files: "package.json",
 			rules: { "jsonc/sort-keys": 0 },
 		},
 		{
-			files: ".github/**/*.js",
+			files: ".github/*.js",
 
 			rules: {
 				"import/no-extraneous-dependencies": [
@@ -157,32 +162,38 @@ const config = {
 		},
 	],
 
-	parserOptions: { ecmaVersion: 6, sourceType: "script" },
+	parserOptions: { ecmaVersion: 2021, sourceType: "script" },
 	plugins: ["eslint-comments", "@redguy12", "jsdoc"],
 	root: true,
 
 	rules: {
 		"@html-eslint/require-doctype": 0,
 		"@redguy12/file-comment-before-use-strict": 2,
-		"@typescript-eslint/naming-convention": 0,
-		"arrow-body-style": 2,
+		"@typescript-eslint/no-misused-promises": [2, { checkVoidReturn: false }],
 		"array-element-newline": 0,
+		"arrow-body-style": 2,
 		"camelcase": 0,
+
 		"capitalized-comments": [
 			2,
 			"always",
 			{
 				block: {
 					ignorePattern:
-						"do|if|in|for|let|new|try|var|case|else|enum|eval|null|this|true|void|with|await|break|catch|class|const|false|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof|	",
+						/^do|if|in|for|let|new|try|var|case|else|enum|eval|null|this|true|void|with|await|break|catch|class|const|false|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof|\t/
+							.source,
 				},
+
 				line: {
-					ignorePattern:
-						"do|if|in|for|let|new|try|var|case|else|enum|eval|null|this|true|void|with|await|break|catch|class|const|false|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof|	",
 					ignoreConsecutiveComments: true,
+
+					ignorePattern:
+						/^do|if|in|for|let|new|try|var|case|else|enum|eval|null|this|true|void|with|await|break|catch|class|const|false|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof|\t/
+							.source,
 				},
 			},
 		],
+
 		"class-methods-use-this": 2,
 		"comma-dangle": [2, "always-multiline"],
 		"complexity": [1, 15],
@@ -190,8 +201,19 @@ const config = {
 		"curly": [2, "multi-or-nest", "consistent"],
 		"default-case": 0,
 		"dot-location": [2, "property"],
-		"eslint-comments/require-description": 2,
+		"eslint-comments/disable-enable-pair": [2, { allowWholeFile: true }],
+		"eslint-comments/no-aggregating-enable": 0,
+		"eslint-comments/no-unused-enable": 0,
+
+		"eslint-comments/no-use": [
+			2,
+			{ allow: ["eslint-disable", "eslint-disable-next-line", "eslint-enable"] },
+		],
+
+		"eslint-comments/require-description": [2, { ignore: ["eslint-enable"] }],
 		"etc/no-commented-out-code": 1,
+		"etc/no-deprecated": 0,
+		"import/no-deprecated": 1,
 		"fp/no-class": 0,
 		"fp/no-loops": 0,
 		"fp/no-mutating-methods": 0,
@@ -201,19 +223,20 @@ const config = {
 		"func-style": [2, "declaration", { allowArrowFunctions: true }],
 		"function-call-argument-newline": [2, "consistent"],
 		"function-paren-newline": 0,
+		"generator-star-spacing": 0,
 
 		"id-length": [
 			2,
 			{
 				exceptions: ["_"],
-				max: 20,
-				min: 3,
+				max: 50,
+				min: 2,
 			},
 		],
 
 		"id-match": [
 			2,
-			/^_?(?:(?:[A-Z]+_){0,3}[A-Z]+|[A-Z]?[a-z]+(?:[A-Z][a-z]+){0,3}|_(?:dirname|filename))?$/
+			/^[#_]?(?:(?:[A-Z]{2,}_){0,9}[A-Z]{2,}|(?:[A-Z](?:[a-z]|[A-Z])+|[a-z]{2,}){0,5})$/
 				.source,
 			{
 				ignoreDestructuring: false,
@@ -223,7 +246,7 @@ const config = {
 		],
 
 		"implicit-arrow-linebreak": 0,
-		"import/extensions": [2, "ignorePackages", { ts: "never", tsx: "never" }],
+		"import/extensions": 0,
 		"import/first": 2,
 		"import/group-exports": 0,
 		"import/max-dependencies": 0,
@@ -245,7 +268,13 @@ const config = {
 		],
 
 		"import/no-commonjs": 0,
-		"import/no-cycle": 2,
+		"import/no-cycle": [
+			2,
+			{
+				// TODO: (waiting for release) // allowUnsafeDynamicCyclicDependency: true,
+				ignoreExternal: true,
+			},
+		],
 		"import/no-dynamic-require": 0,
 
 		"import/no-extraneous-dependencies": [
@@ -260,6 +289,7 @@ const config = {
 
 		"import/no-import-module-exports": 2,
 		"import/no-mutable-exports": 2,
+		"import/no-named-as-default-member": 2,
 		"import/no-named-default": 2,
 		"import/no-namespace": 0,
 		"import/no-relative-parent-imports": 0,
@@ -280,7 +310,7 @@ const config = {
 
 		"jsdoc/check-examples": [
 			0,
-			// Todo: enable after https://github.com/eslint/eslint/issues/14745. See https://github.com/gajus/eslint-plugin-jsdoc/pull/792#issuecomment-939587814
+			// TODO: enable after https://github.com/eslint/eslint/issues/14745. See https://github.com/gajus/eslint-plugin-jsdoc/pull/792#issuecomment-939587814
 			{
 				captionRequired: true,
 				matchingFileName: "dummy.md/*.js",
@@ -304,6 +334,24 @@ const config = {
 		"jsdoc/no-bad-blocks": 2,
 		"jsdoc/no-defaults": 2,
 		"jsdoc/no-multi-asterisks": [2, { allowWhitespace: true }],
+
+		"jsdoc/no-restricted-syntax": [
+			2,
+			{
+				contexts: [
+					{
+						comment:
+							"JsdocBlock:has(JsdocTag[tag=type][parsedType.type!=JsdocTypeStringValue][parsedType.type!=JsdocTypeNumber][parsedType.type!=JsdocTypeName])",
+
+						context: "any",
+
+						message:
+							"@type should be limited to numeric or string literals and names; use a @typedef instead",
+					},
+				],
+			},
+		],
+
 		"jsdoc/no-undefined-types": 0,
 		"jsdoc/require-asterisk-prefix": 2,
 		"jsdoc/require-description": 2,
@@ -323,9 +371,9 @@ const config = {
 		"jsdoc/require-returns-check": 2,
 		"jsdoc/require-returns-description": 2,
 		"jsdoc/require-returns-type": 2,
-		"jsdoc/require-throws": 2,
-		"jsdoc/require-yields": 2,
-		"jsdoc/require-yields-check": 2,
+		"jsdoc/require-throws": 0,
+		"jsdoc/require-yields": 0,
+		"jsdoc/require-yields-check": 0,
 		"line-comment-position": 0,
 		"linebreak-style": 0,
 		"lines-around-comment": 0,
@@ -377,13 +425,17 @@ const config = {
 			},
 		],
 
+		"newline-per-chained-call": 0,
 		"no-confusing-arrow": 0,
 		"no-console": 1,
 		"no-continue": 0,
 		"no-empty": [2, { allowEmptyCatch: true }],
+		"no-empty-function": 0,
 		"no-extra-parens": 0,
-		"no-implicit-coercion": 0,
+		"no-fallthrough": [0, { allowEmptyCase: true }],
+		"no-implicit-coercion": [2, { disallowTemplateShorthand: true }],
 		"no-inline-comments": 0,
+		"no-inner-declarations": 0,
 		"no-invalid-this": 0,
 		"no-magic-numbers": 0,
 		"no-mixed-operators": 0,
@@ -400,8 +452,8 @@ const config = {
 		],
 
 		"no-plusplus": 0,
-		"no-process-exit": 2,
 		"no-promise-executor-return": 0,
+		"no-shadow": [2, { ignoreOnInitialization: true }],
 		"no-tabs": 0,
 		"no-ternary": 0,
 		"no-undef": [2, { typeof: true }],
@@ -419,8 +471,9 @@ const config = {
 
 		"no-useless-escape": 0,
 		"no-warning-comments": [1, { location: "anywhere" }],
+		"node/file-extension-in-import": [2, "always"],
+		"node/no-process-exit": 0,
 		"nonblock-statement-body-position": 0,
-		"newline-per-chained-call": 0,
 
 		"object-curly-newline": [
 			2,
@@ -448,12 +501,12 @@ const config = {
 		],
 
 		"prettier/prettier": 0,
+		"promise/always-return": 0,
 		"promise/avoid-new": 0,
 		"promise/no-callback-in-promise": 0,
-		"promise/no-promise-in-callback": 0,
 		"promise/no-nesting": 0,
+		"promise/no-promise-in-callback": 0,
 		"promise/prefer-await-to-then": 0,
-		"putout/putout": 0,
 		"quote-props": [2, "consistent-as-needed"],
 		"quotes": [2, "double", { avoidEscape: true }],
 		"regexp/confusing-quantifier": 2,
@@ -503,11 +556,12 @@ const config = {
 		"require-unicode-regexp": 0,
 		"security/detect-non-literal-regexp": 0,
 		"security/detect-non-literal-require": 0,
-		"security/detect-object-injection": 2,
+		"security/detect-object-injection": 0,
 		"security/detect-unsafe-regex": 0,
 		"sonarjs/cognitive-complexity": 0,
 		"sonarjs/elseif-without-else": 0,
 		"sonarjs/no-duplicate-string": [2, 3],
+		"sonarjs/no-nested-template-literals": 0,
 		"sort-keys": 2,
 		"sort-vars": 2,
 
@@ -533,12 +587,13 @@ const config = {
 		"unicorn/no-array-reduce": 0,
 		"unicorn/no-await-expression-member": 0,
 		"unicorn/no-empty-file": 2,
-		"unicorn/no-keyword-prefix": 2,
+		"unicorn/no-keyword-prefix": 0,
 		"unicorn/no-nested-ternary": 0,
+		"unicorn/no-typeof-undefined": 2,
 		"unicorn/no-unsafe-regex": 0,
 		"unicorn/no-unused-properties": 2,
 		"unicorn/no-useless-undefined": 2,
-		"unicorn/numeric-separators-style": [2, { onlyIfContainsSeparator: true }],
+		"unicorn/numeric-separators-style": 2,
 		"unicorn/prefer-code-point": 2,
 		"unicorn/prefer-export-from": 0,
 		"unicorn/prefer-module": 0,
@@ -547,11 +602,12 @@ const config = {
 		"unicorn/prefer-prototype-methods": 2,
 		"unicorn/prefer-spread": 0,
 		"unicorn/prefer-string-replace-all": 0,
+		"unicorn/prefer-top-level-await": 0,
 
 		"unicorn/prevent-abbreviations": [
 			2,
 			{
-				allowList: { jQuery: true },
+				allowList: { jQuery: true, args: true },
 				checkDefaultAndNamespaceImports: true,
 				checkProperties: true,
 				checkShorthandImports: true,
@@ -565,6 +621,7 @@ const config = {
 					langs: { languages: true },
 					msg: { message: true },
 					msgs: { messages: true },
+					pkg: { packageJSON: true, package_: false },
 				},
 			},
 		],
@@ -573,17 +630,10 @@ const config = {
 		"unicorn/template-indent": 2,
 		"vars-on-top": 2,
 		"wrap-iife": [2, "inside"],
+		"wrap-regex": 0,
 	},
 
-	settings: {
-		html: { "xml-extensions": [".svg"] },
-
-		jsdoc: {
-			augmentsExtendsReplacesDocs: true,
-			implementsReplacesDocs: true,
-			mode: "typescript",
-		},
-	},
+	settings: { html: { "xml-extensions": [".svg"] } },
 };
 
 module.exports = config;

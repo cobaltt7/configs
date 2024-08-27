@@ -2,12 +2,12 @@
 
 We use semantic versioning (SemVer). [More information here](https://semver.org/).
 
-## [v4.0.2](https://www.npmjs.com/package/@redguy12/eslint-config/v/4.0.2) (2022-02-13) - **Latest**
+## [v1.0.2](https://www.npmjs.com/package/@redguy12/eslint-config/v/1.0.2) (2022-02-13) - **Latest**
 
 -   Update bash scripts used in the README.
 -   Disable `vue/no-undef-components`, `jsdoc/valid-types`, and `@typescript-eslint/prefer-readonly-parameter-types` due to false positives.
 
-## [v4.0.1](https://www.npmjs.com/package/@redguy12/eslint-config/v/4.0.1) (2022-02-13)
+## [v1.0.1](https://www.npmjs.com/package/@redguy12/eslint-config/v/1.0.1) (2022-02-13)
 
 -   Update dependencies.
 

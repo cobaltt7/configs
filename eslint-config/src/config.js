@@ -1,4 +1,4 @@
-/** @file Configuration File-specific rules. */
+/** @file Configuration file-specific rules. */
 "use strict";
 
 /** @type {import("eslint").Linter.Config} */

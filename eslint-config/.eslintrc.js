@@ -1,26 +1,18 @@
-/** @file ESLint Configuration file. */
+/** @file ESLint configuration file. */
 "use strict";
-
-const path = require("path");
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
-	extends: [
-		require.resolve("./src/configs/recommended.js"),
-		require.resolve("./src/configs/cli.js"),
-	],
+	extends: [require.resolve("./src/recommended.js"), require.resolve("./src/config.js")],
 
 	overrides: [
 		{
-			extends: require.resolve("./src/configs/config.js"),
-			files: ["src/configs/*.js", "prettier-config/*.js"],
-		},
-		{
 			files: "!**.md/*",
-			parserOptions: { project: "./jsconfig.json", ecmaVersion: 2021 },
+			parserOptions: { project: require.resolve("./jsconfig.json") },
 		},
 	],
 
+	parserOptions: { ecmaVersion: 2021 },
 	root: true,
 };
 

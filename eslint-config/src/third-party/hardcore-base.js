@@ -4,8 +4,10 @@
 const disablePlugins = require("./_disablePlugins.js");
 
 const resolved = disablePlugins(
-	/** @type {import("eslint").Linter.Config} */ (require("eslint-config-hardcore/base")),
-	["json", "@html-eslint"],
+	/** @type {import("eslint").Linter.Config} */ (
+		/** @type {unknown} */ (require("eslint-config-hardcore/base.json"))
+	),
+	["json", "@html-eslint", "putout"],
 );
 
 module.exports = resolved;

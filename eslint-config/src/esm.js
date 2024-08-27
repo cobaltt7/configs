@@ -1,4 +1,4 @@
-/** @file ESM-specific Rules. */
+/** @file ESM-specific rules. */
 "use strict";
 
 /** @type {import("eslint").Linter.Config} */
@@ -9,7 +9,8 @@ const config = {
 	rules: {
 		"id-match": [
 			2,
-			/^_?(?:(?:[A-Z]+_){0,3}[A-Z]+|[A-Z]?[a-z]+(?:[A-Z][a-z]+){0,3})?$/.source,
+			/^[#_]?(?:(?:[A-Z]{2,}_){0,9}[A-Z]{2,}|(?:[A-Z](?:[a-z]|[A-Z])+|[a-z]{2,}){0,5})$/
+				.source,
 			{
 				ignoreDestructuring: false,
 				onlyDeclarations: false,
@@ -18,7 +19,6 @@ const config = {
 		],
 
 		"import/exports-last": 0,
-		"import/extensions": [2, "ignorePackages", { ts: "never", tsx: "never" }],
 		"import/no-commonjs": 2,
 		"import/no-unassigned-import": [2, { allow: ["**/*.css"] }],
 		"import/no-unresolved": 0,
@@ -39,9 +39,8 @@ const config = {
 			},
 		],
 
-		"node/file-extension-in-import": 0,
-		"node/no-missing-import": 0,
 		"sort-imports": 0,
+		"strict": [2, "never"],
 	},
 };
 

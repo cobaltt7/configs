@@ -1,4 +1,4 @@
-/** @file Vue SFC-Specific Rules. */
+/** @file Vue SFC-specific rules. */
 "use strict";
 
 /** @type {import("eslint").Linter.Config} */
@@ -7,6 +7,7 @@ const config = {
 		require.resolve("./browser.js"),
 		require.resolve("./typescript.js"),
 		"plugin:vue/vue3-recommended",
+		"hardcore/vue",
 	],
 
 	overrides: [
@@ -36,6 +37,7 @@ const config = {
 		"max-len": 0,
 		"max-lines": 0,
 		"no-trailing-spaces": 0,
+		"node/file-extension-in-import": 0,
 		"unicode-bom": 0,
 		"vue/array-bracket-newline": 2,
 		"vue/array-bracket-spacing": 2,
@@ -73,14 +75,15 @@ const config = {
 					void: "always",
 				},
 
-				svg: "always",
 				math: "always",
+				svg: "always",
 			},
 		],
 
 		"vue/key-spacing": 2,
 		"vue/keyword-spacing": 2,
 		"vue/match-component-file-name": 2,
+		"vue/match-component-import-name": 2,
 		"vue/max-attributes-per-line": 0,
 
 		"vue/max-len": [
@@ -105,6 +108,7 @@ const config = {
 		"vue/no-empty-component-block": 2,
 		"vue/no-empty-pattern": 2,
 		"vue/no-expose-after-await": 2,
+		"vue/no-invalid-attribute-name": 2,
 		"vue/no-invalid-model-keys": 2,
 		"vue/no-irregular-whitespace": 2,
 		"vue/no-loss-of-precision": 2,
@@ -150,8 +154,11 @@ const config = {
 		"vue/object-shorthand": 2,
 		"vue/operator-linebreak": 2,
 		"vue/padding-line-between-blocks": 2,
+		"vue/prefer-import-from-vue": 2,
+		"vue/prefer-prop-type-boolean-first": 2,
 		"vue/prefer-separate-static-class": 2,
 		"vue/prefer-template": 2,
+		"vue/prefer-true-attribute-shorthand": 2,
 		"vue/quote-props": [2, "consistent-as-needed"],
 		"vue/require-emit-validator": 2,
 		"vue/require-expose": 2,

@@ -9,14 +9,13 @@ My ESLint Style Guide
 2.  Install the config by running:
 
     ```bash
-    npm install @redguy12/eslint-config @rushstack/eslint-patch @types/eslint eslint --save-dev
+    npm install @redguy12/eslint-config @rushstack/eslint-patch @types/eslint eslint --save-dev --save-exact
     ```
 
 3.  Add an **.eslintrc.js** file (or **.eslintrc.cjs** if you are using Node _and_ ESM in the rest of your project) with the following content:
 
     ```javascript
-    /** @file ESLint Configuration file. */
-
+    /** @file ESLint configuration file. */
     "use strict";
 
     require("@rushstack/eslint-patch/modern-module-resolution");
@@ -28,7 +27,7 @@ My ESLint Style Guide
     	overrides: [
     		{
     			files: "!**.md/*",
-    			parserOptions: { project: "./jsconfig.json" },
+    			parserOptions: { project: require.resolve("./tsconfig.json") },
     		},
     	],
 
@@ -100,13 +99,13 @@ My ESLint Style Guide
 6.  Add an npm script to lint your code as so:
 
     ```json
-    "lint:eslint": "cd \"node_modules/@redguy12/eslint-config/\" && npx eslint ../../../ --resolve-plugins-relative-to . --fix && cd \"../../../\""
+    "scripts": { "lint": "cd node_modules/@redguy12/eslint-config/ && npx eslint ../../../ --resolve-plugins-relative-to . --fix" }
     ```
 
 7.  To lint your code, simply run
 
     ```bash
-    npm run lint:eslint
+    npm run lint
     ```
 
 Congrats! You've successfully integrated ESLint into your project with `@redguy12/eslint-config`!

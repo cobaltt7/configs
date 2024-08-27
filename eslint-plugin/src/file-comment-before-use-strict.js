@@ -12,7 +12,7 @@ const rule = {
 			context.report({
 				loc: comments[0].loc,
 
-				message: `First comment is not a @file comment.`,
+				message: `Expected first comment to be a @file comment.`,
 			});
 		}
 		return {
@@ -46,7 +46,7 @@ const rule = {
 								start: { column: 0, line: supposedNextLine },
 							},
 
-							message: `Unexpected blank line between comment${
+							message: `Expected no blank line between comment${
 								preStrictComments[index + 1] ? "s" : " and use strict directive"
 							}.`,
 						});

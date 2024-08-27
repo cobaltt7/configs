@@ -1,4 +1,4 @@
-/** @file Sample File-specific rules. */
+/** @file Sample file-specific rules. */
 "use strict";
 
 /** @type {import("eslint").Linter.Config} */
@@ -11,7 +11,7 @@ const config = {
 	},
 
 	extends: "plugin:markdown/recommended",
-	parserOptions: { ecmaVersion: 12 },
+	parserOptions: { ecmaVersion: "latest" },
 
 	rules: {
 		"@redguy12/html-file-comment": 0,
